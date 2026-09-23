@@ -31,7 +31,7 @@ Yanıt dili Türkçedir, tam imlâ ile (ı ş ğ ü ö ç İ).
    `Temel.astro` üretimde CSP koyar (`connect-src 'self'`, `form-action 'none'`). Google Fonts, analitik, CDN yok.
 3. **Her sayfada** önizleme uyarısı (`src/components/OnizlemeBandi.astro`, dile göre çevrili) ve
    `<meta name="robots" content="noindex,nofollow">`; `public/robots.txt` her şeyi kapatır.
-   Uyarı 24.09.2026'dan beri (Rıdvan) **açılış penceresidir**: `dialog[data-onizleme-bandi]`, oturumda bir kez
+   Uyarı 23.09.2026'dan beri (Rıdvan) **açılış penceresidir**: `dialog[data-onizleme-bandi]`, oturumda bir kez
    (`sessionStorage` anahtarı `onizleme-uyarisi-goruldu`), «Anladım» / Esc / arka plan ile kapanır, kapatınca iz
    kalmaz. JavaScript kapalıysa aynı metin `<noscript>` sabit bandı (`[data-onizleme-noscript]`) olarak görünür.
    Uyarı hiçbir sayfadan kaldırılmaz; `public/app/sw.js` kabuğu değişince `SURUM` artırılır.

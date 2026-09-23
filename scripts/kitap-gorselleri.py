@@ -1,6 +1,6 @@
 """Kurumsal teklif kitabı ve sunum için önizleme ekran görüntüleri (kurgusal veri).
 
-Önizleme uyarısı (24.09.2026'dan beri açılış penceresi) çekimde kapalıdır: kitap ve sunum altyazıları
+Önizleme uyarısı (23.09.2026'dan beri açılış penceresi) çekimde kapalıdır: kitap ve sunum altyazıları
 «Önizleme — … kurgusal» der; pencere ekranın ortasını kapatmasın diye oturum «görüldü» sayılır.
 
 Kullanım (önce `npm run build`; çalışan önizleme sunucusu yoksa betik açar):

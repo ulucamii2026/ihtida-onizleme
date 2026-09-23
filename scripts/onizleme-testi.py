@@ -53,7 +53,7 @@ SLUG = {
 }
 
 
-# Önizleme uyarısı (24.09.2026): açılışta pencere, oturumda bir kez. Etkileşim testlerinde «görüldü»
+# Önizleme uyarısı (23.09.2026): açılışta pencere, oturumda bir kez. Etkileşim testlerinde «görüldü»
 # sayılır ki pencere tıklamaları engellemesin; rota denetiminde her açılışta yeniden çıkması beklenir.
 UYARI_GORULDU = "try { sessionStorage.setItem('onizleme-uyarisi-goruldu', '1') } catch (e) {}"
 UYARI_SIFIRLA = "try { sessionStorage.removeItem('onizleme-uyarisi-goruldu') } catch (e) {}"
