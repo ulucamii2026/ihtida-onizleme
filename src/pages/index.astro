@@ -1,0 +1,60 @@
+---
+/** Kök: dil seçici. Beş dil birlikte gösterilir; Fransızca (Belçika — Valonya önceliği) öne çıkarılır. */
+import Temel from '../layouts/Temel.astro';
+import { DILLER, DIL_BILGI, VARSAYILAN_DIL, yol, varlik } from '../i18n/diller';
+import { sozluk } from '../i18n';
+
+const siralama = [VARSAYILAN_DIL, ...DILLER.filter((d) => d !== VARSAYILAN_DIL)];
+const bant = DILLER.map((d) => sozluk(d).genel.onizlemeBandi).join(' · ');
+const baslik = DILLER.map((d) => sozluk(d).genel.siteAdi).join(' · ');
+const fr = sozluk('fr');
+const alternatifler: Record<string, string> = Object.fromEntries(DILLER.map((d) => [DIL_BILGI[d].htmlLang, yol(d)]));
+alternatifler['x-default'] = '/';
+---
+<Temel htmlLang="fr-BE" baslik={baslik} aciklama={fr.ana.aciklama} bandMetin={bant} bandAciklama={fr.genel.onizlemeAciklama} alternatifler={alternatifler}>
+  <main id="icerik" class="relative flex min-h-[calc(100vh-3rem)] items-center py-12">
+    <div class="kap">
+      <div class="mx-auto max-w-3xl text-center">
+        <div class="flex items-center justify-center gap-4">
+          <img src={varlik('amblem/diyanet-logotype.svg')} alt={fr.genel.amblemAlt.diyanet} width="140" height="51" class="h-12 w-auto sm:h-14" />
+          <span class="h-12 w-px bg-cizgi" aria-hidden="true"></span>
+          <img src={varlik('amblem/bdv-amblem.svg')} alt={fr.genel.amblemAlt.bdv} width="56" height="56" class="h-12 w-12 sm:h-14 sm:w-14" />
+        </div>
+        <h1 class="mt-8 text-[1.55rem] leading-snug font-bold sm:text-[2.1rem]">
+          {DILLER.map((d) => (
+            <span lang={DIL_BILGI[d].htmlLang} class:list={['block', d === VARSAYILAN_DIL ? 'text-dy-koyu' : 'text-dy-metin']}>{sozluk(d).genel.siteAdi}</span>
+          ))}
+        </h1>
+        <p class="ui mx-auto mt-6 max-w-xl text-sm font-medium text-dy-gri-koyu">
+          {fr.genel.kurumlar.map((k, i) => <>{i > 0 && <span aria-hidden="true"> · </span>}<span>{k}</span></>)}
+        </p>
+      </div>
+
+      <nav aria-label="Langue · Taal · Sprache · Language · Dil" class="mx-auto mt-10 max-w-3xl">
+        <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          {siralama.map((d) => {
+            const s = sozluk(d);
+            const one = d === VARSAYILAN_DIL;
+            return (
+              <li class:list={[one && 'sm:col-span-2 lg:col-span-5']}>
+                <a
+                  href={yol(d)}
+                  lang={DIL_BILGI[d].htmlLang}
+                  hreflang={DIL_BILGI[d].htmlLang}
+                  data-dil-secimi={d}
+                  class:list={[
+                    'flex h-full flex-col items-center justify-center rounded-2xl border-2 px-4 py-4 text-center no-underline transition-colors',
+                    one ? 'border-dy-koyu bg-dy-koyu text-white hover:bg-dy-koyu-2 hover:text-white' : 'border-cizgi bg-white text-dy-metin hover:border-dy-koyu hover:text-dy-koyu',
+                  ]}
+                >
+                  <span class="ui text-lg font-bold">{DIL_BILGI[d].ad}</span>
+                  <span class:list={['mt-0.5 text-sm', one ? 'text-white/90' : 'text-dy-gri-koyu']}>{s.dilSecici.devam}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </div>
+  </main>
+</Temel>

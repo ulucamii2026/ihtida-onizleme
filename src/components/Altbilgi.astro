@@ -1,0 +1,43 @@
+---
+import { yol, varlik, type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+import { ALT_GEZINTI } from '../lib/gezinti';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const s = sozluk(dil);
+---
+<footer class="border-t-4 border-dy-kirmizi bg-dy-metin text-[#EDEAE4]">
+  <div class="kap grid gap-10 py-12 md:grid-cols-[1.4fr_1fr]">
+    <div>
+      <div class="flex items-center gap-3">
+        <span class="inline-flex rounded-lg bg-white p-2">
+          <img src={varlik('amblem/diyanet-logotype.svg')} alt={s.genel.amblemAlt.diyanet} width="110" height="40" class="h-9 w-auto" loading="lazy" />
+        </span>
+        <span class="inline-flex rounded-lg bg-white p-1.5">
+          <img src={varlik('amblem/bdv-amblem.svg')} alt={s.genel.amblemAlt.bdv} width="40" height="40" class="h-10 w-10" loading="lazy" />
+        </span>
+      </div>
+      <p class="ui mt-5 text-lg font-bold text-white">{s.genel.siteAdi}</p>
+      <p class="mt-2 max-w-prose text-[0.975rem]">{s.altbilgi.hakkinda}</p>
+      <ul class="ui mt-5 grid gap-1 text-sm font-medium text-white">
+        {s.genel.kurumlar.map((k) => <li>{k}</li>)}
+      </ul>
+    </div>
+    <nav aria-label={s.altbilgi.baglantilar}>
+      <h2 class="ui text-sm font-bold tracking-[0.08em] text-white uppercase">{s.altbilgi.baglantilar}</h2>
+      <ul class="mt-3 grid grid-cols-2 gap-x-4 gap-y-1.5 text-[0.975rem]">
+        {ALT_GEZINTI.map((p) => (
+          <li><a href={yol(dil, p)} class="text-[#EDEAE4] underline-offset-4 hover:text-white">{s.gezinti[p]}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+  <div class="border-t border-white/15">
+    <div class="kap flex flex-col gap-1 py-5 text-sm text-[#D6D1C8] sm:flex-row sm:flex-wrap sm:justify-between">
+      <span>{s.altbilgi.surum}</span>
+      <span>{s.altbilgi.amblemNotu}</span>
+      <span>{s.altbilgi.yaziTipi}</span>
+    </div>
+  </div>
+</footer>

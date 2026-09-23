@@ -1,0 +1,22 @@
+---
+import SayfaBasligi from '../components/SayfaBasligi.astro';
+import { type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const g = sozluk(dil).gizlilik;
+const son = g.bolumler.length - 1;
+---
+<SayfaBasligi ustEtiket={g.ustEtiket} baslik={g.sayfaBaslik} giris={g.giris} />
+
+<section class="kap py-12 sm:py-14">
+  <div class="grid max-w-4xl gap-4">
+    {g.bolumler.map((b, i) => (
+      <section class:list={['kart p-5 sm:p-6', i === son && 'border-dy-altin/50 bg-dy-altin-acik/40']} aria-labelledby={`gz-${i}`}>
+        <h2 id={`gz-${i}`} class="text-lg font-bold">{b.baslik}</h2>
+        <p class="mt-1.5">{b.metin}</p>
+      </section>
+    ))}
+  </div>
+</section>

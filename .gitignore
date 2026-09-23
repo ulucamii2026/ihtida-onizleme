@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+test-results/
+playwright-report/
+.playwright-mcp/
+# Yerel test çıktıları ve ekran görüntüleri depoya girmez
+cikti/
+.impeccable/

@@ -1,0 +1,18 @@
+---
+import Temel from '../layouts/Temel.astro';
+import { DILLER, DIL_BILGI, yol } from '../i18n/diller';
+import { sozluk } from '../i18n';
+
+const fr = sozluk('fr');
+const bant = DILLER.map((d) => sozluk(d).genel.onizlemeBandi).join(' · ');
+---
+<Temel htmlLang="fr-BE" baslik="404" aciklama="404" bandMetin={bant} bandAciklama={fr.genel.onizlemeAciklama}>
+  <main id="icerik" class="kap py-20 text-center">
+    <p class="ui text-6xl font-extrabold text-dy-koyu">404</p>
+    <ul class="mt-8 flex flex-wrap justify-center gap-3">
+      {DILLER.map((d) => (
+        <li><a class="dugme dugme-ikincil" href={yol(d)} lang={DIL_BILGI[d].htmlLang}>{sozluk(d).genel.anaSayfa} · {DIL_BILGI[d].kisa}</a></li>
+      ))}
+    </ul>
+  </main>
+</Temel>

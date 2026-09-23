@@ -1,0 +1,34 @@
+{
+  "name": "ihtida-platform",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro check && astro build",
+    "preview": "astro preview --port 4410",
+    "astro": "astro",
+    "test:onizleme": "py -3.14 scripts/onizleme-testi.py",
+    "konum:uret": "node scripts/konum-uret.mjs"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^6.0.5",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.4",
+    "leaflet": "^1.9.4",
+    "preact": "^10.29.8",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/leaflet": "^1.9.22",
+    "typescript": "^6.0.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

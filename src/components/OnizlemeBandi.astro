@@ -1,0 +1,19 @@
+---
+/**
+ * ÖNİZLEME BANDI — her sayfada zorunlu (kök dil seçici dâhil). Test betiği `[data-onizleme-bandi]`
+ * seçicisini arar; kaldırmayın. Gerçek platforma geçişte yalnız Temel.astro'daki `onizleme` bayrağı kapatılır.
+ */
+interface Props { metin: string; aciklama?: string; lang?: string }
+const { metin, aciklama, lang } = Astro.props;
+---
+<div
+  data-onizleme-bandi
+  role="note"
+  lang={lang}
+  class="relative z-50 border-b-2 border-dy-kirmizi bg-dy-koyu text-white"
+>
+  <div class="kap flex flex-wrap items-center justify-center gap-x-3 gap-y-0.5 py-2 text-center">
+    <strong class="ui text-[0.8125rem] font-bold tracking-[0.06em] sm:text-sm">{metin}</strong>
+    {aciklama && <span class="block w-full text-xs leading-snug opacity-95 sm:text-sm md:inline md:w-auto">{aciklama}</span>}
+  </div>
+</div>

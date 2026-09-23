@@ -1,0 +1,35 @@
+---
+/**
+ * Kamu sayfaları için tek yönlendirici: /{dil}/{yerel-slug}/ → src/sayfalar/<Sayfa>.astro
+ * Slug tablosu: src/i18n/diller.ts (SLUGLAR). Yeni kamu sayfası: SAYFALAR + SLUGLAR + sözlük + BILESENLER.
+ */
+import Genel from '../../layouts/Genel.astro';
+import Basvuru from '../../sayfalar/Basvuru.astro';
+import IlkAdimlar from '../../sayfalar/IlkAdimlar.astro';
+import Camiler from '../../sayfalar/Camiler.astro';
+import KardesAile from '../../sayfalar/KardesAile.astro';
+import Etkinlikler from '../../sayfalar/Etkinlikler.astro';
+import Dogrula from '../../sayfalar/Dogrula.astro';
+import Aile from '../../sayfalar/Aile.astro';
+import Iletisim from '../../sayfalar/Iletisim.astro';
+import Gizlilik from '../../sayfalar/Gizlilik.astro';
+import { DILLER, SAYFALAR, SLUGLAR, type Dil, type Sayfa } from '../../i18n/diller';
+import { sozluk } from '../../i18n';
+
+export function getStaticPaths() {
+  return DILLER.flatMap((lang) => SAYFALAR.map((sayfa) => ({ params: { lang, sayfa: SLUGLAR[lang][sayfa] }, props: { anahtar: sayfa } })));
+}
+
+const BILESENLER: Record<Sayfa, typeof Basvuru> = {
+  basvuru: Basvuru, ilkAdimlar: IlkAdimlar, camiler: Camiler, kardesAile: KardesAile, etkinlikler: Etkinlikler,
+  dogrula: Dogrula, aile: Aile, iletisim: Iletisim, gizlilik: Gizlilik,
+};
+
+const dil = Astro.params.lang as Dil;
+const { anahtar } = Astro.props as { anahtar: Sayfa };
+const s = sozluk(dil);
+const Bilesen = BILESENLER[anahtar];
+---
+<Genel dil={dil} sayfa={anahtar} baslik={s[anahtar].sayfaBaslik} aciklama={s[anahtar].aciklama}>
+  <Bilesen dil={dil} />
+</Genel>

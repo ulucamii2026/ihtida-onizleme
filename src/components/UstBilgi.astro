@@ -1,0 +1,95 @@
+---
+import Ikon from './Ikon.astro';
+import { DILLER, DIL_BILGI, yol, varlik, type Dil, type SayfaVeyaAna } from '../i18n/diller';
+import { sozluk } from '../i18n';
+import { UST_GEZINTI } from '../lib/gezinti';
+
+interface Props { dil: Dil; sayfa: SayfaVeyaAna }
+const { dil, sayfa } = Astro.props;
+const s = sozluk(dil);
+---
+<header class="border-b border-cizgi bg-white/95">
+  <div class="kap flex items-center justify-between gap-3 py-3">
+    <a href={yol(dil)} class="flex min-w-0 items-center gap-3 text-dy-metin no-underline hover:text-dy-metin" aria-label={`${s.genel.siteAdi} — ${s.genel.anaSayfa}`}>
+      <img src={varlik('amblem/diyanet-logotype.svg')} alt={s.genel.amblemAlt.diyanet} width="110" height="40" class="h-9 w-auto shrink-0 sm:h-10" />
+      <span class="h-9 w-px shrink-0 bg-cizgi" aria-hidden="true"></span>
+      <img src={varlik('amblem/bdv-amblem.svg')} alt={s.genel.amblemAlt.bdv} width="40" height="40" class="h-9 w-9 shrink-0 sm:h-10 sm:w-10" />
+      <span class="ui hidden min-w-0 text-[0.95rem] leading-tight font-bold lg:block">{s.genel.siteAdi}</span>
+    </a>
+
+    <nav aria-label={s.genel.dilSecimi} class="hidden md:block">
+      <ul class="flex items-center gap-1">
+        {DILLER.map((d) => (
+          <li>
+            <a
+              href={yol(d, sayfa)}
+              hreflang={DIL_BILGI[d].htmlLang}
+              lang={DIL_BILGI[d].htmlLang}
+              title={DIL_BILGI[d].ad}
+              aria-current={d === dil ? 'true' : undefined}
+              class:list={[
+                'ui inline-flex min-h-10 min-w-10 items-center justify-center rounded-full px-2 text-sm font-semibold no-underline',
+                d === dil ? 'bg-dy-koyu text-white hover:text-white' : 'text-dy-metin hover:bg-kagit-2',
+              ]}
+            ><span class="sr-only">{DIL_BILGI[d].ad}</span><span aria-hidden="true">{DIL_BILGI[d].kisa}</span></a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <details class="mobil-menu md:hidden">
+      <summary class="dugme dugme-ikincil list-none px-3" aria-label={s.genel.menu}>
+        <Ikon ad="menu" boyut={22} />
+        <span class="text-sm">{s.genel.menu}</span>
+      </summary>
+      <div class="absolute inset-x-0 z-40 mt-3 border-y border-cizgi bg-white shadow-lg">
+        <nav aria-label={s.genel.anaGezinti} class="kap py-3">
+          <ul class="grid gap-1">
+            {UST_GEZINTI.map((p) => (
+              <li>
+                <a href={yol(dil, p)} aria-current={p === sayfa ? 'page' : undefined}
+                  class:list={['ui block rounded-lg px-3 py-2.5 font-semibold no-underline', p === sayfa ? 'bg-kagit-2 text-dy-koyu' : 'text-dy-metin hover:bg-kagit']}>
+                  {s.gezinti[p]}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <nav aria-label={s.genel.dilSecimi} class="kap border-t border-cizgi py-3">
+          <ul class="flex flex-wrap gap-2">
+            {DILLER.map((d) => (
+              <li>
+                <a href={yol(d, sayfa)} hreflang={DIL_BILGI[d].htmlLang} lang={DIL_BILGI[d].htmlLang}
+                  aria-current={d === dil ? 'true' : undefined}
+                  class:list={['ui inline-flex min-h-11 items-center rounded-full border px-3 text-sm font-semibold no-underline', d === dil ? 'border-dy-koyu bg-dy-koyu text-white hover:text-white' : 'border-cizgi text-dy-metin']}>
+                  {DIL_BILGI[d].ad}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </details>
+  </div>
+
+  <nav aria-label={s.genel.anaGezinti} class="hidden border-t border-cizgi md:block">
+    <ul class="kap flex flex-wrap items-center gap-x-0.5 py-1.5">
+      {UST_GEZINTI.map((p) => (
+        <li>
+          <a href={yol(dil, p)} aria-current={p === sayfa ? 'page' : undefined}
+            class:list={[
+              'ui inline-flex min-h-10 items-center rounded-full px-2.5 text-[0.875rem] font-semibold no-underline xl:px-3',
+              p === sayfa ? 'bg-kagit-2 text-dy-koyu' : 'text-dy-metin hover:bg-kagit hover:text-dy-koyu',
+            ]}>
+            {s.gezinti[p]}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .mobil-menu summary::-webkit-details-marker { display: none; }
+  .mobil-menu[open] summary { background: var(--color-kagit-2); }
+</style>

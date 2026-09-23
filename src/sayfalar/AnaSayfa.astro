@@ -1,0 +1,111 @@
+---
+import Ikon from '../components/Ikon.astro';
+import { DILLER, DIL_BILGI, yol, type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+import { KUTUCUK_HEDEFLERI } from '../lib/gezinti';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const s = sozluk(dil);
+const a = s.ana;
+const digerAdlar = DILLER.filter((d) => d !== dil);
+const nedirIkonlari = ['kurum', 'dunya', 'kilit'] as const;
+---
+<section class="relative overflow-hidden border-b border-cizgi bg-white">
+  <div class="hero-desen pointer-events-none absolute inset-0" aria-hidden="true"></div>
+  <div class="kap relative grid gap-10 py-12 sm:py-16 lg:grid-cols-[1.25fr_1fr] lg:items-center lg:py-20">
+    <div>
+      <p class="ust-etiket">{a.ustEtiket}</p>
+      <h1 class="mt-3 text-[2.25rem] font-extrabold sm:text-[3.1rem]">{s.genel.siteAdi}</h1>
+      <p class="ui mt-3 text-[0.9rem] leading-relaxed font-medium text-dy-gri-koyu">
+        {digerAdlar.map((d, i) => <>{i > 0 && <span aria-hidden="true"> · </span>}<span lang={DIL_BILGI[d].htmlLang}>{sozluk(d).genel.siteAdi}</span></>)}
+      </p>
+      <p class="mt-6 max-w-xl text-[1.15rem] leading-relaxed">{a.giris}</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href={yol(dil, 'basvuru')} class="dugme dugme-birincil">{a.birincilDugme}<Ikon ad="ok" boyut={18} /></a>
+        <a href={yol(dil, 'ilkAdimlar')} class="dugme dugme-ikincil">{a.ikincilDugme}</a>
+      </div>
+    </div>
+
+    <aside class="kart relative p-6 sm:p-7" aria-labelledby="yolculuk-baslik">
+      <span class="rozet rozet-ornek absolute top-5 right-5">{s.genel.kurgusal}</span>
+      <p class="ust-etiket" id="yolculuk-baslik">{a.yolculukBaslik}</p>
+      <div class="mt-4 flex items-center gap-3">
+        <span class="ui inline-flex h-12 w-12 items-center justify-center rounded-full bg-dy-altin-acik text-lg font-bold text-dy-altin-koyu" aria-hidden="true">S</span>
+        <p class="ui text-lg font-bold">{a.yolculukKisi}</p>
+      </div>
+      <p class="mt-4">{a.yolculukMetin}</p>
+      <ol class="ui mt-5 grid grid-cols-4 gap-2 text-center text-[0.72rem] font-semibold text-dy-gri-koyu" aria-hidden="true">
+        {[s.gezinti.ilkAdimlar, s.gezinti.kardesAile, s.gezinti.basvuru, s.basvuru.sonrasi[2].baslik].map((t, i) => (
+          <li class="flex flex-col items-center gap-1.5">
+            <span class:list={['inline-flex h-7 w-7 items-center justify-center rounded-full text-[0.8rem] text-white', i < 3 ? 'bg-dy-altin' : 'bg-dy-koyu']}>{i + 1}</span>
+            <span class="leading-tight">{t}</span>
+          </li>
+        ))}
+      </ol>
+      <p class="mt-5 border-t border-cizgi pt-3 text-sm text-dy-gri-koyu">{a.yolculukNot}</p>
+    </aside>
+  </div>
+  <div class="relative border-t border-cizgi bg-kagit">
+    <ul class="kap ui flex flex-col gap-1 py-3 text-[0.8rem] font-semibold text-dy-gri-koyu sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5">
+      {s.genel.kurumlar.map((k, i) => (
+        <li class="flex items-center gap-2">
+          <span class:list={['h-2 w-2 shrink-0 rounded-full', i === 1 ? 'bg-bdv' : 'bg-dy-kirmizi']} aria-hidden="true"></span>{k}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section class="kap py-14 sm:py-16" aria-labelledby="kutucuk-baslik">
+  <h2 id="kutucuk-baslik" class="text-[1.65rem] font-bold sm:text-3xl">{a.kutucukBaslik}</h2>
+  <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {KUTUCUK_HEDEFLERI.map((k, i) => (
+      <li>
+        <a href={yol(dil, k.sayfa)} class="kutucuk kart group flex h-full items-start gap-4 p-5 text-dy-metin no-underline sm:p-6" data-kutucuk={k.sayfa}>
+          <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FBEDEC] text-dy-koyu transition-colors group-hover:bg-dy-koyu group-hover:text-white">
+            <Ikon ad={k.ikon} boyut={26} />
+          </span>
+          <span class="min-w-0">
+            <span class="ui flex items-center gap-1.5 text-lg font-bold group-hover:text-dy-koyu">{a.kutucuklar[i].baslik}<Ikon ad="ok" boyut={16} class="opacity-0 transition-opacity group-hover:opacity-100" /></span>
+            <span class="mt-1 block text-[0.975rem] text-dy-metin/85">{a.kutucuklar[i].metin}</span>
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section class="border-y border-cizgi bg-kagit-2" aria-labelledby="nedir-baslik">
+  <div class="kap grid gap-10 py-14 sm:py-16 lg:grid-cols-[1fr_1.35fr]">
+    <div>
+      <h2 id="nedir-baslik" class="text-[1.65rem] font-bold sm:text-3xl">{a.nedirBaslik}</h2>
+      <p class="mt-4 text-[1.075rem]">{a.nedirMetin}</p>
+      <p class="mt-5 text-sm"><a href={yol(dil, 'gizlilik')}>{s.gezinti.gizlilik}</a> · <a href={yol(dil, 'iletisim')}>{s.gezinti.iletisim}</a></p>
+    </div>
+    <ul class="grid gap-4">
+      {a.nedirMaddeler.map((m, i) => (
+        <li class="kart flex gap-4 p-5">
+          <span class:list={['inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full', i === 1 ? 'bg-[#E6F0F6] text-bdv' : 'bg-dy-altin-acik text-dy-altin-koyu']}>
+            <Ikon ad={nedirIkonlari[i]} boyut={22} />
+          </span>
+          <div>
+            <h3 class="text-lg font-bold">{m.baslik}</h3>
+            <p class="mt-1">{m.metin}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .hero-desen {
+    background-image:
+      radial-gradient(circle at 88% 12%, rgba(238, 52, 52, .07), transparent 40%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%2384754E' stroke-opacity='.16'%3E%3Cpath d='M32 9l7 16 16 7-16 7-7 16-7-16-16-7 16-7z'/%3E%3Crect x='18' y='18' width='28' height='28' transform='rotate(45 32 32)'/%3E%3C/g%3E%3C/svg%3E");
+    mask-image: linear-gradient(100deg, transparent 35%, #000 75%);
+  }
+  .kutucuk { transition: border-color .15s, box-shadow .15s, transform .15s; }
+  .kutucuk:hover { border-color: #D9B7B3; box-shadow: 0 6px 18px rgba(184, 35, 31, .08); transform: translateY(-1px); }
+</style>

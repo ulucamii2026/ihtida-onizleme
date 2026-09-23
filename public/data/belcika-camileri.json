@@ -1,0 +1,698 @@
+{
+  "guncelleme": "2026-09-09",
+  "kapsam": "Belçika Diyanet Vakfı (BDV) tarafından resmî kurum dizininde yayımlanan 72 cami ile adı ve adresi kurumsal/yerel resmî dizinlerde çapraz doğrulanan 2 BİF camisi. BİF’in diğer şubeleri ile UCCİB merkezi, ayrı cami adı ve cami adresi birlikte doğrulanmadığı için kayıt yapılmadı. Bu nedenle katalog Belçika’daki bütün Türk Müslüman camilerini eksiksiz temsil ettiği iddiasında değildir; listede bulunmayan cami formda elle girilmelidir.",
+  "kaynaklar": [
+    {
+      "ad": "Belçika Diyanet Vakfı – Camiler ve Dernekler",
+      "url": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "ad": "Belçika Diyanet Vakfı – Cami ve dernekler PDF dizini",
+      "url": "https://www.diyanet.be/Portals/0/cami_ve_derneklerimiz.pdf"
+    },
+    {
+      "ad": "Belçika İslam Federasyonu – İletişim ve şubeler",
+      "url": "https://fibif.be/iletisim"
+    },
+    {
+      "ad": "İslam Kültür Merkezleri Birliği (UCCİB)",
+      "url": "https://uccib.com/"
+    },
+    {
+      "ad": "İslam Toplumu Millî Görüş – Merkez Camii, Genk",
+      "url": "https://ajanda.igmg.org/place/merkez-camii/"
+    },
+    {
+      "ad": "Belçika Müslümanları Temsil Kurulu – Belçika cami dizini",
+      "url": "https://www.emb-net.be/fr/annuaire"
+    }
+  ],
+  "camiler": [
+    {
+      "id": "ulucamii-marche",
+      "ad": "Ulu Camii",
+      "sehir": "Marche-en-Famenne",
+      "postaKodu": "6900",
+      "adres": "Thier des Corbeaux 14",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "merkez-camii-bif-genk",
+      "ad": "Merkez Camii",
+      "sehir": "Genk",
+      "postaKodu": "3600",
+      "adres": "Eikenlaan 34",
+      "kurum": "BİF",
+      "kaynakUrl": "https://ajanda.igmg.org/place/merkez-camii/"
+    },
+    {
+      "id": "tevhid-camii-bif-gent",
+      "ad": "Tevhid Camii",
+      "sehir": "Gent",
+      "postaKodu": "9000",
+      "adres": "Francisco Ferrerlaan 214/A",
+      "kurum": "BİF",
+      "kaynakUrl": "https://www.emb-net.be/fr/annuaire"
+    },
+    {
+      "id": "kevser-camii-aalst",
+      "ad": "Kevser Camii",
+      "sehir": "Aalst",
+      "postaKodu": "9300",
+      "adres": "Binnenstraat 7",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "anderlecht-merkez-camii-anderlecht",
+      "ad": "Anderlecht Merkez Camii",
+      "sehir": "Anderlecht",
+      "postaKodu": "1070",
+      "adres": "Rue Auguste Gevaert 39",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "imam-i-buhari-camii-antwerpen",
+      "ad": "İmam-ı Buhari Camii",
+      "sehir": "Antwerpen",
+      "postaKodu": "2060",
+      "adres": "Everaertsstraat 101",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "mehmet-akif-camii-antwerpen-zuid",
+      "ad": "Mehmet Akif Camii",
+      "sehir": "Antwerpen-Zuid",
+      "postaKodu": "2018",
+      "adres": "Dendermondestraat 34",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "kocatepe-camii-bastogne",
+      "ad": "Kocatepe Camii",
+      "sehir": "Bastogne",
+      "postaKodu": "6600",
+      "adres": "Rue d’Assenois 20",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "selimiye-camii-berchem",
+      "ad": "Selimiye Camii",
+      "sehir": "Berchem",
+      "postaKodu": "2600",
+      "adres": "Generaal Drubbelstraat 66",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "fatih-camii-beringen",
+      "ad": "Fatih Camii",
+      "sehir": "Beringen",
+      "postaKodu": "3580",
+      "adres": "Stationstraat 57",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "eyup-sultan-camii-bertrix",
+      "ad": "Eyup Sultan Camii",
+      "sehir": "Bertrix",
+      "postaKodu": "6880",
+      "adres": "Rue de Bohémont 5",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "beyne-heusay-camii-beyne-heusay",
+      "ad": "Beyne-Heusay Camii",
+      "sehir": "Beyne-Heusay",
+      "postaKodu": "4610",
+      "adres": "Rue de Heusay 33",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "bilal-habesi-camii-bilzen",
+      "ad": "Bilal Habeşi Camii",
+      "sehir": "Bilzen",
+      "postaKodu": "3740",
+      "adres": "Nieuwstraat 4",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "aksemsettin-camii-blegny",
+      "ad": "Akşemsettin Camii",
+      "sehir": "Blegny",
+      "postaKodu": "4670",
+      "adres": "Rue de l’Institut 3",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "de-koepel-camii-borgerhout",
+      "ad": "De Koepel Camii",
+      "sehir": "Borgerhout",
+      "postaKodu": "2140",
+      "adres": "Stenenburg 11",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "mevlana-camii-bornem",
+      "ad": "Mevlana Camii",
+      "sehir": "Bornem",
+      "postaKodu": "2880",
+      "adres": "Sint-Amandsesteenweg 294",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "osmanli-camii-bree",
+      "ad": "Osmanlı Camii",
+      "sehir": "Bree",
+      "postaKodu": "3960",
+      "adres": "Opitterkiezel 215",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "ulu-camii-bruxelles",
+      "ad": "Ulu Camii",
+      "sehir": "Bruxelles",
+      "postaKodu": "1000",
+      "adres": "Rue Masui 99",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "hz-hatice-camii-charleroi",
+      "ad": "Hz. Hatice Camii",
+      "sehir": "Charleroi",
+      "postaKodu": "6000",
+      "adres": "Rue Pige au Croly 39",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "bilal-habesi-camii-chatelineau",
+      "ad": "Bilal Habeşi Camii",
+      "sehir": "Chatelineau",
+      "postaKodu": "6200",
+      "adres": "Rue de la Poste 47",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "mimar-sinan-camii-cheratte",
+      "ad": "Mimar Sinan Camii",
+      "sehir": "Cheratte",
+      "postaKodu": "4602",
+      "adres": "Rue de Visé 129",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "haci-bayram-camii-couillet",
+      "ad": "Hacı Bayram Camii",
+      "sehir": "Couillet",
+      "postaKodu": "6010",
+      "adres": "Rue de Marcinelle 112",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "fatih-camii-cuesmes",
+      "ad": "Fatih Camii",
+      "sehir": "Cuesmes",
+      "postaKodu": "7033",
+      "adres": "Rue de l'Etang Derbaix 55",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "beraat-camii-diest",
+      "ad": "Beraat Camii",
+      "sehir": "Diest",
+      "postaKodu": "3290",
+      "adres": "Vervoortplaats 17",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "imam-i-azam-camii-farciennes",
+      "ad": "İmam-ı Azam Camii",
+      "sehir": "Farciennes",
+      "postaKodu": "6240",
+      "adres": "Rue de Monciat 110",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "eyup-sultan-camii-gent",
+      "ad": "Eyup Sultan Camii",
+      "sehir": "Gent",
+      "postaKodu": "9000",
+      "adres": "Kazemattenstraat 80",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "yunus-emre-camii-hamme",
+      "ad": "Yunus Emre Camii",
+      "sehir": "Hamme",
+      "postaKodu": "9220",
+      "adres": "Drapstraat 100",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "ayasofya-camii-hasselt",
+      "ad": "Ayasofya Camii",
+      "sehir": "Hasselt",
+      "postaKodu": "3500",
+      "adres": "Crutzenstraat 40",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "rahmet-camii-hechtel",
+      "ad": "Rahmet Camii",
+      "sehir": "Hechtel",
+      "postaKodu": "3940",
+      "adres": "Hasseltsebaan 27",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "hz-omer-camii-hensies",
+      "ad": "Hz. Ömer Camii",
+      "sehir": "Hensies",
+      "postaKodu": "7350",
+      "adres": "Rue Haute 21",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "ertugrul-gazi-camii-herstal",
+      "ad": "Ertuğrul Gazi Camii",
+      "sehir": "Herstal",
+      "postaKodu": "4040",
+      "adres": "Place des Volontaires 32 A",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "selimiye-camii-heusden-zolder",
+      "ad": "Selimiye Camii",
+      "sehir": "Heusden-Zolder",
+      "postaKodu": "3550",
+      "adres": "Valentinusstraat 61",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "haci-bayram-camii-hoboken",
+      "ad": "Hacı Bayram Camii",
+      "sehir": "Hoboken",
+      "postaKodu": "2020",
+      "adres": "Waarlooshofstraat 58",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "yesil-camii-houthalen",
+      "ad": "Yeşil Camii",
+      "sehir": "Houthalen",
+      "postaKodu": "3530",
+      "adres": "Saviostraat 49",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "yildirim-beyazit-camii-kolderbos",
+      "ad": "Yıldırım Beyazıt Camii",
+      "sehir": "Kolderbos",
+      "postaKodu": "3600",
+      "adres": "Hooiweg 75",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "yavuz-sultan-selim-camii-la-louviere",
+      "ad": "Yavuz Sultan Selim Camii",
+      "sehir": "La Louviere",
+      "postaKodu": "7100",
+      "adres": "Rue Emile Urbain 208",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "yavuz-sultan-selim-camii-ledeberg",
+      "ad": "Yavuz Sultan Selim Camii",
+      "sehir": "Ledeberg",
+      "postaKodu": "9050",
+      "adres": "Langestraat 204",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "selimiye-camii-leopoldsburg",
+      "ad": "Selimiye Camii",
+      "sehir": "Leopoldsburg",
+      "postaKodu": "3970",
+      "adres": "Generaal de Krahestraat 72",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "merkez-camii-liege",
+      "ad": "Merkez Camii",
+      "sehir": "Liege",
+      "postaKodu": "4000",
+      "adres": "Rue du Rewé 2",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "molla-gurani-camii-lier",
+      "ad": "Molla Gürani Camii",
+      "sehir": "Lier",
+      "postaKodu": "2500",
+      "adres": "Donk 45",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "sakarya-camii-lokeren",
+      "ad": "Sakarya Camii",
+      "sehir": "Lokeren",
+      "postaKodu": "9160",
+      "adres": "Koophandelstraat 19",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "selimiye-camii-lommel",
+      "ad": "Selimiye Camii",
+      "sehir": "Lommel",
+      "postaKodu": "3920",
+      "adres": "Vreyshorring 125",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "merkez-camii-maasmechelen",
+      "ad": "Merkez Camii",
+      "sehir": "Maasmechelen",
+      "postaKodu": "3630",
+      "adres": "Oude Baan 26",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "tevhid-camii-maasmechelen",
+      "ad": "Tevhid Camii",
+      "sehir": "Maasmechelen",
+      "postaKodu": "3630",
+      "adres": "Paul Lambertlaan 15",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "barbaros-hayrettin-pasa-camii-malmedy",
+      "ad": "Barbaros Hayrettin Paşa Camii",
+      "sehir": "Malmedy",
+      "postaKodu": "4960",
+      "adres": "Rue Martin Legros 49",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "eyup-sultan-camii-manage",
+      "ad": "Eyup Sultan Camii",
+      "sehir": "Manage",
+      "postaKodu": "7170",
+      "adres": "Grand Rue 82",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "alaaddin-camii-marchienne-au-pont",
+      "ad": "Alaaddin Camii",
+      "sehir": "Marchienne-Au-Pont",
+      "postaKodu": "6030",
+      "adres": "Rue de la Providence 36",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "ayasofya-camii-meulebeke",
+      "ad": "Ayasofya Camii",
+      "sehir": "Meulebeke",
+      "postaKodu": "8760",
+      "adres": "Kasteelstraat 25",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "ayasofya-camii-mol",
+      "ad": "Ayasofya Camii",
+      "sehir": "Mol",
+      "postaKodu": "2400",
+      "adres": "Beekstraat 5",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "mevlana-camii-molenbeek",
+      "ad": "Mevlana Camii",
+      "sehir": "Molenbeek",
+      "postaKodu": "1080",
+      "adres": "Rue de Ribaucourt 32",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "namur-camii-namur",
+      "ad": "Namur Camii",
+      "sehir": "Namur",
+      "postaKodu": "5000",
+      "adres": "Rue Denis Georges Bayar 13",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "mimar-sinan-camii-neerpelt",
+      "ad": "Mimar Sinan Camii",
+      "sehir": "Neerpelt",
+      "postaKodu": "3910",
+      "adres": "Jos Verlindenstraat 44",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "ensar-camii-oudenaarde",
+      "ad": "Ensar Camii",
+      "sehir": "Oudenaarde",
+      "postaKodu": "9700",
+      "adres": "Nestor de Tierestraat 160",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "aksemsettin-camii-quaregnon",
+      "ad": "Akşemsettin Camii",
+      "sehir": "Quaregnon",
+      "postaKodu": "7390",
+      "adres": "Rue Adelson Castiaux 191",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "mevlana-camii-retinne",
+      "ad": "Mevlana Camii",
+      "sehir": "Retinne",
+      "postaKodu": "4621",
+      "adres": "Rue du Fort 98",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "kanuni-sultan-suleyman-camii-saint-nicolas",
+      "ad": "Kanuni Sultan Süleyman Camii",
+      "sehir": "Saint-Nicolas",
+      "postaKodu": "4000",
+      "adres": "Rue des Hotteuses 188",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "fatih-camii-schaerbeek",
+      "ad": "Fatih Camii",
+      "sehir": "Schaerbeek",
+      "postaKodu": "1030",
+      "adres": "Chaussée de Haecht 88",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "halil-u-rahman-camii-seraing",
+      "ad": "Halil-u Rahman Camii",
+      "sehir": "Seraing",
+      "postaKodu": "4100",
+      "adres": "Rue Chapuis 118",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "osmangazi-camii-sint-amands",
+      "ad": "Osmangazi Camii",
+      "sehir": "Sint-Amands",
+      "postaKodu": "2890",
+      "adres": "Kerkhofdries 14",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "muradiye-camii-sint-gillis-waas",
+      "ad": "Muradiye Camii",
+      "sehir": "Sint-Gillis-Waas",
+      "postaKodu": "9170",
+      "adres": "Stationstraat 197",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "hicret-camii-sint-niklaas",
+      "ad": "Hicret Camii",
+      "sehir": "Sint-Niklaas",
+      "postaKodu": "9100",
+      "adres": "Hazewindstraat 47",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "yunus-emre-camii-sledderlo",
+      "ad": "Yunus Emre Camii",
+      "sehir": "Sledderlo",
+      "postaKodu": "3600",
+      "adres": "Wintergroenstraat 61",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "molla-husrev-camii-temse",
+      "ad": "Molla Hüsrev Camii",
+      "sehir": "Temse",
+      "postaKodu": "9140",
+      "adres": "Edgard Tinelplaats 6",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "tessenderlo-camii-tessenderlo",
+      "ad": "Tessenderlo Camii",
+      "sehir": "Tessenderlo",
+      "postaKodu": "3980",
+      "adres": "Tushoekstraat 8",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "mevlana-camii-turnhout",
+      "ad": "Mevlana Camii",
+      "sehir": "Turnhout",
+      "postaKodu": "2300",
+      "adres": "Steenweg op Baarle Hertog 40",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "orhan-gazi-camii-verviers",
+      "ad": "Orhan Gazi Camii",
+      "sehir": "Verviers",
+      "postaKodu": "4800",
+      "adres": "Rue des Messieurs 18",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "rahman-camii-vilvoorde",
+      "ad": "Rahman Camii",
+      "sehir": "Vilvoorde",
+      "postaKodu": "1800",
+      "adres": "Cyriel Buyssestraat 14",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "virton-camii-virton",
+      "ad": "Virton Camii",
+      "sehir": "Virton",
+      "postaKodu": "6760",
+      "adres": "Rue Albert Ier 3",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "mevlana-camii-waterschei",
+      "ad": "Mevlana Camii",
+      "sehir": "Waterschei",
+      "postaKodu": "3600",
+      "adres": "Wildekerslaan 46",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "yunus-emre-camii-willebroek",
+      "ad": "Yunus Emre Camii",
+      "sehir": "Willebroek",
+      "postaKodu": "2830",
+      "adres": "Stationstraat 106",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "fatih-camii-winterslag",
+      "ad": "Fatih Camii",
+      "sehir": "Winterslag",
+      "postaKodu": "3600",
+      "adres": "Staatstuinwijk 20/A",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "fatih-camii-wondelgem",
+      "ad": "Fatih Camii",
+      "sehir": "Wondelgem",
+      "postaKodu": "9000",
+      "adres": "Kwakkelstraat 41",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "eyup-el-ensari-camii-zele",
+      "ad": "Eyup El Ensari Camii",
+      "sehir": "Zele",
+      "postaKodu": "9240",
+      "adres": "Zwaanstraat 17",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    },
+    {
+      "id": "merkez-camii-zelzate",
+      "ad": "Merkez Camii",
+      "sehir": "Zelzate",
+      "postaKodu": "9060",
+      "adres": "Groenstraat 111",
+      "kurum": "BDV",
+      "kaynakUrl": "https://www.diyanet.be/Kurumsal/Camiler-ve-Dernekler"
+    }
+  ]
+}

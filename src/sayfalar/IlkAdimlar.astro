@@ -1,0 +1,35 @@
+---
+import SayfaBasligi from '../components/SayfaBasligi.astro';
+import Ikon from '../components/Ikon.astro';
+import { type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const s = sozluk(dil);
+const k = s.ilkAdimlar;
+---
+<SayfaBasligi ustEtiket={k.ustEtiket} baslik={k.sayfaBaslik} giris={k.giris} />
+
+<section class="kap py-12 sm:py-14">
+  <ol class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-ders-listesi>
+    {k.dersler.map((d, i) => (
+      <li class="kart flex flex-col p-5 sm:p-6">
+        <p class="ui flex items-center gap-2 text-sm font-bold text-dy-altin-koyu">
+          <span class="inline-flex h-8 min-w-8 items-center justify-center rounded-full bg-dy-altin-acik px-2" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+          <span class="tracking-[0.06em] uppercase">{k.dersEtiketi} {i + 1}</span>
+        </p>
+        <h2 class="mt-3 text-lg font-bold">{d.baslik}</h2>
+        <p class="mt-2 text-[0.975rem]">{d.ozet}</p>
+      </li>
+    ))}
+  </ol>
+
+  <aside class="mt-10 flex gap-4 rounded-2xl border border-dy-altin/40 bg-dy-altin-acik/50 p-5 sm:p-6" aria-labelledby="ders-notu">
+    <span class="mt-0.5 shrink-0 text-dy-altin-koyu"><Ikon ad="kitap" boyut={26} /></span>
+    <div>
+      <h2 id="ders-notu" class="text-lg font-bold">{k.notBaslik}</h2>
+      <p class="mt-1">{k.not}</p>
+    </div>
+  </aside>
+</section>

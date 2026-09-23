@@ -1,0 +1,41 @@
+---
+import SayfaBasligi from '../components/SayfaBasligi.astro';
+import Ikon from '../components/Ikon.astro';
+import DemoFormu, { type DemoAlan } from '../islands/DemoFormu';
+import { DILLER, DIL_BILGI, type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const s = sozluk(dil);
+const i = s.iletisim;
+const alanlar: DemoAlan[] = [
+  { ad: 'ad', etiket: i.form.ad, tur: 'text' },
+  { ad: 'eposta', etiket: i.form.eposta, tur: 'email' },
+  { ad: 'konu', etiket: i.form.konu, tur: 'select', secenekler: i.form.konular },
+  { ad: 'dil', etiket: i.form.dil, tur: 'select', secenekler: DILLER.map((d) => DIL_BILGI[d].ad) },
+  { ad: 'mesaj', etiket: i.form.mesaj, tur: 'textarea' },
+];
+---
+<SayfaBasligi ustEtiket={i.ustEtiket} baslik={i.sayfaBaslik} giris={i.giris} />
+
+<section class="kap grid gap-8 py-12 sm:py-14 lg:grid-cols-[1.35fr_1fr]">
+  <div class="kart p-5 sm:p-6">
+    <p class="rozet rozet-ornek mb-5">{i.form.kapaliNot}</p>
+    <DemoFormu client:visible kimlik="iletisim" alanlar={alanlar} gonderEtiketi={i.form.gonder} modal={s.modal} seciniz={s.basvuru.form.seciniz} kapali />
+  </div>
+  <aside aria-labelledby="kurumlar-baslik">
+    <h2 id="kurumlar-baslik" class="text-xl font-bold">{i.kurumlarBaslik}</h2>
+    <ul class="mt-4 grid gap-3">
+      {s.genel.kurumlar.map((k, n) => (
+        <li class="kart flex gap-3 p-4">
+          <span class:list={['mt-0.5 shrink-0', n === 1 ? 'text-bdv' : 'text-dy-koyu']}><Ikon ad="kurum" boyut={22} /></span>
+          <div>
+            <p class="ui font-bold">{k}</p>
+            <p class="mt-1 text-[0.95rem] text-dy-metin/85">{i.kurumAciklamalari[n]}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </aside>
+</section>

@@ -1,0 +1,41 @@
+---
+import SayfaBasligi from '../components/SayfaBasligi.astro';
+import Ikon from '../components/Ikon.astro';
+import OnizlemeDugmesi from '../islands/OnizlemeDugmesi';
+import { type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const s = sozluk(dil);
+const a = s.aile;
+const ikonlar = ['kalp', 'kalkan', 'kisiler', 'zarf'] as const;
+---
+<SayfaBasligi ustEtiket={a.ustEtiket} baslik={a.sayfaBaslik} giris={a.giris} />
+
+<section class="kap py-12 sm:py-14">
+  <ul class="grid gap-4 md:grid-cols-2">
+    {a.bolumler.map((b, i) => (
+      <li class="kart flex gap-4 p-5 sm:p-6">
+        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-dy-altin-acik text-dy-altin-koyu"><Ikon ad={ikonlar[i]} boyut={22} /></span>
+        <div>
+          <h2 class="text-lg font-bold">{b.baslik}</h2>
+          <p class="mt-1">{b.metin}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+
+  <p class="mt-6 flex items-start gap-3 rounded-xl border-l-4 border-bdv bg-white p-4">
+    <span class="mt-0.5 shrink-0 text-bdv"><Ikon ad="kilit" boyut={20} /></span>
+    <span>{a.gizlilikNot}</span>
+  </p>
+
+  <div class="mt-10 flex flex-col items-start gap-4 rounded-2xl bg-dy-metin p-6 text-white sm:flex-row sm:items-center sm:justify-between sm:p-8">
+    <div class="max-w-xl">
+      <h2 class="text-xl font-bold text-white">{a.teklifBaslik}</h2>
+      <p class="mt-1 text-[#EDEAE4]">{a.teklifMetin}</p>
+    </div>
+    <OnizlemeDugmesi client:visible etiket={a.teklifDugme} modal={s.modal} />
+  </div>
+</section>

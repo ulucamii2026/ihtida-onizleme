@@ -1,0 +1,15 @@
+---
+import Genel from '../../layouts/Genel.astro';
+import AnaSayfa from '../../sayfalar/AnaSayfa.astro';
+import { DILLER, type Dil } from '../../i18n/diller';
+import { sozluk } from '../../i18n';
+
+export function getStaticPaths() {
+  return DILLER.map((lang) => ({ params: { lang } }));
+}
+const dil = Astro.params.lang as Dil;
+const s = sozluk(dil);
+---
+<Genel dil={dil} sayfa="ana" baslik={s.ana.sayfaBaslik} aciklama={s.ana.aciklama}>
+  <AnaSayfa dil={dil} />
+</Genel>

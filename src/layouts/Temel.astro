@@ -1,0 +1,65 @@
+---
+/**
+ * TEMEL İSKELET — bütün sayfaların (kamu sayfaları, kök dil seçici ve 2. fazdaki /panel/ ile /app/)
+ * ortak <head> ve önizleme bandı. Kamu sayfaları bunu Genel.astro üzerinden kullanır.
+ *
+ * Değişmez kurallar (önizleme):
+ *  - <meta name="robots" content="noindex,nofollow"> her sayfada.
+ *  - Önizleme bandı her sayfada.
+ *  - CSP: ağ bağlantısı yalnız aynı kaynak + OSM harita karoları; form-action 'none' (hiçbir form gönderilemez).
+ */
+import '../styles/global.css';
+import OnizlemeBandi from '../components/OnizlemeBandi.astro';
+import { varlik } from '../i18n/diller';
+
+interface Props {
+  htmlLang: string;
+  baslik: string;
+  aciklama: string;
+  bandMetin: string;
+  bandAciklama?: string;
+  /** hreflang → mutlak yol (kök göreli) */
+  alternatifler?: Record<string, string>;
+}
+
+const { htmlLang, baslik, aciklama, bandMetin, bandAciklama, alternatifler = {} } = Astro.props;
+const site = Astro.site ?? new URL('https://ihtida.ulucamii.be');
+const kanonik = new URL(Astro.url.pathname, site).href;
+
+const csp = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https://tile.openstreetmap.org",
+  "font-src 'self'",
+  "connect-src 'self'",
+  "form-action 'none'",
+  "base-uri 'self'",
+  "object-src 'none'",
+].join('; ');
+---
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {import.meta.env.PROD && <meta http-equiv="Content-Security-Policy" content={csp} />}
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>{baslik}</title>
+    <meta name="description" content={aciklama} />
+    <meta name="theme-color" content="#B8231F" />
+    <link rel="canonical" href={kanonik} />
+    {Object.entries(alternatifler).map(([lang, href]) => (
+      <link rel="alternate" hreflang={lang} href={new URL(href, site).href} />
+    ))}
+    <link rel="icon" href={varlik('favicon.svg')} type="image/svg+xml" />
+    <link rel="preload" href={varlik('fonts/Montserrat-VF.woff2')} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={varlik('fonts/SourceSerif4-VF.woff2')} as="font" type="font/woff2" crossorigin />
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen antialiased">
+    <OnizlemeBandi metin={bandMetin} aciklama={bandAciklama} />
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,102 @@
+---
+import SayfaBasligi from '../components/SayfaBasligi.astro';
+import Ikon from '../components/Ikon.astro';
+import BasvuruFormu from '../islands/BasvuruFormu';
+import { type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+import { CAMILER } from '../data/camiler';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const s = sozluk(dil);
+const b = s.basvuru;
+const camiSecenekleri = CAMILER.map((c) => ({ id: c.id, etiket: `${c.ad} — ${c.sehir}` }));
+const DEGERLENDIRME = new Set([1, 3, 6, 12]);
+const evet = '✓';
+---
+<SayfaBasligi ustEtiket={b.ustEtiket} baslik={b.sayfaBaslik} giris={b.giris} />
+
+<section class="kap py-12 sm:py-14" aria-labelledby="adimlar-baslik">
+  <h2 id="adimlar-baslik" class="text-[1.6rem] font-bold sm:text-3xl">{b.adimlarBaslik}</h2>
+  <ol class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {b.adimlar.map((a, i) => (
+      <li class:list={['kart relative p-5', i === 6 && 'lg:col-span-1']}>
+        <span class="ui inline-flex h-9 w-9 items-center justify-center rounded-full bg-dy-koyu text-[0.95rem] font-bold text-white" aria-hidden="true">{i + 1}</span>
+        <h3 class="mt-3 text-lg font-bold"><span class="sr-only">{i + 1}. </span>{a.baslik}</h3>
+        <p class="mt-1.5 text-[0.975rem]">{a.metin}</p>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<section class="border-y border-cizgi bg-white" aria-labelledby="belgeler-baslik">
+  <div class="kap py-12 sm:py-14">
+    <h2 id="belgeler-baslik" class="text-[1.6rem] font-bold sm:text-3xl">{b.belgelerBaslik}</h2>
+    <ul class="mt-8 grid gap-4 md:grid-cols-3">
+      {b.belgeler.map((x, i) => (
+        <li class="kart flex flex-col gap-3 bg-kagit p-5">
+          <span class:list={['inline-flex h-11 w-11 items-center justify-center rounded-xl', i === 0 ? 'bg-[#FBEDEC] text-dy-koyu' : i === 1 ? 'bg-[#E6F0F6] text-bdv' : 'bg-dy-altin-acik text-dy-altin-koyu']}>
+            <Ikon ad={i === 0 ? 'belge' : i === 1 ? 'kalkan' : 'kilit'} boyut={24} />
+          </span>
+          <h3 class="text-lg font-bold">{x.baslik}</h3>
+          <p class="text-[0.975rem]">{x.metin}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section class="kap py-12 sm:py-14" aria-labelledby="sonrasi-baslik">
+  <h2 id="sonrasi-baslik" class="text-[1.6rem] font-bold sm:text-3xl">{b.sonrasiBaslik}</h2>
+  <ol class="relative mt-8 grid gap-6 border-l-2 border-dy-altin/50 pl-6 sm:pl-8">
+    {b.sonrasi.map((x) => (
+      <li class="relative">
+        <span class="absolute top-1.5 -left-[2.05rem] h-4 w-4 rounded-full border-[3px] border-kagit bg-dy-koyu sm:-left-[2.55rem]" aria-hidden="true"></span>
+        <p class="ust-etiket">{x.zaman}</p>
+        <h3 class="mt-1 text-lg font-bold">{x.baslik}</h3>
+        <p class="mt-1 max-w-2xl">{x.metin}</p>
+      </li>
+    ))}
+  </ol>
+
+  <div class="kart mt-10 p-5 sm:p-6">
+    <h3 class="text-lg font-bold">{b.eslikBaslik}</h3>
+    <ol class="mt-5 grid grid-cols-6 gap-2 sm:grid-cols-12" aria-label={b.eslikBaslik}>
+      {Array.from({ length: 12 }, (_, i) => i + 1).map((ay) => {
+        const haftalik = ay <= 3;
+        const deg = DEGERLENDIRME.has(ay);
+        const etiket = `${b.eslikEtiketleri.ay} ${ay}: ${haftalik ? b.eslikEtiketleri.haftalik : b.eslikEtiketleri.aylik}${deg ? ` · ${b.eslikEtiketleri.degerlendirme}` : ''}`;
+        return (
+          <li class="flex flex-col items-center gap-1.5" title={etiket}>
+            <span class="sr-only">{etiket}</span>
+            <span class:list={['flex h-12 w-full items-end justify-center gap-[3px] rounded-lg pb-1.5', haftalik ? 'bg-[#FBEDEC]' : 'bg-kagit-2']} aria-hidden="true">
+              {Array.from({ length: haftalik ? 4 : 1 }).map(() => (
+                <span class:list={['w-1.5 rounded-full', haftalik ? 'h-6 bg-dy-koyu' : 'h-4 bg-dy-altin']}></span>
+              ))}
+            </span>
+            <span class="ui text-xs font-semibold" aria-hidden="true">{ay}</span>
+            <span class:list={['h-2.5 w-2.5 rounded-full', deg ? 'bg-bdv' : 'bg-transparent']} aria-hidden="true"></span>
+          </li>
+        );
+      })}
+    </ol>
+    <ul class="ui mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium">
+      <li class="flex items-center gap-2"><span class="inline-block h-3 w-3 rounded-sm bg-dy-koyu" aria-hidden="true"></span>{b.eslikEtiketleri.haftalik}</li>
+      <li class="flex items-center gap-2"><span class="inline-block h-3 w-3 rounded-sm bg-dy-altin" aria-hidden="true"></span>{b.eslikEtiketleri.aylik}</li>
+      <li class="flex items-center gap-2"><span class="inline-block h-3 w-3 rounded-full bg-bdv" aria-hidden="true"></span>{b.eslikEtiketleri.degerlendirme}</li>
+    </ul>
+  </div>
+</section>
+
+<section class="border-t border-cizgi bg-kagit-2" aria-labelledby="form-baslik">
+  <div class="kap py-12 sm:py-14">
+    <div class="flex flex-wrap items-center gap-3">
+      <h2 id="form-baslik" class="text-[1.6rem] font-bold sm:text-3xl">{b.formBaslik}</h2>
+      <span class="rozet rozet-ornek">{s.genel.ornek}</span>
+    </div>
+    <p class="mt-3 max-w-2xl">{b.formAciklama}</p>
+    <div class="mt-8 max-w-4xl">
+      <BasvuruFormu client:visible f={b.form} adimlar={b.adimlar} camiler={camiSecenekleri} modal={s.modal} evet={evet} />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+---
+import SayfaBasligi from '../components/SayfaBasligi.astro';
+import Ikon from '../components/Ikon.astro';
+import OnizlemeDugmesi from '../islands/OnizlemeDugmesi';
+import { DIL_BILGI, type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+import { ORNEK_ETKINLIKLER } from '../data/etkinlikler';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const s = sozluk(dil);
+const e = s.etkinlikler;
+const yerel = DIL_BILGI[dil].tarihYerel;
+const gun = (t: string) => new Date(`${t}T12:00:00Z`);
+const bicim = {
+  gun: new Intl.DateTimeFormat(yerel, { day: 'numeric', timeZone: 'Europe/Brussels' }),
+  ay: new Intl.DateTimeFormat(yerel, { month: 'short', timeZone: 'Europe/Brussels' }),
+  tam: new Intl.DateTimeFormat(yerel, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Brussels' }),
+};
+---
+<SayfaBasligi ustEtiket={e.ustEtiket} baslik={e.sayfaBaslik} giris={e.giris} />
+
+<section class="kap py-12 sm:py-14">
+  <ol class="grid gap-4" data-etkinlik-listesi>
+    {ORNEK_ETKINLIKLER.map((x, i) => {
+      const t = gun(x.tarih);
+      const m = e.liste[i];
+      return (
+        <li class="kart flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:gap-6 sm:p-5">
+          <div class="ui flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-2xl border border-dy-altin/40 bg-dy-altin-acik text-dy-altin-koyu" aria-hidden="true">
+            <span class="text-2xl leading-none font-extrabold">{bicim.gun.format(t)}</span>
+            <span class="mt-1 text-xs font-bold tracking-[0.08em] uppercase">{bicim.ay.format(t).replace('.', '')}</span>
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <h2 class="text-lg font-bold">{m.baslik}</h2>
+              <span class="rozet rozet-ornek">{s.genel.ornek}</span>
+            </div>
+            <p class="mt-1">{m.metin}</p>
+            <dl class="ui mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-dy-gri-koyu">
+              <div class="flex items-center gap-1.5"><Ikon ad="takvim" boyut={16} /><dt class="sr-only">{e.saat}</dt><dd><time datetime={`${x.tarih}T${x.saat}`}>{bicim.tam.format(t)} · {x.saat}</time></dd></div>
+              <div class="flex items-center gap-1.5"><Ikon ad="konum" boyut={16} /><dt class="sr-only">{e.yer}</dt><dd>{x.yer}</dd></div>
+              <div class="flex items-center gap-1.5"><Ikon ad="dil" boyut={16} /><dt class="sr-only">{e.dil}</dt><dd>{m.dil}</dd></div>
+            </dl>
+          </div>
+          <div class="shrink-0">
+            <OnizlemeDugmesi client:visible etiket={e.katil} modal={s.modal} ikincil />
+          </div>
+        </li>
+      );
+    })}
+  </ol>
+</section>

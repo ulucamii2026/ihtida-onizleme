@@ -1,0 +1,298 @@
+{
+ "ulucamii-marche": [
+  50.2271,
+  5.342
+ ],
+ "merkez-camii-bif-genk": [
+  50.9655,
+  5.5001
+ ],
+ "tevhid-camii-bif-gent": [
+  51.0538,
+  3.725
+ ],
+ "kevser-camii-aalst": [
+  50.9435,
+  4.0401
+ ],
+ "anderlecht-merkez-camii-anderlecht": [
+  50.8391,
+  4.3297
+ ],
+ "imam-i-buhari-camii-antwerpen": [
+  51.2211,
+  4.3997
+ ],
+ "mehmet-akif-camii-antwerpen-zuid": [
+  51.195,
+  4.3689
+ ],
+ "kocatepe-camii-bastogne": [
+  50.0023,
+  5.7173
+ ],
+ "selimiye-camii-berchem": [
+  51.1944,
+  4.433
+ ],
+ "fatih-camii-beringen": [
+  51.0502,
+  5.2208
+ ],
+ "eyup-sultan-camii-bertrix": [
+  49.8547,
+  5.2529
+ ],
+ "beyne-heusay-camii-beyne-heusay": [
+  50.6221,
+  5.6534
+ ],
+ "bilal-habesi-camii-bilzen": [
+  50.8708,
+  5.5181
+ ],
+ "aksemsettin-camii-blegny": [
+  50.6727,
+  5.7252
+ ],
+ "de-koepel-camii-borgerhout": [
+  51.2128,
+  4.4462
+ ],
+ "mevlana-camii-bornem": [
+  51.0953,
+  4.2341
+ ],
+ "osmanli-camii-bree": [
+  51.1416,
+  5.5975
+ ],
+ "ulu-camii-bruxelles": [
+  50.8467,
+  4.3525
+ ],
+ "hz-hatice-camii-charleroi": [
+  50.4168,
+  4.4494
+ ],
+ "bilal-habesi-camii-chatelineau": [
+  50.4156,
+  4.5179
+ ],
+ "mimar-sinan-camii-cheratte": [
+  50.684,
+  5.6708
+ ],
+ "haci-bayram-camii-couillet": [
+  50.3887,
+  4.4703
+ ],
+ "fatih-camii-cuesmes": [
+  50.4369,
+  3.925
+ ],
+ "beraat-camii-diest": [
+  50.9844,
+  5.0504
+ ],
+ "imam-i-azam-camii-farciennes": [
+  50.4321,
+  4.5467
+ ],
+ "eyup-sultan-camii-gent": [
+  51.0538,
+  3.725
+ ],
+ "yunus-emre-camii-hamme": [
+  51.0978,
+  4.1377
+ ],
+ "ayasofya-camii-hasselt": [
+  50.9304,
+  5.3366
+ ],
+ "rahmet-camii-hechtel": [
+  51.1237,
+  5.3639
+ ],
+ "hz-omer-camii-hensies": [
+  50.4326,
+  3.6848
+ ],
+ "ertugrul-gazi-camii-herstal": [
+  50.665,
+  5.63
+ ],
+ "selimiye-camii-heusden-zolder": [
+  51.0328,
+  5.2797
+ ],
+ "haci-bayram-camii-hoboken": [
+  51.1795,
+  4.3618
+ ],
+ "yesil-camii-houthalen": [
+  51.0311,
+  5.3721
+ ],
+ "yildirim-beyazit-camii-kolderbos": [
+  50.9527,
+  5.5026
+ ],
+ "yavuz-sultan-selim-camii-la-louviere": [
+  50.4794,
+  4.1856
+ ],
+ "yavuz-sultan-selim-camii-ledeberg": [
+  51.0372,
+  3.7414
+ ],
+ "selimiye-camii-leopoldsburg": [
+  51.1225,
+  5.2622
+ ],
+ "merkez-camii-liege": [
+  50.6451,
+  5.5736
+ ],
+ "molla-gurani-camii-lier": [
+  51.1311,
+  4.5697
+ ],
+ "sakarya-camii-lokeren": [
+  51.1044,
+  3.9899
+ ],
+ "selimiye-camii-lommel": [
+  51.2306,
+  5.3077
+ ],
+ "merkez-camii-maasmechelen": [
+  50.9634,
+  5.696
+ ],
+ "tevhid-camii-maasmechelen": [
+  50.9634,
+  5.696
+ ],
+ "barbaros-hayrettin-pasa-camii-malmedy": [
+  50.4265,
+  6.0276
+ ],
+ "eyup-sultan-camii-manage": [
+  50.504,
+  4.2356
+ ],
+ "alaaddin-camii-marchienne-au-pont": [
+  50.407,
+  4.3951
+ ],
+ "ayasofya-camii-meulebeke": [
+  50.9498,
+  3.2889
+ ],
+ "ayasofya-camii-mol": [
+  51.184,
+  5.1155
+ ],
+ "mevlana-camii-molenbeek": [
+  50.8546,
+  4.3386
+ ],
+ "namur-camii-namur": [
+  50.4572,
+  4.8498
+ ],
+ "mimar-sinan-camii-neerpelt": [
+  51.2292,
+  5.4428
+ ],
+ "ensar-camii-oudenaarde": [
+  50.8434,
+  3.6041
+ ],
+ "aksemsettin-camii-quaregnon": [
+  50.4422,
+  3.8637
+ ],
+ "mevlana-camii-retinne": [
+  50.6305,
+  5.6977
+ ],
+ "kanuni-sultan-suleyman-camii-saint-nicolas": [
+  51.1647,
+  4.1395
+ ],
+ "fatih-camii-schaerbeek": [
+  50.8676,
+  4.3737
+ ],
+ "halil-u-rahman-camii-seraing": [
+  50.6152,
+  5.5089
+ ],
+ "osmangazi-camii-sint-amands": [
+  51.056,
+  4.2011
+ ],
+ "muradiye-camii-sint-gillis-waas": [
+  51.218,
+  4.1286
+ ],
+ "hicret-camii-sint-niklaas": [
+  51.1647,
+  4.1395
+ ],
+ "yunus-emre-camii-sledderlo": [
+  50.9326,
+  5.5259
+ ],
+ "molla-husrev-camii-temse": [
+  51.1385,
+  4.2165
+ ],
+ "tessenderlo-camii-tessenderlo": [
+  51.0676,
+  5.0879
+ ],
+ "mevlana-camii-turnhout": [
+  51.3289,
+  4.93
+ ],
+ "orhan-gazi-camii-verviers": [
+  50.5932,
+  5.8678
+ ],
+ "rahman-camii-vilvoorde": [
+  50.9287,
+  4.4231
+ ],
+ "virton-camii-virton": [
+  49.5677,
+  5.533
+ ],
+ "mevlana-camii-waterschei": [
+  50.9959,
+  5.5224
+ ],
+ "yunus-emre-camii-willebroek": [
+  51.0607,
+  4.3589
+ ],
+ "fatih-camii-winterslag": [
+  50.9772,
+  5.4859
+ ],
+ "fatih-camii-wondelgem": [
+  51.0886,
+  3.7124
+ ],
+ "eyup-el-ensari-camii-zele": [
+  51.0684,
+  4.0386
+ ],
+ "merkez-camii-zelzate": [
+  51.2,
+  3.8105
+ ]
+}
