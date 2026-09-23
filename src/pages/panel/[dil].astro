@@ -1,0 +1,18 @@
+---
+import Panel from '../../layouts/Panel.astro';
+import PanelUygulamasi from '../../islands/panel/PanelUygulamasi';
+import { DILLER, DIL_BILGI, type Dil } from '../../i18n/diller';
+import { panelSozluk } from '../../i18n/panel';
+import { appYolu } from '../../lib/gezinti';
+
+/** /panel/fr/ … /panel/en/ — Türkçe /panel/ adresindedir. */
+export function getStaticPaths() {
+  return DILLER.filter((d) => d !== 'tr').map((dil) => ({ params: { dil } }));
+}
+const dil = Astro.params.dil as Dil;
+const m = panelSozluk(dil);
+---
+<Panel dil={dil}>
+  <PanelUygulamasi client:only="preact" m={m} yerel={DIL_BILGI[dil].tarihYerel} appHref={appYolu(dil)} />
+  <noscript><p class="kap py-10">JavaScript</p></noscript>
+</Panel>

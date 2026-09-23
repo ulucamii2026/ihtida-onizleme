@@ -1,0 +1,66 @@
+---
+/**
+ * PERSONEL UYGULAMASI DÜZENİ (PWA, 2. faz) — Temel.astro üzerine: bant + noindex + CSP oradan gelir.
+ * Manifest ve service worker YALNIZ /app/ sayfalarında; service worker kapsamı /app/ (public/app/sw.js).
+ * Telefonda tam ekran uygulama; geniş ekranda tanıtım metni + telefon çerçevesi.
+ */
+import Temel from './Temel.astro';
+import { DIL_BILGI, varlik, type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+import { panelSozluk } from '../i18n/panel';
+import { PANEL_DILLERI, appYolu, panelYolu } from '../lib/gezinti';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const s = sozluk(dil);
+const m = panelSozluk(dil);
+const alternatifler = Object.fromEntries(PANEL_DILLERI.map((d) => [DIL_BILGI[d].htmlLang, appYolu(d)]));
+---
+<Temel
+  htmlLang={DIL_BILGI[dil].htmlLang}
+  baslik={`${m.app.sayfaBaslik} · ${s.genel.siteAdi}`}
+  aciklama={m.app.aciklama}
+  bandMetin={s.genel.onizlemeBandi}
+  bandAciklama={s.genel.onizlemeAciklama}
+  alternatifler={alternatifler}
+>
+  <Fragment slot="head">
+    <link rel="manifest" href={varlik('manifest.webmanifest')} />
+    <link rel="apple-touch-icon" href={varlik('app/ikonlar/apple-touch-icon.png')} />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Personel" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  </Fragment>
+
+  <main id="icerik" tabindex="-1" class="outline-none lg:py-8">
+    <div class="lg:mx-auto lg:grid lg:max-w-[72rem] lg:grid-cols-[minmax(0,1fr)_24.5rem] lg:items-center lg:gap-14 lg:px-6">
+      <div class="hidden lg:block">
+        <div class="mb-6 flex items-center gap-3">
+          <img src={varlik('amblem/diyanet-logotype.svg')} alt={s.genel.amblemAlt.diyanet} width="110" height="40" class="h-10 w-auto" />
+          <span class="h-10 w-px bg-cizgi" aria-hidden="true"></span>
+          <img src={varlik('amblem/bdv-amblem.svg')} alt={s.genel.amblemAlt.bdv} width="40" height="40" class="h-10 w-10" />
+        </div>
+        <p class="ust-etiket">{m.app.ustEtiket}</p>
+        <h1 class="mt-2 text-[2.2rem] leading-tight font-bold">{m.app.tanitimBaslik}</h1>
+        <p class="mt-4 max-w-xl text-[1.05rem]">{m.app.tanitimMetin}</p>
+        <p class="mt-4 max-w-xl rounded-2xl border border-cizgi bg-white p-4 text-[0.95rem] text-dy-gri-koyu">{m.app.kurulumNot}</p>
+        <p class="mt-6 flex flex-wrap gap-2">
+          <a class="dugme dugme-ikincil" href={panelYolu(dil)}>{m.ortak.panel}</a>
+        </p>
+      </div>
+      <div class="lg:relative lg:h-[min(46rem,calc(100dvh-8rem))] lg:overflow-hidden lg:rounded-[2.6rem] lg:border-[10px] lg:border-dy-metin lg:shadow-2xl" data-telefon-cercevesi>
+        <h1 class="sr-only lg:hidden">{m.app.sayfaBaslik}</h1>
+        <slot />
+      </div>
+    </div>
+  </main>
+
+  <script is:inline>
+    // Service worker yalnız /app/ kapsamında: çevrim dışı kabuk önbelleği. Ağa veri GÖNDERMEZ.
+    if ('serviceWorker' in navigator && location.hostname !== '') {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/app/sw.js', { scope: '/app/' }).catch(function () {});
+      });
+    }
+  </script>
+</Temel>

@@ -6,9 +6,16 @@ Yanıt dili Türkçedir, tam imlâ ile (ı ş ğ ü ö ç İ).
 
 ## 1. Amaç
 
-- **Şimdi (1. faz):** Belçika Mühtedi Koordinatörlüğünün T.C. Brüksel Büyükelçiliği Sosyal İşler Müşavirliği
+- **Şimdi (1. + 2. faz):** Belçika Mühtedi Koordinatörlüğünün T.C. Brüksel Büyükelçiliği Sosyal İşler Müşavirliği
   ve Belçika Diyanet Vakfı'na (BDV) önereceği merkezî platformun **tıklanabilir önizlemesi**. Arka uç yok.
-  Önizleme adresi `https://ihtida.ulucamii.be` (yayını Rıdvan ayrıca açar). Sunum: 28 Eylül 2026.
+  1. faz: kamu sayfaları; 2. faz: rol değiştiricili personel paneli `/panel/` ve PWA personel uygulaması `/app/`.
+  Sunum: 28 Eylül – 2 Ekim 2026.
+- **Yayın (23 Eylül 2026, Rıdvan'ın isteğiyle açıldı):** herkese açık depo `ulucamii2026/ihtida-onizleme`
+  (GitHub Free Pages için public), `main` → `.github/workflows/deploy.yml` → GitHub Pages (build_type=workflow),
+  özel alan adı `ihtida.ulucamii.be` (`public/CNAME` + Pages API). DNS: bNamed (ulucamii.be, DNummer 651019)
+  `ihtida` CNAME → `ulucamii2026.github.io.`; diğer kayıtlara dokunulmadı. Push:
+  `T=$(gh auth token --user ulucamii2026); B64=$(printf 'x-access-token:%s' "$T" | base64 -w0); git -c http.extraheader="AUTHORIZATION: basic $B64" push`.
+  Kimlik: «Ulu Camii Marche-en-Famenne <ulucamii2026@gmail.com>» (depo yerel `git config`).
 - **Sonra:** Müşavirlik onayından sonra gerçek platform `ihtida.diyanet.be`. Pilot dernek hesaplarında
   (GitHub/Google `ulucamii2026`), veriler AB içinde **Google Cloud europe-west1 (Belçika)**. PWA öncelikli.
 - Başlık (5 dil): Yeni Müslüman Rehberi · Guide du nouveau musulman · Gids voor nieuwe moslims ·
@@ -45,10 +52,12 @@ npm run dev            # geliştirme sunucusu
 npm run check          # astro check (eksik çeviri anahtarı burada yakalanır)
 npm run build          # astro check && astro build  → dist/
 npm run preview        # http://localhost:4410
-npm run test:onizleme  # py -3.14 scripts/onizleme-testi.py (önce build): 51 yol × 1280/390 px,
+npm run test:onizleme  # py -3.14 scripts/onizleme-testi.py (önce build): 61 yol × 1280/390 px, panel/app etkileşimleri, PWA,
                        # 200 + bant + noindex + taşma yok + izinsiz istek yok + gönderimden sonra SIFIR ağ isteği;
                        # ekran görüntüleri cikti/ekran/ (en uzun kenar ≤1500 px)
 npm run konum:uret     # cami konumlarını (yaklaşık, belediye merkezi) Nominatim'den bir kez üretir
+npm run gorsel:kitap   # teklif kitabı/sunum ekran görüntüleri (dsf 2) → D:\muhtedi-koordinatorlugu\06_...\gorsel\
+npm run pwa:ikon       # PWA PNG ikonları public/app/ikonlar/*.svg ana çizimden (Chrome ile) üretilir
 ```
 
 ## 4. Yapı
@@ -66,8 +75,18 @@ src/sayfalar/            sayfa gövdeleri (AnaSayfa, Basvuru, IlkAdimlar, Camile
                          Dogrula, Aile, Iletisim, Gizlilik)
 src/islands/             Preact adacıkları: BasvuruFormu, DemoFormu, KardesAileFormlari, CamiBulucu (Leaflet),
                          BelgeDogrula, OnizlemeDugmesi, OnizlemeModal
-src/data/                camiler.ts (il/bölge dili türetimi, «mühtedi dostu (örnek)» rozeti), camiler-konum.json,
-                         etkinlikler.ts (kurgusal etkinlikler + örnek belge BE-2026-DEMO-0001)
+src/data/                camiler.ts (il/bölge dili türetimi; «mühtedi dostu cami» YALNIZ kurgusal örnek kartta —
+                         gerçek camiye asla bağlanmaz, Rıdvan 23 Eylül 2026), camiler-konum.json,
+                         etkinlikler.ts (kurgusal etkinlikler + örnek belge BE-2026-DEMO-0001),
+                         ornek-dosyalar.ts (2. faz: M-DEMO-01…12, rol etiketli personel, görevler, saha sayımı)
+src/i18n/panel/          panel + uygulama sözlüğü: tr.ts KAYNAK (`panelTr`), fr/nl/de/en `satisfies PanelSozluk`
+src/islands/panel/       PanelUygulamasi (rol değiştirici + veri en aza indirme şeridi), Musavirlik, Koordinator,
+                         BolgeSorumlusu, DinGorevlisi, KisiselAlan, ortak.tsx (tarih, KisiAdi, ikonlar)
+src/islands/app/         PersonelUygulamasi (alt gezinti: Bildirimler · Onay · Takip · Sayım · Görevler · Kaynaklar)
+src/lib/                 dosyalar.ts (kurgusal dosya durumu + localStorage değişiklikleri), yerelDurum.ts
+src/layouts/Panel.astro, Uygulama.astro   Temel.astro üzerine; Uygulama manifest + SW kaydı ekler
+src/pages/panel/, src/pages/app/          /panel/ (TR) + /panel/{fr,nl,de,en}/, /app/ (TR) + /app/{dil}/
+public/manifest.webmanifest, public/app/sw.js (kapsam /app/, yalnız çevrim dışı kabuk önbelleği), public/app/ikonlar/
 public/                  CNAME, robots.txt, favicon.svg, fonts/, amblem/, data/belcika-camileri.json
 .github/workflows/deploy.yml  GitHub Pages (çalıştırılmadı)
 ```
@@ -75,7 +94,24 @@ public/                  CNAME, robots.txt, favicon.svg, fonts/, amblem/, data/b
 Yeni kamu sayfası: `SAYFALAR` + `SLUGLAR` (diller.ts) → `tr.ts` bölümü (+ 4 dil) → `src/sayfalar/X.astro`
 → `[sayfa].astro` içindeki `BILESENLER`.
 
-## 5. 2. faz uzatma noktaları (başka ajan ekleyecek)
+## 5. 2. faz (23 Eylül 2026'da yapıldı) ve kuralları
+
+- **Kişiler:** yalnız `src/data/ornek-dosyalar.ts`; sıradan ön ad + baş harf, arayüzde her zaman «kurgusal».
+  M-DEMO-05 **kodlu kayıt** (aile baskısı örneği): adı hiçbir rolde görünmez (test denetler).
+  Personel yalnız rol etiketiyle («Din görevlisi (Namur)»); camiler «şehir · örnek cami» (gerçek cami adı yok).
+- **Veri en aza indirme görünür:** her rolde «gördüğü / görmediği alanlar» şeridi (`GORUNUR` tablosu,
+  PanelUygulamasi.tsx). Din görevlisi yalnız kendi camisini ve ad/dil/iletişim tercihini görür; tam dosya
+  yalnız Müşavirlik; saha sayımı yalnız toplu sayı (yıl, cinsiyet, dil).
+- **Serbest metin alanı yok** (panel/uygulama): gerçek bilgi yazılamasın diye yalnız seçim/işaret/hazır yanıt.
+  Gösterim durumu (verilen örnek Belge No, işaretler, görevler) yalnız localStorage `ihtida-onizleme:*`;
+  «Önizleme verisini sıfırla» düğmesi siler. Uygulamada «Tören yapıldı» → paneldeki Müşavirlik kuyruğu.
+- Tarihler bugüne göre gün farkıyla tutulur (sunum hangi gün yapılırsa yapılsın «yarın» doğru kalır).
+- **PWA:** manifest yalnız /app/ sayfalarında bağlanır; SW `public/app/sw.js` kapsamı `/app/`, kurulumda /app/
+  kabuğunu ve başvurduğu `/_astro/` dosyalarını önbelleğe alır; push/senkron yok. Kamu sayfaları SW denetiminde değil.
+  İkon ana çizimi `public/app/ikonlar/ikon.svg` (= `public/favicon.svg`; 23 Eylül'de hilal düzeltildi — eski
+  path sıfır alanlıydı, yalnız yıldız görünüyordu).
+
+### Eski notlar — 2. faz uzatma noktaları
 
 - **Personel paneli `/panel/`** (rol değiştiricili: din görevlisi, koordinatör, Müşavirlik, kardeş aile) ve
   **PWA personel uygulaması `/app/`**: `src/pages/panel/**` ve `src/pages/app/**` altına, `[lang]` dışında.

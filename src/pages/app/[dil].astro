@@ -1,0 +1,18 @@
+---
+import Uygulama from '../../layouts/Uygulama.astro';
+import PersonelUygulamasi from '../../islands/app/PersonelUygulamasi';
+import { DILLER, DIL_BILGI, type Dil } from '../../i18n/diller';
+import { panelSozluk } from '../../i18n/panel';
+import { PANEL_DILLERI, appYolu } from '../../lib/gezinti';
+
+/** /app/fr/ … /app/en/ — Türkçe /app/ adresindedir (service worker kapsamı hepsini içerir). */
+export function getStaticPaths() {
+  return DILLER.filter((d) => d !== 'tr').map((dil) => ({ params: { dil } }));
+}
+const dil = Astro.params.dil as Dil;
+const m = panelSozluk(dil);
+const dilBaglantilari = PANEL_DILLERI.map((d) => ({ dil: DIL_BILGI[d].htmlLang, kisa: DIL_BILGI[d].kisa, ad: DIL_BILGI[d].ad, href: appYolu(d), aktif: d === dil }));
+---
+<Uygulama dil={dil}>
+  <PersonelUygulamasi client:only="preact" m={m} yerel={DIL_BILGI[dil].tarihYerel} dilBaglantilari={dilBaglantilari} />
+</Uygulama>

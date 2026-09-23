@@ -13,7 +13,9 @@
     "preview": "astro preview --port 4410",
     "astro": "astro",
     "test:onizleme": "py -3.14 scripts/onizleme-testi.py",
-    "konum:uret": "node scripts/konum-uret.mjs"
+    "konum:uret": "node scripts/konum-uret.mjs",
+    "gorsel:kitap": "py -3.14 scripts/kitap-gorselleri.py",
+    "pwa:ikon": "py -3.14 scripts/pwa-ikon-uret.py"
   },
   "dependencies": {
     "@astrojs/preact": "^6.0.5",
