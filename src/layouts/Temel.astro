@@ -5,12 +5,13 @@
  *
  * Değişmez kurallar (önizleme):
  *  - <meta name="robots" content="noindex,nofollow"> her sayfada.
- *  - Önizleme bandı her sayfada.
+ *  - Önizleme uyarısı her sayfada: açılışta pencere, oturumda bir kez; JavaScript kapalıysa sabit bant.
  *  - CSP: ağ bağlantısı yalnız aynı kaynak + OSM harita karoları; form-action 'none' (hiçbir form gönderilemez).
  */
 import '../styles/global.css';
 import OnizlemeBandi from '../components/OnizlemeBandi.astro';
-import { varlik } from '../i18n/diller';
+import { varlik, DILLER } from '../i18n/diller';
+import { sozluk } from '../i18n';
 
 interface Props {
   htmlLang: string;
@@ -18,11 +19,15 @@ interface Props {
   aciklama: string;
   bandMetin: string;
   bandAciklama?: string;
+  /** Uyarı penceresinin düğmesi; verilmezse sayfa dilinden (htmlLang) alınır. */
+  bandKapat?: string;
   /** hreflang → mutlak yol (kök göreli) */
   alternatifler?: Record<string, string>;
 }
 
-const { htmlLang, baslik, aciklama, bandMetin, bandAciklama, alternatifler = {} } = Astro.props;
+const { htmlLang, baslik, aciklama, bandMetin, bandAciklama, bandKapat, alternatifler = {} } = Astro.props;
+const sayfaDili = DILLER.find((d) => htmlLang.toLowerCase().startsWith(d)) ?? 'fr';
+const kapatMetni = bandKapat ?? sozluk(sayfaDili).genel.onizlemeKapat;
 const site = Astro.site ?? new URL('https://ihtida.ulucamii.be');
 const kanonik = new URL(Astro.url.pathname, site).href;
 
@@ -59,7 +64,7 @@ const csp = [
     <slot name="head" />
   </head>
   <body class="min-h-screen antialiased">
-    <OnizlemeBandi metin={bandMetin} aciklama={bandAciklama} />
+    <OnizlemeBandi metin={bandMetin} aciklama={bandAciklama} kapat={kapatMetni} />
     <slot />
   </body>
 </html>

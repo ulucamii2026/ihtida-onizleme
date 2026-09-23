@@ -12,6 +12,7 @@ export const nl = {
     ],
     onizlemeBandi: 'VOORBEELDVERSIE — geen officiële website',
     onizlemeAciklama: 'Demonstratieversie van een voorstel dat aan de Raadgever voor sociale zaken wordt voorgelegd. Formulieren worden nergens naartoe verstuurd; personen en dossiers zijn fictief.',
+    onizlemeKapat: 'Begrepen',
     icerigeGec: 'Naar de inhoud',
     menu: 'Menu',
     menuKapat: 'Menu sluiten',

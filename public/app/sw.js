@@ -3,7 +3,7 @@
  * Yalnız ÇEVRİM DIŞI KABUK ÖNBELLEĞİ: aynı kaynaktaki statik dosyaları önbelleğe alır ve çevrim dışıyken
  * oradan sunar. Hiçbir veri göndermez, dış kaynağa istek atmaz, anlık bildirim (push) kullanmaz.
  */
-const SURUM = 'ihtida-onizleme-app-v2';
+const SURUM = 'ihtida-onizleme-app-v3';
 const KABUK = [
   '/app/', '/app/fr/', '/app/nl/', '/app/de/', '/app/en/',
   '/manifest.webmanifest', '/favicon.svg',

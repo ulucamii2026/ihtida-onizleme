@@ -12,6 +12,7 @@ export const fr = {
     ],
     onizlemeBandi: 'APERÇU — ce n’est pas un site officiel',
     onizlemeAciklama: 'Aperçu de présentation d’une proposition soumise au Conseiller aux affaires sociales. Les formulaires ne sont envoyés nulle part ; les personnes et les dossiers sont fictifs.',
+    onizlemeKapat: 'J’ai compris',
     icerigeGec: 'Aller au contenu',
     menu: 'Menu',
     menuKapat: 'Fermer le menu',

@@ -53,6 +53,12 @@ SLUG = {
 }
 
 
+# Önizleme uyarısı (24.09.2026): açılışta pencere, oturumda bir kez. Etkileşim testlerinde «görüldü»
+# sayılır ki pencere tıklamaları engellemesin; rota denetiminde her açılışta yeniden çıkması beklenir.
+UYARI_GORULDU = "try { sessionStorage.setItem('onizleme-uyarisi-goruldu', '1') } catch (e) {}"
+UYARI_SIFIRLA = "try { sessionStorage.removeItem('onizleme-uyarisi-goruldu') } catch (e) {}"
+
+
 def yollar() -> list[str]:
     sonuc = []
     for f in sorted(DIST.rglob("index.html")):
@@ -96,6 +102,7 @@ KODLU_KAYIT_ADI = "Aurélie"  # M-DEMO-05: kodlu kayıt — adı hiçbir rolde g
 def panel_ve_uygulama(tarayici, taban, dil, gen, yuk, hatalar, sayac) -> None:
     """Rol değiştirici, sekmeler ve bütün önizleme eylemleri: SIFIR ağ isteği, JS hatası yok, taşma yok."""
     bag = tarayici.new_context(viewport={"width": gen, "height": yuk}, service_workers="block")
+    bag.add_init_script(UYARI_GORULDU)
     sayfa = bag.new_page()
     istekler: list[str] = []
     js: list[str] = []
@@ -302,14 +309,79 @@ def pwa_senaryosu(pw, taban, hatalar, sayac) -> None:
     try:
         sayfa.goto(f"{taban}/app/")
         sayfa.wait_for_selector("[data-app]", timeout=8000)
-        if sayfa.locator("[data-onizleme-bandi]").count() != 1:
-            hatalar.append("PWA: çevrim dışı açılışta bant yok")
+        if not sayfa.locator("dialog[data-onizleme-bandi][open]").is_visible():
+            hatalar.append("PWA: çevrim dışı açılışta önizleme uyarısı yok")
     except Exception as h:  # noqa: BLE001
         hatalar.append(f"PWA: çevrim dışı açılış başarısız ({str(h).splitlines()[0]})")
     bag.set_offline(False)
     sayac["pwa_kontrol"] = 1
     bag.close()
     shutil.rmtree(profil, ignore_errors=True)
+
+
+def uyari_senaryosu(tarayici, taban, taban_host, hatalar, sayac) -> None:
+    """Önizleme uyarısı: açılışta çıkar; «Anladım»/Esc ile kapanır; aynı sekmede tekrar gelmez;
+    yeni sekmede ve yeni bağlamda yeniden gelir; kapatınca iz kalmaz; JS kapalıyken sabit bant görünür."""
+    for gen, yuk in GENISLIKLER:
+        bag = tarayici.new_context(viewport={"width": gen, "height": yuk}, service_workers="block")
+        sayfa = bag.new_page()
+        istekler: list[str] = []
+        sayfa.on("request", lambda r: istekler.append(r.url))
+        e = f"[{gen}px] uyarı"
+        acik = "dialog[data-onizleme-bandi][open]"
+        sayfa.goto(f"{taban}/tr/")
+        if not sayfa.locator(acik).is_visible():
+            hatalar.append(f"{e}: ilk açılışta pencere yok")
+        dugme = sayfa.locator("[data-onizleme-kapat]")
+        if dugme.inner_text().strip() != "Anladım":
+            hatalar.append(f"{e}: düğme metni {dugme.inner_text()!r}")
+        kutu = dugme.bounding_box() or {"height": 0}
+        if kutu["height"] < 44:
+            hatalar.append(f"{e}: düğme parmak için küçük ({kutu['height']:.0f}px)")
+        dugme.click()
+        sayfa.wait_for_timeout(150)
+        if sayfa.locator(acik).count():
+            hatalar.append(f"{e}: «Anladım» ile kapanmadı")
+        if sayfa.locator("[data-onizleme-bandi]:visible, [data-onizleme-noscript]:visible").count():
+            hatalar.append(f"{e}: kapatınca sayfada iz kaldı")
+        for yol in ("/tr/basvuru/", "/panel/", "/app/"):
+            sayfa.goto(taban + yol)
+            sayfa.wait_for_timeout(200)
+            if sayfa.locator(acik).count():
+                hatalar.append(f"{e}: aynı sekmede {yol} açılınca pencere yeniden çıktı")
+        ikinci = bag.new_page()
+        ikinci.goto(f"{taban}/fr/")
+        if not ikinci.locator(acik).is_visible():
+            hatalar.append(f"{e}: yeni sekmede pencere çıkmadı")
+        elif ikinci.locator("[data-onizleme-kapat]").inner_text().strip() != "J’ai compris":
+            hatalar.append(f"{e}: FR düğme metni yanlış")
+        ikinci.keyboard.press("Escape")
+        ikinci.wait_for_timeout(150)
+        if ikinci.locator(acik).count():
+            hatalar.append(f"{e}: Esc ile kapanmadı")
+        for u in istekler:
+            if urlparse(u).netloc not in (taban_host, *IZINLI_DIS) and not u.startswith(("data:", "blob:")):
+                hatalar.append(f"{e}: izinsiz ağ isteği {u}")
+        bag.close()
+    # Yeni bağlamda panel ve uygulama da açılışta uyarı gösterir
+    for yol in ("/panel/", "/app/", "/"):
+        bag = tarayici.new_context(viewport={"width": 390, "height": 844}, service_workers="block")
+        sayfa = bag.new_page()
+        sayfa.goto(taban + yol)
+        if not sayfa.locator("dialog[data-onizleme-bandi][open]").is_visible():
+            hatalar.append(f"uyarı: yeni oturumda {yol} açılışında pencere yok")
+        bag.close()
+    # JavaScript kapalı: sabit bant görünür, pencere açılmaz
+    bag = tarayici.new_context(viewport={"width": 390, "height": 844}, java_script_enabled=False)
+    sayfa = bag.new_page()
+    sayfa.goto(f"{taban}/tr/")
+    bant = sayfa.locator("[data-onizleme-noscript]")
+    if bant.count() != 1 or not bant.first.is_visible():
+        hatalar.append("uyarı: JavaScript kapalıyken sabit bant görünmüyor")
+    if sayfa.locator("dialog[data-onizleme-bandi][open]").count():
+        hatalar.append("uyarı: JavaScript kapalıyken pencere açık")
+    bag.close()
+    sayac["uyari_kontrol"] = 1
 
 
 def main() -> int:
@@ -350,6 +422,7 @@ def main() -> int:
             # 1) Bütün sayfalar × iki genişlik
             for (gen, yuk) in GENISLIKLER:
                 bag = tarayici.new_context(viewport={"width": gen, "height": yuk}, service_workers="block")
+                bag.add_init_script(UYARI_SIFIRLA)
                 sayfa = bag.new_page()
                 istekler: list[str] = []
                 js_hatalari: list[str] = []
@@ -365,9 +438,14 @@ def main() -> int:
                     if yol.startswith("/panel/") or yol.startswith("/app/"):
                         sayfa.wait_for_selector("[data-panel], [data-app]", timeout=8000)
                     sayfa.wait_for_timeout(250)
-                    bant = sayfa.locator("[data-onizleme-bandi]")
-                    if bant.count() != 1 or not bant.first.is_visible():
-                        hatalar.append(f"{etiket}: önizleme bandı görünmüyor")
+                    uyari = sayfa.locator("dialog[data-onizleme-bandi]")
+                    if uyari.count() != 1 or not sayfa.locator("dialog[data-onizleme-bandi][open]").is_visible():
+                        hatalar.append(f"{etiket}: önizleme uyarısı açılışta görünmüyor")
+                    else:
+                        uyari.locator("[data-onizleme-kapat]").click()
+                        sayfa.wait_for_timeout(150)
+                        if sayfa.locator("dialog[data-onizleme-bandi][open]").count():
+                            hatalar.append(f"{etiket}: önizleme uyarısı «kapat» ile kapanmadı")
                     robots = sayfa.locator('meta[name="robots"]').get_attribute("content") or ""
                     if "noindex" not in robots or "nofollow" not in robots:
                         hatalar.append(f"{etiket}: robots meta eksik ({robots!r})")
@@ -404,6 +482,7 @@ def main() -> int:
 
             # 2) Örnek gönderimler: tıklamadan sonra SIFIR ağ isteği
             bag = tarayici.new_context(viewport={"width": 1280, "height": 900}, service_workers="block")
+            bag.add_init_script(UYARI_GORULDU)
             sayfa = bag.new_page()
             sonraki: list[str] = []
             sayfa.on("request", lambda r: sonraki.append(r.url))
@@ -475,6 +554,9 @@ def main() -> int:
             for gen, yuk in GENISLIKLER:
                 for dil in (DILLER if gen == 1280 else ["tr", "de"]):
                     panel_ve_uygulama(tarayici, taban, dil, gen, yuk, hatalar, sayac)
+
+            # 3b) Önizleme uyarısının oturum davranışı
+            uyari_senaryosu(tarayici, taban, taban_host, hatalar, sayac)
 
             # 4) PWA senaryosu (service worker'a izin verilen ayrı bağlam)
             pwa_senaryosu(pw, taban, hatalar, sayac)

@@ -12,6 +12,7 @@ export const de = {
     ],
     onizlemeBandi: 'VORSCHAU — keine offizielle Website',
     onizlemeAciklama: 'Vorschau eines Vorschlags, der dem Botschaftsrat für Sozialangelegenheiten vorgelegt wird. Formulare werden nirgendwohin gesendet; Personen und Einträge sind fiktiv.',
+    onizlemeKapat: 'Verstanden',
     icerigeGec: 'Zum Inhalt springen',
     menu: 'Menü',
     menuKapat: 'Menü schließen',

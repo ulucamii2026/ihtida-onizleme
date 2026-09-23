@@ -15,6 +15,7 @@ export const tr = {
     ],
     onizlemeBandi: 'ÖNİZLEME — resmî site değildir',
     onizlemeAciklama: 'Müşavirliğe sunulan bir önerinin tanıtım önizlemesidir. Formlar hiçbir yere gönderilmez; kişiler ve kayıtlar kurgusaldır.',
+    onizlemeKapat: 'Anladım',
     icerigeGec: 'İçeriğe geç',
     menu: 'Menü',
     menuKapat: 'Menüyü kapat',

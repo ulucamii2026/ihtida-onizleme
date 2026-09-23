@@ -12,6 +12,7 @@ export const en = {
     ],
     onizlemeBandi: 'PREVIEW — not an official website',
     onizlemeAciklama: 'A preview presenting a proposal submitted to the Counsellor for Social Affairs. Forms are never sent anywhere; all people and records are fictional.',
+    onizlemeKapat: 'Got it',
     icerigeGec: 'Skip to content',
     menu: 'Menu',
     menuKapat: 'Close menu',

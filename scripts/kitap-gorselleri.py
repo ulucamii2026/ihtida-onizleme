@@ -1,4 +1,7 @@
-"""Kurumsal teklif kitabı ve sunum için önizleme ekran görüntüleri (kurgusal veri, önizleme bandı görünür).
+"""Kurumsal teklif kitabı ve sunum için önizleme ekran görüntüleri (kurgusal veri).
+
+Önizleme uyarısı (24.09.2026'dan beri açılış penceresi) çekimde kapalıdır: kitap ve sunum altyazıları
+«Önizleme — … kurgusal» der; pencere ekranın ortasını kapatmasın diye oturum «görüldü» sayılır.
 
 Kullanım (önce `npm run build`; çalışan önizleme sunucusu yoksa betik açar):
     py -3.14 scripts/kitap-gorselleri.py [--url http://localhost:4410] [--hedef <klasör>]
@@ -60,6 +63,7 @@ def main() -> None:
                 w, h = c["vp"]
                 bag = t.new_context(viewport={"width": w, "height": h}, device_scale_factor=2,
                                     service_workers="block", locale="tr-TR")
+                bag.add_init_script("try { sessionStorage.setItem('onizleme-uyarisi-goruldu', '1') } catch (e) {}")
                 s = bag.new_page()
                 s.goto(taban + c["yol"])
                 s.evaluate("() => localStorage.clear()")
@@ -69,6 +73,8 @@ def main() -> None:
                 s.wait_for_selector(c["bekle"], timeout=10000)
                 s.evaluate("() => document.fonts.ready")
                 s.wait_for_timeout(600)
+                if s.locator("dialog[data-onizleme-bandi][open]").count():
+                    raise SystemExit(f"{c['ad']}: önizleme uyarısı açık kaldı, çekim durduruldu")
                 yol = hedef / c["ad"]
                 s.screenshot(path=str(yol))
                 print("kaydedildi:", yol)

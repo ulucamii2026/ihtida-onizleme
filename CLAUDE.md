@@ -29,8 +29,12 @@ Yanıt dili Türkçedir, tam imlâ ile (ı ş ğ ü ö ç İ).
    «Önizleme: gönderim kapalı» penceresini (`src/islands/OnizlemeModal.tsx`) açar. Anahtar: `src/lib/onizleme.ts`.
 2. **Ağ:** yalnız aynı kaynaktaki statik dosyalar + OpenStreetMap karoları (`tile.openstreetmap.org`).
    `Temel.astro` üretimde CSP koyar (`connect-src 'self'`, `form-action 'none'`). Google Fonts, analitik, CDN yok.
-3. **Her sayfada** önizleme bandı (`[data-onizleme-bandi]`, dile göre çevrili) ve
+3. **Her sayfada** önizleme uyarısı (`src/components/OnizlemeBandi.astro`, dile göre çevrili) ve
    `<meta name="robots" content="noindex,nofollow">`; `public/robots.txt` her şeyi kapatır.
+   Uyarı 24.09.2026'dan beri (Rıdvan) **açılış penceresidir**: `dialog[data-onizleme-bandi]`, oturumda bir kez
+   (`sessionStorage` anahtarı `onizleme-uyarisi-goruldu`), «Anladım» / Esc / arka plan ile kapanır, kapatınca iz
+   kalmaz. JavaScript kapalıysa aynı metin `<noscript>` sabit bandı (`[data-onizleme-noscript]`) olarak görünür.
+   Uyarı hiçbir sayfadan kaldırılmaz; `public/app/sw.js` kabuğu değişince `SURUM` artırılır.
 4. **Kişiler kurgusal:** yalnız «Sarah (kurgusal)» ve `M-DEMO-01…` kodları. Gerçek ad yok.
 5. **Telefon numarası hiçbir yerde yok** (imam telefonu asla). İletişim = (kapalı) form + kurum adları.
 6. **Vektör önce:** amblemler yalnız SVG (`public/amblem/`). Raster logo yasak.
@@ -53,7 +57,7 @@ npm run check          # astro check (eksik çeviri anahtarı burada yakalanır)
 npm run build          # astro check && astro build  → dist/
 npm run preview        # http://localhost:4410
 npm run test:onizleme  # py -3.14 scripts/onizleme-testi.py (önce build): 61 yol × 1280/390 px, panel/app etkileşimleri, PWA,
-                       # 200 + bant + noindex + taşma yok + izinsiz istek yok + gönderimden sonra SIFIR ağ isteği;
+                       # 200 + açılış uyarısı + noindex + taşma yok + izinsiz istek yok + gönderimden sonra SIFIR ağ isteği;
                        # ekran görüntüleri cikti/ekran/ (en uzun kenar ≤1500 px)
 npm run konum:uret     # cami konumlarını (yaklaşık, belediye merkezi) Nominatim'den bir kez üretir
 npm run gorsel:kitap   # teklif kitabı/sunum ekran görüntüleri (dsf 2) → D:\muhtedi-koordinatorlugu\06_...\gorsel\
@@ -116,7 +120,7 @@ Yeni kamu sayfası: `SAYFALAR` + `SLUGLAR` (diller.ts) → `tr.ts` bölümü (+ 
 - **Personel paneli `/panel/`** (rol değiştiricili: din görevlisi, koordinatör, Müşavirlik, kardeş aile) ve
   **PWA personel uygulaması `/app/`**: `src/pages/panel/**` ve `src/pages/app/**` altına, `[lang]` dışında.
   Kendi düzenlerini `src/layouts/Panel.astro` / `Uygulama.astro` olarak **Temel.astro üzerine** kurarlar
-  (bant + noindex + CSP otomatik gelir); `Genel.astro` kamuya aittir, değiştirilmez.
+  (önizleme uyarısı + noindex + CSP otomatik gelir); `Genel.astro` kamuya aittir, değiştirilmez.
 - Panel metinleri için `tr.ts`'e `panel: {...}` bölümü eklenir; dört dil aynı anda doldurulmazsa build düşer.
 - Gezinti: `src/lib/gezinti.ts` içine `PANEL_GEZINTI` / `APP_GEZINTI` eklenir.
 - Örnek kayıtlar yalnız `M-DEMO-01…` kodlu ve kurgusal; `src/data/` altında ayrı dosyada.
