@@ -45,7 +45,9 @@ Yanıt dili Türkçedir, tam imlâ ile (ı ş ğ ü ö ç İ).
 8. **Beş dil birlikte:** TR · FR · NL · DE · EN. FR/NL Belçika kullanımı. Türkçe tam imlâ. Dinî içerik Sünnî/Hanefî,
    Diyanet ile uyumlu, ayet alıntısı yok. Terim: mühtedi / ihtida; «dönme» asla.
 9. `D:\app\ulucamii-site` **salt okunur referanstır**; oradan kopyalanan tek dosya kamuya açık
-   `public/data/belcika-camileri.json`.
+   `public/data/belcika-camileri.json`. Bu kopyadan (ve `src/data/camiler-konum.json`'dan)
+   `de-koepel-camii-borgerhout` kaydı **bilerek çıkarıldı** (Rıdvan, 24.09.2026: Diyanet çizgisine uygun değil);
+   katalog 73 camidir. Kaynak dosya yeniden kopyalanırsa bu kayıt yine silinir.
 10. Remote/push/DNS/yayın yalnız Rıdvan'ın açık isteğiyle ve yalnız dernek hesabıyla.
 
 ## 3. Komutlar
