@@ -1,7 +1,6 @@
 # ÖNİZLEME yayını — ihtida.ulucamii.be (GitHub Pages, özel alan adı: public/CNAME).
-# ulucamii-site/.github/workflows/deploy.yml örnek alınmıştır. Henüz ÇALIŞTIRILMADI:
-# depo/uzak (remote) yok, DNS kaydı yok. Yayın yalnız Rıdvan'ın açık kararıyla,
-# dernek hesabı (GitHub: ulucamii2026) üzerinden açılır.
+# Yayın Rıdvan'ın talimatıyla dernek hesabından (ulucamii2026) yapılır.
+# Gerçek arka uç yoktur; her sayfada önizleme uyarısı ve noindex denetlenir.
 name: Önizlemeyi yayınla (GitHub Pages)
 
 on:

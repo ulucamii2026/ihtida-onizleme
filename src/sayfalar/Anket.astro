@@ -1,0 +1,41 @@
+---
+/**
+ * Buluşma sonrası tek sayfalık anket (Öneri 14) — kamu sayfası; buluşmanın sonunda QR kodla açılması öngörülür.
+ * Anonim: ad alanı yok, serbest metin yok; bütün sorular isteğe bağlı. Üst gezintide değildir (alt bilgi + Etkinlikler).
+ */
+import SayfaBasligi from '../components/SayfaBasligi.astro';
+import Ikon from '../components/Ikon.astro';
+import AnketFormu from '../islands/AnketFormu';
+import { type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const s = sozluk(dil);
+const t = s.anket;
+---
+<SayfaBasligi ustEtiket={t.ustEtiket} baslik={t.sayfaBaslik} giris={t.giris} />
+
+<section class="kap py-12 sm:py-14" aria-labelledby="anket-form-baslik">
+  <div class="mx-auto grid max-w-3xl gap-6">
+    <div class="flex flex-wrap items-center gap-3">
+      <h2 id="anket-form-baslik" class="text-[1.4rem] font-bold sm:text-2xl">
+        <span class="ui block text-sm font-semibold tracking-[0.04em] text-dy-gri-koyu uppercase">{t.bulusma}</span>
+        {t.bulusmaAdi}
+      </h2>
+      <span class="rozet rozet-ornek">{s.genel.ornek}</span>
+    </div>
+    <ul class="grid gap-2.5 sm:grid-cols-2" data-anket-notlar>
+      <li class="flex items-start gap-3 rounded-2xl border-2 border-[#9DBBD1] bg-[#E6F0F6]/60 p-4" data-anket-ad-yok>
+        <Ikon ad="kalkan" boyut={22} class="mt-0.5 shrink-0 text-bdv" />
+        <p class="ui font-semibold">{t.adYok}</p>
+      </li>
+      <li class="flex items-start gap-3 rounded-2xl border border-cizgi bg-white p-4">
+        <Ikon ad="kisiler" boyut={22} class="mt-0.5 shrink-0 text-bdv" />
+        <p class="text-[0.95rem]">{t.kucukGrup}</p>
+      </li>
+    </ul>
+    <AnketFormu client:visible t={t} modal={s.modal} />
+    <p class="flex items-start gap-2 text-sm text-dy-gri-koyu"><Ikon ad="anket" boyut={18} class="mt-0.5 shrink-0" />{t.qrNot}</p>
+  </div>
+</section>

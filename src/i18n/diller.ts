@@ -20,8 +20,10 @@ export const SAYFALAR = [
   'basvuru',
   'ilkAdimlar',
   'camiler',
+  'beniArayin',
   'kardesAile',
   'etkinlikler',
+  'anket',
   'dogrula',
   'aile',
   'iletisim',
@@ -33,24 +35,24 @@ export type SayfaVeyaAna = Sayfa | 'ana';
 /** Yerelleştirilmiş adres parçaları. Değiştirirken testteki yol listesi kendiliğinden güncellenir. */
 export const SLUGLAR: Record<Dil, Record<Sayfa, string>> = {
   tr: {
-    basvuru: 'basvuru', ilkAdimlar: 'ilk-adimlar', camiler: 'cami-bul', kardesAile: 'kardes-aile',
-    etkinlikler: 'etkinlikler', dogrula: 'belge-dogrula', aile: 'aileler-icin', iletisim: 'iletisim', gizlilik: 'gizlilik',
+    basvuru: 'basvuru', ilkAdimlar: 'ilk-adimlar', camiler: 'cami-bul', beniArayin: 'beni-arayin', kardesAile: 'kardes-aile',
+    etkinlikler: 'etkinlikler', anket: 'anket', dogrula: 'belge-dogrula', aile: 'aileler-icin', iletisim: 'iletisim', gizlilik: 'gizlilik',
   },
   fr: {
-    basvuru: 'demande', ilkAdimlar: 'premiers-pas', camiler: 'mosquees', kardesAile: 'accompagnement',
-    etkinlikler: 'activites', dogrula: 'verifier', aile: 'pour-les-proches', iletisim: 'contact', gizlilik: 'confidentialite',
+    basvuru: 'demande', ilkAdimlar: 'premiers-pas', camiler: 'mosquees', beniArayin: 'contactez-moi', kardesAile: 'accompagnement',
+    etkinlikler: 'activites', anket: 'questionnaire', dogrula: 'verifier', aile: 'pour-les-proches', iletisim: 'contact', gizlilik: 'confidentialite',
   },
   nl: {
-    basvuru: 'aanvraag', ilkAdimlar: 'eerste-stappen', camiler: 'moskeeen', kardesAile: 'buddygezin',
-    etkinlikler: 'activiteiten', dogrula: 'verifieren', aile: 'voor-familie', iletisim: 'contact', gizlilik: 'privacy',
+    basvuru: 'aanvraag', ilkAdimlar: 'eerste-stappen', camiler: 'moskeeen', beniArayin: 'contacteer-mij', kardesAile: 'buddygezin',
+    etkinlikler: 'activiteiten', anket: 'vragenlijst', dogrula: 'verifieren', aile: 'voor-familie', iletisim: 'contact', gizlilik: 'privacy',
   },
   de: {
-    basvuru: 'antrag', ilkAdimlar: 'erste-schritte', camiler: 'moscheen', kardesAile: 'patenfamilie',
-    etkinlikler: 'veranstaltungen', dogrula: 'pruefen', aile: 'fuer-angehoerige', iletisim: 'kontakt', gizlilik: 'datenschutz',
+    basvuru: 'antrag', ilkAdimlar: 'erste-schritte', camiler: 'moscheen', beniArayin: 'kontaktwunsch', kardesAile: 'patenfamilie',
+    etkinlikler: 'veranstaltungen', anket: 'fragebogen', dogrula: 'pruefen', aile: 'fuer-angehoerige', iletisim: 'kontakt', gizlilik: 'datenschutz',
   },
   en: {
-    basvuru: 'application', ilkAdimlar: 'first-steps', camiler: 'mosques', kardesAile: 'buddy-family',
-    etkinlikler: 'events', dogrula: 'verify', aile: 'for-families', iletisim: 'contact', gizlilik: 'privacy',
+    basvuru: 'application', ilkAdimlar: 'first-steps', camiler: 'mosques', beniArayin: 'contact-me', kardesAile: 'buddy-family',
+    etkinlikler: 'events', anket: 'survey', dogrula: 'verify', aile: 'for-families', iletisim: 'contact', gizlilik: 'privacy',
   },
 };
 

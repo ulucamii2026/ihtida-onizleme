@@ -58,11 +58,12 @@ npm run dev            # geliştirme sunucusu
 npm run check          # astro check (eksik çeviri anahtarı burada yakalanır)
 npm run build          # astro check && astro build  → dist/
 npm run preview        # http://localhost:4410
-npm run test:onizleme  # py -3.14 scripts/onizleme-testi.py (önce build): 61 yol × 1280/390 px, panel/app etkileşimleri, PWA,
-                       # 200 + açılış uyarısı + noindex + taşma yok + izinsiz istek yok + gönderimden sonra SIFIR ağ isteği;
-                       # ekran görüntüleri cikti/ekran/ (en uzun kenar ≤1500 px)
+npm run test:onizleme  # py -3.14 scripts/onizleme-testi.py (önce build): 71 yol × 1280/390 px, panel/app etkileşimleri
+                       # (panel modülleri rol rol), PWA, 200 + açılış uyarısı + noindex + taşma yok + izinsiz istek yok +
+                       # gönderimden sonra SIFIR ağ isteği + form değerleri depoya yazılmaz; ekran görüntüleri cikti/ekran/ (≤1500 px)
 npm run konum:uret     # cami konumlarını (yaklaşık, belediye merkezi) Nominatim'den bir kez üretir
-npm run gorsel:kitap   # teklif kitabı/sunum ekran görüntüleri (dsf 2) → D:\muhtedi-koordinatorlugu\06_...\gorsel\
+npm run gorsel:kitap   # teklif kitabı/sunum ekran görüntüleri (dsf 2, 7 çekim) → D:\muhtedi-koordinatorlugu\06_...\gorsel\
+                       # (denemede `-- --hedef <geçici klasör>`: kitap klasörüne yalnız bilerek yazılır)
 npm run pwa:ikon       # PWA PNG ikonları public/app/ikonlar/*.svg ana çizimden (Chrome ile) üretilir
 ```
 
@@ -78,18 +79,22 @@ src/lib/gezinti.ts       kamu gezinti dizileri (UST_GEZINTI, ALT_GEZINTI, KUTUCU
 src/pages/index.astro    kök dil seçici (FR öne çıkar)
 src/pages/[lang]/index.astro, [lang]/[sayfa].astro   tek yönlendirici → src/sayfalar/*.astro
 src/sayfalar/            sayfa gövdeleri (AnaSayfa, Basvuru, IlkAdimlar, Camiler, KardesAile, Etkinlikler,
-                         Dogrula, Aile, Iletisim, Gizlilik)
+                         Dogrula, Aile, Iletisim, Gizlilik, BeniArayin, Anket)
 src/islands/             Preact adacıkları: BasvuruFormu, DemoFormu, KardesAileFormlari, CamiBulucu (Leaflet),
-                         BelgeDogrula, OnizlemeDugmesi, OnizlemeModal
+                         BelgeDogrula, OnizlemeDugmesi, OnizlemeModal, BeniArayin (Leaflet), AnketFormu, cip.ts
 src/data/                camiler.ts (il/bölge dili türetimi; «mühtedi dostu cami» YALNIZ kurgusal örnek kartta —
                          gerçek camiye asla bağlanmaz, Rıdvan 23 Eylül 2026), camiler-konum.json,
                          etkinlikler.ts (kurgusal etkinlikler + örnek belge BE-2026-DEMO-0001),
-                         ornek-dosyalar.ts (2. faz: M-DEMO-01…12, rol etiketli personel, görevler, saha sayımı)
+                         ornek-dosyalar.ts (2. faz: M-DEMO-01…12, rol etiketli personel, görevler, saha sayımı),
+                         ornek-moduller.ts (faaliyet üreticisi, H-DEMO-01…09 işaretleri, erişim kaydı, anket sonuçları),
+                         valonya-sema.ts (paneldeki Valonya şeması: OSM sınırından sadeleştirilmiş SVG yolu, ilçe noktaları)
 src/i18n/panel/          panel + uygulama sözlüğü: tr.ts KAYNAK (`panelTr`), fr/nl/de/en `satisfies PanelSozluk`
-src/islands/panel/       PanelUygulamasi (rol değiştirici + veri en aza indirme şeridi), Musavirlik, Koordinator,
-                         BolgeSorumlusu, DinGorevlisi, KisiselAlan, ortak.tsx (tarih, KisiAdi, ikonlar)
+src/islands/panel/       PanelUygulamasi (rol değiştirici + modül sekmeleri + veri en aza indirme şeridi), Musavirlik,
+                         Koordinator, BolgeSorumlusu, DinGorevlisi, KisiselAlan, FaaliyetGunlugu, RehberHaritasi,
+                         AnketSonuclari, ortak.tsx (tarih, KisiAdi, ikonlar)
 src/islands/app/         PersonelUygulamasi (alt gezinti: Bildirimler · Onay · Takip · Sayım · Görevler · Kaynaklar)
-src/lib/                 dosyalar.ts (kurgusal dosya durumu + localStorage değişiklikleri), yerelDurum.ts
+src/lib/                 dosyalar.ts (kurgusal dosya durumu + localStorage değişiklikleri), yerelDurum.ts,
+                         moduller.ts (çeyrek özetleri, işaret görünürlüğü, iş günü hesabı)
 src/layouts/Panel.astro, Uygulama.astro   Temel.astro üzerine; Uygulama manifest + SW kaydı ekler
 src/pages/panel/, src/pages/app/          /panel/ (TR) + /panel/{fr,nl,de,en}/, /app/ (TR) + /app/{dil}/
 public/manifest.webmanifest, public/app/sw.js (kapsam /app/, yalnız çevrim dışı kabuk önbelleği), public/app/ikonlar/
@@ -116,6 +121,31 @@ Yeni kamu sayfası: `SAYFALAR` + `SLUGLAR` (diller.ts) → `tr.ts` bölümü (+ 
   kabuğunu ve başvurduğu `/_astro/` dosyalarını önbelleğe alır; push/senkron yok. Kamu sayfaları SW denetiminde değil.
   İkon ana çizimi `public/app/ikonlar/ikon.svg` (= `public/favicon.svg`; 23 Eylül'de hilal düzeltildi — eski
   path sıfır alanlıydı, yalnız yıldız görünüyordu).
+
+### Teklif kitabı modülleri (30 Eylül 2026, WP6: Öneri 14, 17, 18)
+
+- **Kamu sayfaları:** «Beni arayın» `/tr/beni-arayin/` · `/fr/contactez-moi/` · `/nl/contacteer-mij/` ·
+  `/de/kontaktwunsch/` · `/en/contact-me/` (üst + alt gezinti) ve buluşma anketi `/tr/anket/` · `/fr/questionnaire/` ·
+  `/nl/vragenlijst/` · `/de/fragebogen/` · `/en/survey/` (üst gezintide değil: alt bilgi + Etkinlikler kartı).
+- **Beni arayın:** ayrı açık rıza kutusu işaretlenmeden alanlar ve gönder kapalı; takma ad yalnız örnek listeden
+  (serbest metin yok), yaş aralığı (18+), ilçe, cinsiyet (kadın kaydını yalnız kadın görevli görür); iletişim alanı
+  kilitli. Gönder = pencere + işaret yalnız o ekrandaki haritada, ilçe merkezinde ~9 km daire. Harita görünümü
+  gönderimde değişmez (yeni karo isteği olmasın); `L.marker` kullanılmaz (PNG ikon isteği). «İşaretimi geri çek»
+  bütün belleği sıfırlar. DPIA / Müşavirlik onayı notu sayfada ve panel haritasında görünür.
+- **Anket:** ad ve serbest metin yok, bütün sorular isteğe bağlı. Panelde (yalnız koordinatör) toplu sonuç;
+  `KUCUK_GRUP_ESIGI` altındaki buluşmanın sonucu ve yanıt sayısı gösterilmez, eşik sayısı arayüzde yazılmaz.
+- **Panel modülleri** (`ROL_MODULLERI`): koordinatör 4 sekme; Müşavirlik, bölge sorumlusu, din görevlisi
+  Dosyalar · Faaliyet günlüğü · Rehber haritası; mühtedi yalnız kişisel alan (+ «Beni arayın» bağlantısı).
+  Faaliyet günlüğü kişisiz: din görevlisi = cami irtibat kişisi (yalnız seçim + sayaç formu, değer yazılmaz),
+  bölge sorumlusu bölge tablosu, koordinatör/Müşavirlik 5 çeyrek + tek seri sütun grafiği + «Üç aylık rapor».
+  Rehber haritası: bölge sorumlusu yalnız bölgesindeki ilçeleri (Liège + Eupen), din görevlisi yalnız caminin
+  ilçesini (Namur) görür; «Kadın görevli» görünümü yalnız bu iki rolde; koordinatör ve Müşavirlik tek tek işaret ve
+  takma ad görmez (yalnız toplam); her ayrıntı açılışı / dönüş erişim kaydına yazılır, Müşavirlik denetler.
+- **Yeni gösterim anahtarları** (hepsi `ihtida-onizleme:` önekli, sıfırla düğmesi siler): `panel:modul`,
+  `harita:kadin-gorevli`, `harita:durum:v1` (dönüş yapılan işaret kodları), `harita:erisim:v1` (eklenen erişim
+  satırları, son 30). Form değerleri hiçbir anahtara yazılmaz (test önce/sonra karşılaştırır).
+- **Panelde ağ isteği sıfır:** modüller statik içe aktarılır; panelde Leaflet YOK (Valonya şeması satır içi SVG,
+  sınır © OpenStreetMap ODbL); italik yazı kullanılmaz (tembel yazı tipi isteği doğmasın).
 
 ### Eski notlar — 2. faz uzatma noktaları
 

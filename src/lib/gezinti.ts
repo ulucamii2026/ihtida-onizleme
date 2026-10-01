@@ -4,8 +4,11 @@ import { DILLER, type Dil, type Sayfa } from '../i18n/diller';
  * Kamu sitesinin gezinti düzeni (1. faz). 2. fazda personel paneli (/panel/) ve PWA (/app/)
  * kendi gezinti dizilerini buraya `PANEL_GEZINTI` / `APP_GEZINTI` olarak ekler; kamu dizileri değişmez.
  */
-export const UST_GEZINTI: Sayfa[] = ['basvuru', 'ilkAdimlar', 'camiler', 'kardesAile', 'etkinlikler', 'dogrula', 'aile'];
-export const ALT_GEZINTI: Sayfa[] = ['basvuru', 'ilkAdimlar', 'camiler', 'kardesAile', 'etkinlikler', 'dogrula', 'aile', 'iletisim', 'gizlilik'];
+export const UST_GEZINTI: Sayfa[] = ['basvuru', 'ilkAdimlar', 'camiler', 'beniArayin', 'kardesAile', 'etkinlikler', 'dogrula', 'aile'];
+/** «Buluşma anketi» üst gezintide değildir: buluşmanın sonunda QR kodla açılır; alt bilgiden ve Etkinlikler sayfasından bağlanır. */
+export const ALT_GEZINTI: Sayfa[] = [
+  'basvuru', 'ilkAdimlar', 'camiler', 'beniArayin', 'kardesAile', 'etkinlikler', 'anket', 'dogrula', 'aile', 'iletisim', 'gizlilik',
+];
 
 /** Ana sayfadaki altı kutucuğun hedefleri — sözlükteki `ana.kutucuklar` sırasıyla aynı. */
 export const KUTUCUK_HEDEFLERI: { sayfa: Sayfa; ikon: 'belge' | 'kitap' | 'konum' | 'kisiler' | 'takvim' | 'kalkan' }[] = [
@@ -33,6 +36,13 @@ export function appYolu(dil: Dil): string {
 /** Panelde rol değiştiricinin sırası. */
 export const PANEL_GEZINTI = ['koordinator', 'musavirlik', 'bolge', 'dinGorevlisi', 'muhtedi'] as const;
 export type PanelRolu = (typeof PANEL_GEZINTI)[number];
+
+/**
+ * Rolün içindeki ekranlar (30 Eylül 2026): «dosyalar» mevcut rol ekranıdır; faaliyet günlüğü, buluşma anketi ve
+ * rehber haritası yeni modüllerdir. Hangi rolün hangi modülü gördüğü PanelUygulamasi.tsx → ROL_MODULLERI.
+ */
+export const PANEL_MODULLERI = ['dosyalar', 'faaliyet', 'anket', 'harita'] as const;
+export type PanelModulu = (typeof PANEL_MODULLERI)[number];
 
 /** Uygulamanın alt gezinti sekmeleri. */
 export const APP_GEZINTI = ['bildirimler', 'onay', 'takip', 'sayim', 'gorevler', 'kaynaklar'] as const;

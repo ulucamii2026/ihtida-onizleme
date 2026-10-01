@@ -8,7 +8,7 @@ import { KISISEL_ALAN_KODU, ORNEK_GOREVLILER } from '../../data/ornek-dosyalar';
 import { Ikon, Kart, camiAdi, gorevliAdi, gunEtiketi, tamTarih, tarihYaz } from './ortak';
 import type { RolOzellikleri } from './PanelUygulamasi';
 
-export default function KisiselAlan({ m, yerel, kisiler, modalAc }: RolOzellikleri) {
+export default function KisiselAlan({ m, yerel, kisiler, modalAc, kamu }: RolOzellikleri) {
   const p = m.panel.muhtedi;
   const k = kisiler.find((x) => x.kod === KISISEL_ALAN_KODU)!;
   const irtibat = ORNEK_GOREVLILER.filter((g) => g.yer === k.yer && (g.rol === 'dinGorevlisi' || g.rol === 'kardesAile'));
@@ -78,11 +78,22 @@ export default function KisiselAlan({ m, yerel, kisiler, modalAc }: RolOzellikle
           <p class="mt-2 text-sm text-dy-gri-koyu">{p.irtibatNot}</p>
         </Kart>
 
-        <Kart baslik={p.haklarBaslik} id="ka-haklar" class="xl:col-span-2">
+        <Kart baslik={p.haklarBaslik} id="ka-haklar">
           <div class="flex flex-wrap gap-2">
             {p.haklar.map((h) => (
               <button type="button" class="dugme dugme-ikincil" onClick={modalAc}>{h}</button>
             ))}
+          </div>
+        </Kart>
+
+        {/* «Beni arayın»: kamu sayfasındaki rıza esaslı işaret (isteğe bağlı; burada yalnız bağlantı) */}
+        <Kart baslik={p.haritaBaslik} id="ka-harita">
+          <div data-kisisel-harita>
+            <div class="flex items-start gap-3">
+              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E6F0F6] text-bdv"><Ikon ad="konum" boyut={20} /></span>
+              <p class="text-[0.95rem]">{p.haritaMetin}</p>
+            </div>
+            <a class="dugme dugme-ikincil mt-3" href={kamu.haritaHref}><Ikon ad="harita" boyut={18} />{p.haritaDugme}</a>
           </div>
         </Kart>
       </div>

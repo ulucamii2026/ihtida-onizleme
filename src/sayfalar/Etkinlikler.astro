@@ -2,7 +2,7 @@
 import SayfaBasligi from '../components/SayfaBasligi.astro';
 import Ikon from '../components/Ikon.astro';
 import OnizlemeDugmesi from '../islands/OnizlemeDugmesi';
-import { DIL_BILGI, type Dil } from '../i18n/diller';
+import { DIL_BILGI, yol, type Dil } from '../i18n/diller';
 import { sozluk } from '../i18n';
 import { ORNEK_ETKINLIKLER } from '../data/etkinlikler';
 
@@ -50,4 +50,16 @@ const bicim = {
       );
     })}
   </ol>
+
+  <!-- Buluşma sonrası anket (Öneri 14): buluşmanın sonunda QR kodla da açılır -->
+  <div class="mt-8 flex flex-col gap-4 rounded-2xl border-2 border-[#9DBBD1] bg-[#E6F0F6]/50 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6" data-etkinlik-anket>
+    <div class="flex items-start gap-4">
+      <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-bdv"><Ikon ad="anket" boyut={22} /></span>
+      <div>
+        <h2 class="text-lg font-bold">{e.anketBaslik}</h2>
+        <p class="mt-1">{e.anketMetin}</p>
+      </div>
+    </div>
+    <a class="dugme dugme-ikincil shrink-0" href={yol(dil, 'anket')}>{e.anketDugme}<Ikon ad="ok" boyut={18} /></a>
+  </div>
 </section>

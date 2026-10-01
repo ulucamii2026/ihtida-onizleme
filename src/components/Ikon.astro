@@ -2,7 +2,8 @@
 /** Satır çizgili, sade SVG ikonlar (vektör, dış bağımlılık yok). Dekoratiftir: aria-hidden. */
 export type IkonAdi =
   | 'belge' | 'kitap' | 'konum' | 'kisiler' | 'takvim' | 'kalkan' | 'kalp' | 'zarf'
-  | 'kilit' | 'dunya' | 'ok' | 'onay' | 'saat' | 'dil' | 'menu' | 'kapat' | 'kurum';
+  | 'kilit' | 'dunya' | 'ok' | 'onay' | 'saat' | 'dil' | 'menu' | 'kapat' | 'kurum'
+  | 'kisi' | 'uyari' | 'harita' | 'anket';
 
 interface Props { ad: IkonAdi; class?: string; boyut?: number }
 const { ad, class: sinif = '', boyut = 24 } = Astro.props;
@@ -25,6 +26,10 @@ const yollar: Record<IkonAdi, string> = {
   menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
   kapat: '<path d="M6 6l12 12M18 6 6 18"/>',
   kurum: '<path d="M3 10 12 4l9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/>',
+  kisi: '<circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/>',
+  uyari: '<path d="M12 3 2 20h20z"/><path d="M12 10v4.5M12 17.5v.01"/>',
+  harita: '<path d="M9 4 3 6.5V20l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/>',
+  anket: '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5"/><path d="m8.5 10 1.5 1.5 2.5-2.5M14.5 10.5h1.5M8.5 15.5l1.5 1.5 2.5-2.5M14.5 16h1.5"/>',
 };
 ---
 <svg

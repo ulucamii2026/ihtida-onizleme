@@ -5,7 +5,7 @@
  */
 import type { ComponentChildren } from 'preact';
 import type { PanelSozluk } from '../../i18n/panel/tipler';
-import { gunTarihi, type Asama, type OrnekKisi, type OrnekGorevli } from '../../data/ornek-dosyalar';
+import { gunTarihi, type Asama, type OrnekKisi, type OrnekGorevli, type Yer } from '../../data/ornek-dosyalar';
 import { doldur } from '../../lib/yerelDurum';
 
 export type M = PanelSozluk;
@@ -45,7 +45,12 @@ export function gorevliAdi(g: OrnekGorevli | undefined, m: M): string {
 }
 
 export function camiAdi(k: OrnekKisi, m: M): string {
-  return doldur(m.ornekCami, { yer: m.yerler[k.yer] });
+  return camiAdiYer(k.yer, m);
+}
+
+/** «Şehir · örnek cami» — faaliyet günlüğü ve rehber haritası kişisiz kayıtları için. */
+export function camiAdiYer(yer: Yer, m: M): string {
+  return doldur(m.ornekCami, { yer: m.yerler[yer] });
 }
 
 /** Kişinin adı: kodlu kayıtta ad asla gösterilmez; kurgusal adlar her zaman etiketlenir. */
@@ -146,6 +151,11 @@ const YOLLAR = {
   cevrim: '<path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/>',
   kurum: '<path d="M3 10 12 4l9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/>',
   telefon: '<rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/>',
+  harita: '<path d="M9 4 3 6.5V20l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/>',
+  konum: '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+  gunluk: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M12 8h4M12 12h4M12 16h3"/>',
+  anket: '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5"/><path d="m8.5 10 1.5 1.5 2.5-2.5M14.5 10.5h1.5M8.5 15.5l1.5 1.5 2.5-2.5M14.5 16h1.5"/>',
+  geriAl: '<path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/>',
 } as const;
 export type IkonAdi = keyof typeof YOLLAR;
 

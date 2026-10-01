@@ -14,9 +14,18 @@ Denetler — dist/ içindeki HER sayfa, 1280 px ve 390 px:
   * sayfa JS hatası yok
 Her dilde örnek gönderim düğmeleri: tıklamadan SONRA hiçbir ağ isteği olmamalı ve
 «Önizleme: gönderim kapalı» penceresi açılmalı (belge doğrulamada sonuç kartı görünmeli).
+  * «Beni arayın» (Öneri 18): rıza işaretlenmeden alanlar ve gönder kapalı; doldururken ve gönderince ağ isteği yok;
+    işaret yalnız bu ekrandaki haritada ilçe düzeyinde; «İşaretimi geri çek» her şeyi sıfırlar
+  * buluşma anketi (Öneri 14): ad / serbest metin alanı yok; gönderince ağ isteği yok; «Temizle» sıfırlar
+  * iki formda da değerler localStorage / sessionStorage'a YAZILMAZ (önce/sonra karşılaştırılır)
 2. faz (/panel/ ve /app/, beş dil):
   * her rol ve her sekme tıklanır; etkileşimlerden sonra SIFIR ağ isteği, JS hatası yok, yatay taşma yok
   * veri en aza indirme: din görevlisi rolünde kimlik/uyruk/defter görünmez; kodlu kayıttaki ad hiçbir rolde yok
+  * panel modülleri, rol rol: faaliyet günlüğü (cami: yalnız seçim + sayaç formu → pencere, değer yazılmaz;
+    bölge: bölge tablosu; koordinatör/Müşavirlik: 5 çeyrek, sütun grafiği + odak ipucu, «Üç aylık rapor» → pencere),
+    buluşma anketi sonuçları (küçük grup gizli), rehber haritası (bölge/cami görevlisi yalnız kapsamındaki işaretleri
+    görür; kadın kaydı yalnız «kadın görevli» görünümünde; ayrıntı ve dönüş erişim kaydına yazılır; koordinatör ve
+    Müşavirlik yalnız toplam sayıyı görür, takma ad görmez; Müşavirlik «denetlendi» satırı ekler; DPIA notu görünür)
   * uygulamada «Tören yapıldı» onayı → paneldeki Müşavirlik kuyruğuna düşer (yalnız localStorage)
   * PWA senaryosu (service worker'a izin verilen ayrı bağlam): manifest geçerli, ikonlar doğru boyutta,
     service worker /app/ kapsamıyla kayıtlı, Chrome kurulabilirlik hatası yok, çevrim dışı açılış
@@ -50,7 +59,22 @@ SLUG = {
     "dogrula": {"tr": "belge-dogrula", "fr": "verifier", "nl": "verifieren", "de": "pruefen", "en": "verify"},
     "aile": {"tr": "aileler-icin", "fr": "pour-les-proches", "nl": "voor-familie", "de": "fuer-angehoerige", "en": "for-families"},
     "iletisim": {"tr": "iletisim", "fr": "contact", "nl": "contact", "de": "kontakt", "en": "contact"},
+    "beniArayin": {"tr": "beni-arayin", "fr": "contactez-moi", "nl": "contacteer-mij", "de": "kontaktwunsch", "en": "contact-me"},
+    "anket": {"tr": "anket", "fr": "questionnaire", "nl": "vragenlijst", "de": "fragebogen", "en": "survey"},
 }
+# Form değerleri tarayıcı belleğine yazılmamalı: gönderimden önce ve sonra iki depo birebir aynı olmalı.
+DEPOLAMA = "() => JSON.stringify([Object.entries(localStorage).sort(), Object.entries(sessionStorage).sort()])"
+
+
+def harita_bekle(sayfa) -> None:
+    """«Beni arayın» Leaflet haritası kurulup açılış karoları yüklenene kadar bekler (karo yalnız açılışta istenir)."""
+    sayfa.wait_for_selector("[data-beni-arayin-haritasi].leaflet-container", timeout=10000)
+    sayfa.wait_for_function(
+        "() => { const t = document.querySelectorAll('[data-beni-arayin-haritasi] img.leaflet-tile');"
+        " return t.length > 0 && [...t].every((i) => i.complete); }",
+        timeout=20000,
+    )
+    sayfa.wait_for_timeout(400)
 
 
 # Önizleme uyarısı (23.09.2026): açılışta pencere, oturumda bir kez. Etkileşim testlerinde «görüldü»
@@ -97,6 +121,24 @@ def parcala(yol: Path, yukseklik: int = 1500) -> None:
 PANEL_ROLLERI = ["koordinator", "musavirlik", "bolge", "dinGorevlisi", "muhtedi"]
 APP_SEKMELERI = ["bildirimler", "onay", "takip", "sayim", "gorevler", "kaynaklar"]
 KODLU_KAYIT_ADI = "Aurélie"  # M-DEMO-05: kodlu kayıt — adı hiçbir rolde görünmemeli
+# Panel modülleri (rol → sekmeler; tek modüllü rolde sekme çubuğu yoktur)
+PANEL_MODULLERI = {
+    "koordinator": ["dosyalar", "faaliyet", "anket", "harita"],
+    "musavirlik": ["dosyalar", "faaliyet", "harita"],
+    "bolge": ["dosyalar", "faaliyet", "harita"],
+    "dinGorevlisi": ["dosyalar", "faaliyet", "harita"],
+    "muhtedi": [],
+}
+# Rehber haritasındaki kurgusal işaretlerin takma adları: koordinatör ve Müşavirlik görünümünde hiçbiri geçmemeli
+ISARET_TAKMA_ADLARI = ["Deneb", "Mizar", "Altair", "Rigel", "Mintaka", "Alnilam", "Alcor", "Alkaid", "Alnitak"]
+# Görevli görünümü: kapsam, (erkek, kadın) görünümde beklenen açık işaret sayısı, erkek ve kadın örnek kayıt
+GOREVLI_HARITA = {
+    "bolge": ({"liege", "eupen"}, (2, 3), "H-DEMO-03", "H-DEMO-05"),
+    "dinGorevlisi": ({"namur"}, (1, 2), "H-DEMO-01", "H-DEMO-02"),
+}
+TOPLAM_ACIK_ISARET = 8
+# Yalnız TR'de tam sayfa görüntüsü alınan modül ekranları (bölge haritası, kadın görünümünde ayrıca alınır)
+PANEL_EKRAN = {("koordinator", "faaliyet"), ("koordinator", "anket"), ("musavirlik", "harita"), ("dinGorevlisi", "faaliyet")}
 
 
 def panel_ve_uygulama(tarayici, taban, dil, gen, yuk, hatalar, sayac) -> None:
@@ -189,6 +231,176 @@ def panel_ve_uygulama(tarayici, taban, dil, gen, yuk, hatalar, sayac) -> None:
             sayfa.wait_for_timeout(300)
             modal_acik_mi(e)
         denetle(e)
+
+    # ── PANEL MODÜLLERİ: faaliyet günlüğü (Öneri 17), buluşma anketi (Öneri 14), rehber haritası (Öneri 18) ──
+    def sayi(secici: str) -> int:
+        return sayfa.locator(secici).count()
+
+    def ekran_al(ad: str) -> None:
+        if dil != "tr":
+            return
+        tam = EKRAN / f"panel-{ad}-{gen}-tam.png"
+        sayfa.screenshot(path=str(tam), full_page=True)
+        parcala(tam)
+
+    def faaliyet_denetle(rol: str, e: str) -> None:
+        if rol in ("koordinator", "musavirlik"):
+            if sayi("[data-ceyrek-tablosu] tbody tr[data-ceyrek]") != 5:
+                hatalar.append(f"{e}: çeyrek tablosunda 5 satır yok")
+            if sayi("svg[data-ceyrek-grafigi] [data-grafik-sutun]") != 5:
+                hatalar.append(f"{e}: çeyrek grafiğinde 5 sütun yok")
+            if sayi("[data-faaliyet-kaydi], [data-faaliyet-formu]"):
+                hatalar.append(f"{e}: toplu görünümde tek tek kayıt / giriş formu görünüyor")
+            sayfa.locator("[data-grafik-sutun]").nth(3).focus()
+            sayfa.wait_for_timeout(100)
+            if sayi("[data-grafik-ipucu]") != 1:
+                hatalar.append(f"{e}: grafik ipucu klavye odağında görünmedi")
+            sayfa.locator("[data-uc-aylik-rapor]").click()
+            sayfa.wait_for_timeout(250)
+            modal_acik_mi(e)
+        elif rol == "bolge":
+            if sayi("[data-bolge-gunlugu]") != 1 or sayi("[data-bolge-gunlugu] [data-faaliyet-kaydi]") == 0:
+                hatalar.append(f"{e}: bölge kayıt tablosu yok")
+            if sayi("[data-faaliyet-formu], [data-ceyrek-tablosu]"):
+                hatalar.append(f"{e}: bölge sorumlusu formu / çeyrek tablosunu görüyor")
+        else:  # din görevlisi = cami irtibat kişisi
+            form = sayfa.locator("[data-faaliyet-formu]")
+            if form.count() != 1 or sayi("[data-cami-gunlugu] [data-faaliyet-kaydi]") == 0:
+                hatalar.append(f"{e}: cami günlüğü / giriş formu yok")
+                return
+            if form.locator("textarea, input[type=text], input[type=email], input[type=tel]").count():
+                hatalar.append(f"{e}: faaliyet formunda serbest metin alanı var")
+            depo0 = sayfa.evaluate(DEPOLAMA)
+            sayfa.locator("[data-faaliyet-artir=K]").click()
+            sayfa.locator("[data-faaliyet-artir=K]").click()
+            sayfa.locator("[data-faaliyet-artir=E]").click()
+            sayfa.select_option("#fg-tur", index=2)
+            if not sayfa.locator("[data-faaliyet-toplam]").inner_text().strip().endswith("3"):
+                hatalar.append(f"{e}: sayaç toplamı 3 değil")
+            sayfa.locator("[data-faaliyet-gonder]").click()
+            sayfa.wait_for_timeout(250)
+            modal_acik_mi(e)
+            if sayfa.evaluate(DEPOLAMA) != depo0:
+                hatalar.append(f"{e}: faaliyet formu değerleri tarayıcı belleğine yazıldı")
+
+    def anket_denetle(e: str) -> None:
+        if sayi("[data-anket-sonuc]") != 1 or sayi("[data-anket-gizli]") != 1:
+            hatalar.append(f"{e}: açık / gizli anket kartı sayısı yanlış")
+            return
+        if sayfa.locator("[data-anket-gizli]").locator("[data-anket-ortalama], [data-anket-soru]").count():
+            hatalar.append(f"{e}: küçük grubun anket sonucu görünüyor")
+        ort = sayfa.locator("[data-anket-sonuc] [data-anket-ortalama]").inner_text()
+        if "4,5" not in ort and "4.5" not in ort:
+            hatalar.append(f"{e}: ortalama memnuniyet 4,5 değil ({ort!r})")
+
+    def harita_denetle(rol: str, e: str) -> None:
+        if sayi("[data-pilot-notu]") != 1:
+            hatalar.append(f"{e}: «DPIA ve Müşavirlik onayı olmadan pilot başlamaz» notu yok")
+        if rol in ("koordinator", "musavirlik"):
+            if sayi("[data-isaret], [data-isaret-listesi], [data-harita-semasi]"):
+                hatalar.append(f"{e}: bu rolde tek tek işaret görünüyor")
+            if sayi("[data-isaret-yok-notu]") != 1:
+                hatalar.append(f"{e}: «işaretler görünmez; yalnız toplulaştırılmış sayı» notu yok")
+            toplam = sayfa.locator("[data-isaret-toplam]").inner_text().strip() if sayi("[data-isaret-toplam]") else ""
+            if toplam != str(TOPLAM_ACIK_ISARET):
+                hatalar.append(f"{e}: toplam açık işaret {toplam!r} (beklenen {TOPLAM_ACIK_ISARET})")
+            metin = sayfa.locator("[data-rol-icerik]").inner_text()
+            adlar = [a for a in ISARET_TAKMA_ADLARI if a in metin]
+            if adlar:
+                hatalar.append(f"{e}: takma adlar görünüyor: {adlar}")
+            if rol == "koordinator":
+                if sayi("[data-kim-neyi-gorur]") != 1 or sayi("[data-erisim-kaydi-harita]"):
+                    hatalar.append(f"{e}: koordinatör görünümü yanlış (kim neyi görür yok / erişim kaydı açık)")
+            else:
+                n0 = sayi("[data-erisim-kaydi-harita] li")
+                sayfa.locator("[data-erisim-denetle]").click()
+                sayfa.wait_for_timeout(150)
+                if sayi("[data-erisim-kaydi-harita] li") != n0 + 1 or sayi("[data-erisim-islem=denetim]") < 2:
+                    hatalar.append(f"{e}: «denetlendi» satırı erişim kaydına eklenmedi")
+            return
+
+        kapsam, (n_erkek, n_kadin), erkek_kod, kadin_kod = GOREVLI_HARITA[rol]
+
+        def isaretler() -> list[list[str]]:
+            return sayfa.locator("[data-isaret]").evaluate_all(
+                "els => els.map((e) => [e.dataset.isaret, e.dataset.yer, e.dataset.kadin])")
+
+        sayfa.locator("[data-kadin-gorevli=hayir]").click()
+        sayfa.wait_for_timeout(100)
+        liste = isaretler()
+        if len(liste) != n_erkek or any(k == "evet" for _, _, k in liste) or any(y not in kapsam for _, y, _ in liste):
+            hatalar.append(f"{e}: erkek görevli görünümünde işaretler yanlış: {liste}")
+        if sayi("[data-kadin-gizli]") != 1 or sayi("[data-isaret-disi]") != 1:
+            hatalar.append(f"{e}: «kadın kaydı gizli» / «diğer yerler görünmez» notu yok")
+        sayili = sayfa.locator("[data-harita-yer]").evaluate_all(
+            "els => els.filter((e) => e.hasAttribute('data-harita-sayi')).map((e) => e.dataset.haritaYer)")
+        if set(sayili) != kapsam:
+            hatalar.append(f"{e}: şemada kapsam dışı ilçe sayı taşıyor: {sayili}")
+        n0 = sayi("[data-erisim-kaydi-harita] li")
+        sayfa.locator(f"[data-isaret-ac='{erkek_kod}']").click()
+        sayfa.wait_for_timeout(100)
+        if sayi(f"[data-isaret-ayrinti='{erkek_kod}']") != 1 or sayi("[data-erisim-kaydi-harita] li") != n0 + 1:
+            hatalar.append(f"{e}: ayrıntı açılınca erişim kaydına satır eklenmedi")
+        # Kadın görevli görünümü: kadın kaydı da görünür
+        sayfa.locator("[data-kadin-gorevli=evet]").click()
+        sayfa.wait_for_timeout(100)
+        liste = isaretler()
+        if len(liste) != n_kadin or kadin_kod not in [k for k, _, _ in liste] or sayi("[data-kadin-gizli]"):
+            hatalar.append(f"{e}: kadın görevli görünümünde işaretler yanlış: {liste}")
+        if sayi("[data-alan-gorunur=kadinIsaretleri]") != 1:
+            hatalar.append(f"{e}: kadın görevli görünümünde «kadın kayıtlı işaretler» alanı görünür değil")
+        sayfa.locator(f"[data-isaret-ac='{kadin_kod}']").click()
+        sayfa.wait_for_timeout(100)
+        if rol == "bolge":
+            ekran_al("bolge-harita-kadin")
+        n1 = sayi("[data-erisim-kaydi-harita] li")
+        sayfa.locator(f"[data-donus-yapildi='{erkek_kod}']").click()
+        sayfa.wait_for_timeout(150)
+        if sayi(f"[data-isaret='{erkek_kod}']") or sayi("[data-isaret-bildirim]") != 1 \
+                or sayi("[data-erisim-kaydi-harita] li") != n1 + 1:
+            hatalar.append(f"{e}: «Dönüş yapıldı» işareti kaldırmadı / erişim kaydına yazmadı")
+        # Erkek görünümüne dönüş: kadın kaydı ve ona ait erişim satırları yine görünmez
+        sayfa.locator("[data-kadin-gorevli=hayir]").click()
+        sayfa.wait_for_timeout(100)
+        satirlar = " ".join(sayfa.locator("[data-erisim-kaydi-harita] li").all_inner_texts())
+        if sayi(f"[data-isaret='{kadin_kod}']") or kadin_kod in satirlar:
+            hatalar.append(f"{e}: erkek görünümünde kadın kaydı veya ona ait erişim satırı görünüyor")
+
+    hazirla(f"/panel/{ek}", "[data-panel]")
+    for rol, moduller in PANEL_MODULLERI.items():
+        e0 = f"{etiket0} panel/{rol}"
+        sayfa.locator(f"[data-rol-dugme={rol}]").click()
+        sayfa.wait_for_selector(f"[data-rol-icerik={rol}] [data-modul-icerik=dosyalar]")
+        sekmeler = sayfa.locator("[data-modul-dugme]").evaluate_all("els => els.map((e) => e.dataset.modulDugme)")
+        if sekmeler != moduller:
+            hatalar.append(f"{e0}: modül sekmeleri {sekmeler} (beklenen {moduller})")
+        if sayi("[data-kadin-gorevli-secici]") != (1 if rol in GOREVLI_HARITA else 0):
+            hatalar.append(f"{e0}: «kadın görevli» seçicisi yanlış rolde ya da eksik")
+        if rol == "muhtedi":
+            href = sayfa.locator("[data-kisisel-harita] a").get_attribute("href") if sayi("[data-kisisel-harita] a") else ""
+            if not (href or "").endswith(f"/{dil}/{SLUG['beniArayin'][dil]}/"):
+                hatalar.append(f"{e0}: kişisel alanda «Beni arayın» bağlantısı yok ya da yanlış ({href!r})")
+            denetle(e0)
+            continue
+        for modul in moduller[1:]:
+            e = f"{e0}/{modul}"
+            sayfa.locator(f"[data-modul-dugme={modul}]").click()
+            sayfa.wait_for_selector(f"[data-panel][data-modul={modul}] [data-modul-icerik={modul}]")
+            if modul == "faaliyet":
+                faaliyet_denetle(rol, e)
+            elif modul == "anket":
+                anket_denetle(e)
+            else:
+                harita_denetle(rol, e)
+            denetle(e)
+            if (rol, modul) in PANEL_EKRAN:
+                ekran_al(f"{rol}-{modul}")
+    # Rol değişince modül «Dosyalar»a döner
+    sayfa.locator("[data-rol-dugme=koordinator]").click()
+    sayfa.locator("[data-modul-dugme=harita]").click()
+    sayfa.locator("[data-rol-dugme=musavirlik]").click()
+    if sayfa.locator("[data-panel]").get_attribute("data-modul") != "dosyalar":
+        hatalar.append(f"{etiket0} panel: rol değişince modül «Dosyalar»a dönmedi")
 
     # ── UYGULAMA ──
     hazirla(f"/app/{ek}", "[data-app]")
@@ -464,12 +676,16 @@ def main() -> int:
                         hatalar.append(f"{etiket}: JS hatası {h}")
                     sayac["sayfa_kontrol"] += 1
 
-                    # Ekran görüntüleri: ana sayfa ve başvuru (TR)
-                    ad = {"/tr/": "ana-tr", "/tr/basvuru/": "basvuru-tr"}.get(yol)
+                    # Ekran görüntüleri: ana sayfa, başvuru, «Beni arayın» ve buluşma anketi (TR)
+                    ad = {"/tr/": "ana-tr", "/tr/basvuru/": "basvuru-tr", "/tr/beni-arayin/": "beni-arayin-tr",
+                          "/tr/anket/": "anket-tr"}.get(yol)
                     if ad:
-                        if yol == "/tr/basvuru/":
-                            sayfa.locator("[data-demo-form=basvuru]").scroll_into_view_if_needed()
+                        form = {"/tr/basvuru/": "basvuru", "/tr/beni-arayin/": "beni-arayin", "/tr/anket/": "anket"}.get(yol)
+                        if form:  # ada görünür olunca canlanır; tam sayfa görüntüsünden önce canlandırılır
+                            sayfa.locator(f"[data-demo-form={form}]").scroll_into_view_if_needed()
                             sayfa.wait_for_timeout(400)
+                            if form == "beni-arayin":
+                                harita_bekle(sayfa)
                             sayfa.evaluate("() => window.scrollTo(0, 0)")
                             sayfa.wait_for_timeout(200)
                         hedef = EKRAN / f"{ad}-{gen}.png"
@@ -540,6 +756,82 @@ def main() -> int:
                 sayfa.goto(f"{taban}/{dil}/{SLUG['etkinlikler'][dil]}/")
                 adacik_hazir("[data-demo-gonder]")
                 gonder_ve_denetle(f"{dil}/etkinlik katıl", sayfa.locator("[data-demo-gonder]").first)
+                href = sayfa.locator("[data-etkinlik-anket] a").get_attribute("href") if sayfa.locator("[data-etkinlik-anket] a").count() else ""
+                if not (href or "").endswith(f"/{dil}/{SLUG['anket'][dil]}/"):
+                    hatalar.append(f"{dil}/etkinlikler: buluşma anketi bağlantısı yok ya da yanlış ({href!r})")
+
+                def ag_istekleri() -> list[str]:
+                    return [u for u in sonraki if not u.startswith(("data:", "blob:"))]
+
+                # «Beni arayın» (Öneri 18): rıza önce; takma ad + yaş aralığı + ilçe + cinsiyet → pencere; geri çek
+                sayfa.goto(f"{taban}/{dil}/{SLUG['beniArayin'][dil]}/")
+                adacik_hazir("[data-demo-form=beni-arayin]")
+                harita_bekle(sayfa)
+                ba = sayfa.locator("[data-demo-form=beni-arayin]")
+                if ba.locator("textarea, input[type=email], input[type=tel], input[type=text]:not(:disabled)").count():
+                    hatalar.append(f"{dil}/beni arayın: serbest metin / iletişim alanı açık")
+                if sayfa.locator("[data-pilot-notu]").count() != 1:
+                    hatalar.append(f"{dil}/beni arayın: DPIA / Müşavirlik onayı notu yok")
+                if not sayfa.eval_on_selector("#ba-yas", "(e) => e.matches(':disabled')") or not ba.locator("[data-demo-gonder]").is_disabled():
+                    hatalar.append(f"{dil}/beni arayın: rıza işaretlenmeden alanlar veya gönder düğmesi açık")
+                depo0 = sayfa.evaluate(DEPOLAMA)
+                sonraki.clear()
+                ba.locator("[data-riza-onay]").check()
+                ba.locator("[data-takma-ad=Deneb]").click()
+                sayfa.select_option("#ba-yas", "1")
+                sayfa.select_option("#ba-ilce", "liege")
+                ba.locator("[data-cinsiyet=K]").click()
+                sayfa.wait_for_timeout(200)
+                if ag_istekleri():
+                    hatalar.append(f"{dil}/beni arayın: form doldurulurken ağ isteği: {ag_istekleri()[:3]}")
+                gonder_ve_denetle(f"{dil}/beni arayın", ba.locator("[data-demo-gonder]"))
+                ipucu = sayfa.locator("[data-beni-arayin-haritasi] .leaflet-tooltip")
+                if sayfa.locator("[data-isaret-durumu=var]").count() != 1 or ipucu.count() != 1 or "Deneb" not in ipucu.inner_text():
+                    hatalar.append(f"{dil}/beni arayın: gönderimden sonra işaret kartı / ilçe düzeyinde harita işareti yok")
+                sonraki.clear()
+                ba.locator("[data-isaret-geri-cek]").click()
+                sayfa.wait_for_timeout(400)
+                if sayfa.locator("[data-isaret-durumu=yok] [data-geri-cekildi]").count() != 1 \
+                        or ba.locator("[data-riza-onay]").is_checked() or ipucu.count() \
+                        or ba.locator("[data-takma-ad] input:checked").count() or sayfa.input_value("#ba-ilce") != "":
+                    hatalar.append(f"{dil}/beni arayın: «İşaretimi geri çek» durumu sıfırlamadı")
+                if ag_istekleri():
+                    hatalar.append(f"{dil}/beni arayın: geri çekmeden sonra ağ isteği: {ag_istekleri()[:3]}")
+                if sayfa.evaluate(DEPOLAMA) != depo0:
+                    hatalar.append(f"{dil}/beni arayın: form değerleri tarayıcı belleğine yazıldı")
+
+                # Buluşma sonrası anket (Öneri 14): ad yok, serbest metin yok, bütün sorular isteğe bağlı
+                sayfa.goto(f"{taban}/{dil}/{SLUG['anket'][dil]}/")
+                adacik_hazir("[data-demo-form=anket]")
+                an = sayfa.locator("[data-demo-form=anket]")
+                if an.locator("textarea, input[type=text], input[type=email], input[type=tel]").count():
+                    hatalar.append(f"{dil}/anket: ad veya serbest metin alanı var")
+                if sayfa.locator("[data-anket-ad-yok]").count() != 1:
+                    hatalar.append(f"{dil}/anket: «ad yazılmaz, isteğe bağlıdır» notu yok")
+                sayfa.wait_for_load_state("networkidle")
+                depo0 = sayfa.evaluate(DEPOLAMA)
+                sonraki.clear()
+                an.locator("[data-memnuniyet='5']").click()
+                an.locator("[data-anket-soru=konu] [data-secenek='0']").click()
+                an.locator("[data-anket-soru=dil] [data-secenek='1']").click()
+                an.locator("[data-anket-soru=sure] [data-secenek='1']").click()
+                an.locator("[data-istek='0']").click()
+                an.locator("[data-istek='3']").click()
+                an.locator("[data-anket-soru=tekrar] [data-secenek='0']").click()
+                if an.locator("input:checked").count() != 7:
+                    hatalar.append(f"{dil}/anket: seçimler işaretlenmedi ({an.locator('input:checked').count()}/7)")
+                sayfa.wait_for_timeout(200)
+                if ag_istekleri():
+                    hatalar.append(f"{dil}/anket: doldurulurken ağ isteği: {ag_istekleri()[:3]}")
+                gonder_ve_denetle(f"{dil}/anket", an.locator("[data-demo-gonder]"))
+                an.locator("[data-anket-temizle]").click()
+                sayfa.wait_for_timeout(150)
+                if an.locator("input:checked").count():
+                    hatalar.append(f"{dil}/anket: «Temizle» seçimleri sıfırlamadı")
+                if ag_istekleri():
+                    hatalar.append(f"{dil}/anket: temizledikten sonra ağ isteği: {ag_istekleri()[:3]}")
+                if sayfa.evaluate(DEPOLAMA) != depo0:
+                    hatalar.append(f"{dil}/anket: cevaplar tarayıcı belleğine yazıldı")
 
                 sayfa.goto(f"{taban}/{dil}/{SLUG['dogrula'][dil]}/")
                 adacik_hazir("[data-demo-form=dogrula]")

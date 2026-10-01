@@ -1,7 +1,8 @@
 ---
 import Panel from '../../layouts/Panel.astro';
 import PanelUygulamasi from '../../islands/panel/PanelUygulamasi';
-import { DILLER, DIL_BILGI, type Dil } from '../../i18n/diller';
+import { DILLER, DIL_BILGI, yol, type Dil } from '../../i18n/diller';
+import { sozluk } from '../../i18n';
 import { panelSozluk } from '../../i18n/panel';
 import { appYolu } from '../../lib/gezinti';
 
@@ -11,8 +12,10 @@ export function getStaticPaths() {
 }
 const dil = Astro.params.dil as Dil;
 const m = panelSozluk(dil);
+/** Kamu sayfalarına bağlantılar ve anket soruları (tek kaynak: kamu sözlüğü). */
+const kamu = { haritaHref: yol(dil, 'beniArayin'), anketHref: yol(dil, 'anket'), anket: sozluk(dil).anket };
 ---
 <Panel dil={dil}>
-  <PanelUygulamasi client:only="preact" m={m} yerel={DIL_BILGI[dil].tarihYerel} appHref={appYolu(dil)} />
+  <PanelUygulamasi client:only="preact" m={m} yerel={DIL_BILGI[dil].tarihYerel} appHref={appYolu(dil)} kamu={kamu} />
   <noscript><p class="kap py-10">JavaScript</p></noscript>
 </Panel>
