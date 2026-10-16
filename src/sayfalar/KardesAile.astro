@@ -1,0 +1,78 @@
+---
+import SayfaBasligi from '../components/SayfaBasligi.astro';
+import Ikon from '../components/Ikon.astro';
+import KardesAileFormlari from '../islands/KardesAileFormlari';
+import type { DemoAlan } from '../islands/DemoFormu';
+import { type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+import { CAMILER, IL_KODLARI } from '../data/camiler';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const s = sozluk(dil);
+const k = s.kardesAile;
+const iller = IL_KODLARI.map((i) => s.camiler.iller[i]);
+const camiler = CAMILER.map((c) => `${c.ad} — ${c.sehir}`);
+const ikonlar = ['kisiler', 'dil', 'kalkan', 'kalp'] as const;
+
+type Sekme = { kimlik: string; etiket: string; gonder: string; not?: string; alanlar: DemoAlan[] };
+const sekmeler: [Sekme, Sekme] = [
+  {
+    kimlik: 'talep', etiket: k.talepSekme, gonder: k.talep.gonder,
+    alanlar: [
+      { ad: 'ad', etiket: k.talep.ad, tur: 'text', ornek: s.basvuru.form.adSoyadOrnek },
+      { ad: 'il', etiket: k.talep.il, tur: 'select', secenekler: iller },
+      { ad: 'diller', etiket: k.talep.diller, tur: 'coklu', secenekler: k.dilSecenekleri },
+      { ad: 'not', etiket: k.talep.not, tur: 'textarea' },
+    ],
+  },
+  {
+    kimlik: 'gonullu', etiket: k.gonulluSekme, gonder: k.gonullu.gonder, not: k.gonullu.egitimNotu,
+    alanlar: [
+      { ad: 'ad', etiket: k.gonullu.ad, tur: 'text', ornek: s.basvuru.form.adSoyadOrnek },
+      { ad: 'cami', etiket: k.gonullu.cami, tur: 'select', secenekler: camiler },
+      { ad: 'diller', etiket: k.gonullu.diller, tur: 'coklu', secenekler: k.dilSecenekleri },
+      { ad: 'siklik', etiket: k.gonullu.siklik, tur: 'select', secenekler: k.gonullu.siklikSecenekler, genis: true },
+      { ad: 'not', etiket: k.gonullu.not, tur: 'textarea' },
+    ],
+  },
+];
+---
+<SayfaBasligi ustEtiket={k.ustEtiket} baslik={k.sayfaBaslik} giris={k.giris} />
+
+<section class="kap py-12 sm:py-14" aria-labelledby="ilkeler-baslik">
+  <h2 id="ilkeler-baslik" class="text-[1.6rem] font-bold sm:text-3xl">{k.ilkelerBaslik}</h2>
+  <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+    {k.ilkeler.map((x, i) => (
+      <li class="kart flex gap-4 p-5">
+        <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#FBEDEC] text-dy-koyu"><Ikon ad={ikonlar[i]} boyut={22} /></span>
+        <div>
+          <h3 class="text-lg font-bold">{x.baslik}</h3>
+          <p class="mt-1">{x.metin}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+
+  <div class="mt-10 rounded-2xl border border-cizgi bg-white p-5 sm:p-6">
+    <h2 class="text-xl font-bold">{k.neYaparBaslik}</h2>
+    <ul class="mt-4 grid gap-2.5 sm:grid-cols-2">
+      {k.neYapar.map((x) => (
+        <li class="flex items-start gap-2.5"><span class="mt-1 text-dy-koyu"><Ikon ad="onay" boyut={18} /></span><span>{x}</span></li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section class="border-t border-cizgi bg-kagit-2" aria-labelledby="ka-form-baslik">
+  <div class="kap py-12 sm:py-14">
+    <div class="flex flex-wrap items-center gap-3">
+      <h2 id="ka-form-baslik" class="text-[1.6rem] font-bold sm:text-3xl">{k.formlarBaslik}</h2>
+      <span class="rozet rozet-ornek">{s.genel.ornek}</span>
+    </div>
+    <p class="mt-3 max-w-2xl">{k.formlarAciklama}</p>
+    <div class="mt-8 max-w-3xl">
+      <KardesAileFormlari client:visible sekmeler={sekmeler} modal={s.modal} seciniz={s.basvuru.form.seciniz} />
+    </div>
+  </div>
+</section>

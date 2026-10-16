@@ -1,0 +1,28 @@
+---
+import SayfaBasligi from '../components/SayfaBasligi.astro';
+import Ikon from '../components/Ikon.astro';
+import BelgeDogrula from '../islands/BelgeDogrula';
+import { DIL_BILGI, type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+import { ORNEK_BELGE } from '../data/etkinlikler';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const s = sozluk(dil);
+const d = s.dogrula;
+const tarih = new Intl.DateTimeFormat(DIL_BILGI[dil].tarihYerel, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Brussels' })
+  .format(new Date(`${ORNEK_BELGE.tarih}T12:00:00Z`));
+const { sayfaBaslik, aciklama: _aciklama, ustEtiket, giris, gizlilikBaslik, gizlilik, ...m } = d;
+---
+<SayfaBasligi ustEtiket={ustEtiket} baslik={sayfaBaslik} giris={giris} />
+
+<section class="kap grid gap-8 py-12 sm:py-14 lg:grid-cols-[1.4fr_1fr]">
+  <div>
+    <BelgeDogrula client:load m={m} ornekNo={ORNEK_BELGE.no} ornekTarih={`${tarih} (${s.genel.ornek})`} />
+  </div>
+  <aside class="kart h-fit bg-[#F2F6F9] p-5 sm:p-6" aria-labelledby="dogrula-gizlilik">
+    <span class="text-bdv"><Ikon ad="kilit" boyut={26} /></span>
+    <h2 id="dogrula-gizlilik" class="mt-2 text-lg font-bold">{gizlilikBaslik}</h2>
+    <p class="mt-2">{gizlilik}</p>
+  </aside>
+</section>

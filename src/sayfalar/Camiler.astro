@@ -1,0 +1,47 @@
+---
+import SayfaBasligi from '../components/SayfaBasligi.astro';
+import Ikon from '../components/Ikon.astro';
+import CamiBulucu from '../islands/CamiBulucu';
+import { DIL_BILGI, type Dil } from '../i18n/diller';
+import { sozluk } from '../i18n';
+import { CAMILER, IL_KODLARI } from '../data/camiler';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const s = sozluk(dil);
+const c = s.camiler;
+const ilSirasi = [...IL_KODLARI].sort((a, b) => c.iller[a].localeCompare(c.iller[b], DIL_BILGI[dil].tarihYerel));
+const {
+  iller, sayfaBaslik, aciklama: _aciklama, ustEtiket, giris, kaynakNot,
+  dostu, dostuBaslik, dostuAciklama, dostuOrnekAd, dostuOrnekYer, dostuOlcutler, ...metin
+} = c;
+---
+<SayfaBasligi ustEtiket={ustEtiket} baslik={sayfaBaslik} giris={giris} />
+
+<section class="kap py-10 sm:py-12">
+  <CamiBulucu client:load camiler={CAMILER} m={metin} iller={iller} ilSirasi={ilSirasi} yerel={DIL_BILGI[dil].tarihYerel} />
+  <p class="mt-8 max-w-3xl text-sm text-dy-gri-koyu">{kaynakNot}</p>
+</section>
+
+<!-- «Mühtedi dostu cami»: yalnız kavram + kurgusal örnek. Hiçbir gerçek camiye bağlanmaz. -->
+<section class="kap pb-14" data-dostu-kavram aria-labelledby="dostu-baslik">
+  <div class="kart grid gap-6 p-5 sm:p-7 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:items-center">
+    <div>
+      <h2 id="dostu-baslik" class="text-xl font-bold sm:text-2xl">{dostuBaslik}</h2>
+      <p class="mt-3 max-w-2xl">{dostuAciklama}</p>
+    </div>
+    <div class="rounded-2xl border-2 border-dashed border-[#9DBBD1] bg-kagit p-4 sm:p-5" data-dostu-ornek>
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <p class="ui text-base font-bold">{dostuOrnekAd}</p>
+        <span class="rozet rozet-ornek">{s.genel.kurgusal}</span>
+      </div>
+      <p class="mt-0.5 text-sm text-dy-gri-koyu">{dostuOrnekYer}</p>
+      <span class="rozet rozet-dostu mt-3 inline-flex items-center gap-1.5"><Ikon ad="kalkan" boyut={16} />{dostu}</span>
+      <ul class="mt-3 grid gap-1.5 text-[0.95rem]">
+        {dostuOlcutler.map((o) => (
+          <li class="flex items-start gap-2"><Ikon ad="onay" boyut={18} class="mt-0.5 shrink-0 text-bdv" /><span>{o}</span></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

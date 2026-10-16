@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+/* Yerel yazı tipleri (Google Fonts yok). Alt küme: Latin + Latin genişletilmiş (Türkçe dâhil). */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-VF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/SourceSerif4-VF.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/fonts/SourceSerif4-Italic-VF.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Kurumsal kimlik: Diyanet kırmızısı, koyu kırmızı, altın, gri, metin, BDV lacivert.
+   Erişilebilirlik: #EE3434 ve #808285 beyaz üzerinde AA metin kontrastı vermez →
+   metin ve düğmelerde koyu kırmızı (#B8231F), ikincil metinde koyu gri (#5C5E61) kullanılır. */
+@theme {
+  --color-dy-kirmizi: #EE3434;
+  --color-dy-koyu: #B8231F;
+  --color-dy-koyu-2: #8F1A17;
+  --color-dy-altin: #84754E;
+  --color-dy-altin-acik: #EFE9DC;
+  --color-dy-altin-koyu: #6B5F3E;
+  --color-dy-gri: #808285;
+  --color-dy-gri-koyu: #5C5E61;
+  --color-dy-metin: #2B2B2B;
+  --color-bdv: #004878;
+  --color-kagit: #FAF7F2;
+  --color-kagit-2: #F3EEE5;
+  --color-cizgi: #E2DACB;
+
+  --font-baslik: "Montserrat", ui-sans-serif, system-ui, "Segoe UI", Arial, sans-serif;
+  --font-govde: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+  body {
+    background: var(--color-kagit);
+    color: var(--color-dy-metin);
+    font-family: var(--font-govde);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, legend, label, button, nav, .ui {
+    font-family: var(--font-baslik);
+  }
+  h1, h2, h3 { line-height: 1.2; letter-spacing: -0.01em; color: var(--color-dy-metin); }
+  a { color: var(--color-dy-koyu); text-underline-offset: 0.18em; }
+  a:hover { color: var(--color-dy-koyu-2); }
+  :focus-visible {
+    outline: 3px solid var(--color-bdv);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  ::selection { background: #F6D5D3; }
+}
+
+@layer components {
+  .kap { width: 100%; max-width: 72rem; margin-inline: auto; padding-inline: 1rem; }
+  @media (min-width: 640px) { .kap { padding-inline: 1.5rem; } }
+
+  .ust-etiket {
+    font-family: var(--font-baslik);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-dy-altin-koyu);
+  }
+  /* #84754E açık zeminde ~4,2:1 kalır → metinde koyu altın #6B5F3E (≥5,8:1) kullanılır */
+
+  .dugme {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    min-height: 2.75rem; padding: 0.625rem 1.25rem; border-radius: 999px;
+    font-family: var(--font-baslik); font-weight: 600; font-size: 0.975rem;
+    text-decoration: none; border: 2px solid transparent; cursor: pointer;
+    transition: background-color .15s, color .15s, border-color .15s;
+  }
+  .dugme-birincil { background: var(--color-dy-koyu); color: #fff; }
+  .dugme-birincil:hover { background: var(--color-dy-koyu-2); color: #fff; }
+  .dugme-ikincil { background: #fff; color: var(--color-dy-koyu); border-color: var(--color-dy-koyu); }
+  .dugme-ikincil:hover { background: #FBEDEC; color: var(--color-dy-koyu-2); }
+  .dugme:disabled, .dugme[aria-disabled="true"] { opacity: .55; cursor: not-allowed; }
+
+  .kart {
+    background: #fff; border: 1px solid var(--color-cizgi); border-radius: 1rem;
+    box-shadow: 0 1px 2px rgba(43, 43, 43, .04);
+  }
+
+  .alan-etiket { display: block; font-family: var(--font-baslik); font-weight: 600; font-size: .9375rem; margin-bottom: .375rem; }
+  .alan-yardim { font-size: .875rem; color: var(--color-dy-gri-koyu); margin-top: .25rem; }
+  .alan {
+    width: 100%; min-height: 2.75rem; padding: .55rem .75rem; border-radius: .625rem;
+    border: 1.5px solid #B9B2A4; background: #fff; color: var(--color-dy-metin);
+    font-family: var(--font-govde); font-size: 1rem;
+  }
+  .alan:focus { border-color: var(--color-bdv); outline: 2px solid var(--color-bdv); outline-offset: 0; }
+  .alan:disabled { background: var(--color-kagit-2); color: var(--color-dy-gri-koyu); cursor: not-allowed; }
+
+  .rozet {
+    display: inline-flex; align-items: center; gap: .3rem; padding: .15rem .6rem; border-radius: 999px;
+    font-family: var(--font-baslik); font-size: .75rem; font-weight: 600; line-height: 1.5;
+  }
+  .rozet-ornek { background: var(--color-dy-altin-acik); color: #5A4F33; border: 1px dashed var(--color-dy-altin); }
+  .rozet-dostu { background: #E6F0F6; color: var(--color-bdv); border: 1px solid #9DBBD1; }
+
+  .metin-akisi > * + * { margin-top: 1rem; }
+}
+
+/* Leaflet konteyneri sayfa yazı tipini kullansın */
+.leaflet-container { font-family: var(--font-baslik); }
