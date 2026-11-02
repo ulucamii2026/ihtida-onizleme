@@ -16,3 +16,5 @@ cikti/
 .impeccable/
 # Yerel proje kuralları dosyası depoya girmez
 CLAUDE.md
+# Yerel, depoya girmeyen denetim listeleri
+.yerel/

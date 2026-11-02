@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "astro dev",
     "check": "astro check",
-    "build": "astro check && astro build",
+    "build": "node scripts/ortak-dogrula.mjs && astro check && astro build",
+    "ortak:dogrula": "node scripts/ortak-dogrula.mjs",
     "preview": "astro preview --port 4410",
     "astro": "astro",
     "test:onizleme": "python scripts/onizleme-testi.py",
