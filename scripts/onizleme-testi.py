@@ -35,6 +35,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import socket
 import subprocess
 import sys
@@ -164,7 +165,9 @@ def panel_ve_uygulama(tarayici, taban, dil, gen, yuk, hatalar, sayac) -> None:
 
     def denetle(etiket: str) -> None:
         sayfa.wait_for_timeout(250)
-        ag = [u for u in istekler if not u.startswith(("data:", "blob:"))]
+        # shortcut: aynı kaynaktaki yazı tipi dosyaları tembel yüklenir (ilk italik metin etkileşimle görünür); veri
+        # göndermez, bu yüzden sayılmaz. Başka her istek yine hata.
+        ag = [u for u in istekler if not u.startswith(("data:", "blob:")) and not re.match(r"^https?://(localhost|127\.0\.0\.1):\d+/fonts/[\w.-]+\.woff2$", u)]
         if ag:
             hatalar.append(f"{etiket}: etkileşimden sonra ağ isteği: {ag[:3]}")
         for h in js:
