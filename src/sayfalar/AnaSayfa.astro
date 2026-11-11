@@ -76,6 +76,16 @@ const nedirIkonlari = ['kurum', 'dunya', 'kilit'] as const;
   </ul>
 </section>
 
+<section class="kap pb-14 sm:pb-16" aria-labelledby="yol-baslik">
+  <div class="kart flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
+    <div class="max-w-2xl">
+      <h2 id="yol-baslik" class="text-[1.4rem] font-bold sm:text-2xl">{s.ogrenmeYolu.anaBaslik}</h2>
+      <p class="mt-1">{s.ogrenmeYolu.anaMetin}</p>
+    </div>
+    <a href={yol(dil, 'ogrenmeYolu')} class="dugme dugme-birincil shrink-0">{s.ogrenmeYolu.anaDugme}<Ikon ad="ok" boyut={18} /></a>
+  </div>
+</section>
+
 <section class="border-y border-cizgi bg-kagit-2" aria-labelledby="nedir-baslik">
   <div class="kap grid gap-10 py-14 sm:py-16 lg:grid-cols-[1fr_1.35fr]">
     <div>

@@ -4,8 +4,8 @@ import { DILLER, DIL_BILGI, yol, varlik, type Dil, type SayfaVeyaAna } from '../
 import { sozluk } from '../i18n';
 import { UST_GEZINTI } from '../lib/gezinti';
 
-interface Props { dil: Dil; sayfa: SayfaVeyaAna }
-const { dil, sayfa } = Astro.props;
+interface Props { dil: Dil; sayfa: SayfaVeyaAna; alt?: string }
+const { dil, sayfa, alt = '' } = Astro.props;
 const s = sozluk(dil);
 ---
 <header class="border-b border-cizgi bg-white/95">
@@ -20,7 +20,7 @@ const s = sozluk(dil);
         {DILLER.map((d) => (
           <li>
             <a
-              href={yol(d, sayfa)}
+              href={yol(d, sayfa, alt)}
               hreflang={DIL_BILGI[d].htmlLang}
               lang={DIL_BILGI[d].htmlLang}
               title={DIL_BILGI[d].ad}
@@ -57,7 +57,7 @@ const s = sozluk(dil);
           <ul class="flex flex-wrap gap-2">
             {DILLER.map((d) => (
               <li>
-                <a href={yol(d, sayfa)} hreflang={DIL_BILGI[d].htmlLang} lang={DIL_BILGI[d].htmlLang}
+                <a href={yol(d, sayfa, alt)} hreflang={DIL_BILGI[d].htmlLang} lang={DIL_BILGI[d].htmlLang}
                   aria-current={d === dil ? 'true' : undefined}
                   class:list={['ui inline-flex min-h-11 items-center rounded-full border px-3 text-sm font-semibold no-underline', d === dil ? 'border-dy-koyu bg-dy-koyu text-white hover:text-white' : 'border-cizgi text-dy-metin']}>
                   {DIL_BILGI[d].ad}

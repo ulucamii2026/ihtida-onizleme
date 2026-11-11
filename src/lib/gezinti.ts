@@ -4,10 +4,10 @@ import { DILLER, type Dil, type Sayfa } from '../i18n/diller';
  * Kamu sitesinin gezinti düzeni (1. faz). 2. fazda personel paneli (/panel/) ve PWA (/app/)
  * kendi gezinti dizilerini buraya `PANEL_GEZINTI` / `APP_GEZINTI` olarak ekler; kamu dizileri değişmez.
  */
-export const UST_GEZINTI: Sayfa[] = ['basvuru', 'ilkAdimlar', 'camiler', 'beniArayin', 'kardesAile', 'etkinlikler', 'dogrula', 'aile'];
+export const UST_GEZINTI: Sayfa[] = ['basvuru', 'ilkAdimlar', 'ogrenmeYolu', 'camiler', 'beniArayin', 'kardesAile', 'etkinlikler', 'dogrula', 'aile'];
 /** «Buluşma anketi» üst gezintide değildir: buluşmanın sonunda QR kodla açılır; alt bilgiden ve Etkinlikler sayfasından bağlanır. */
 export const ALT_GEZINTI: Sayfa[] = [
-  'basvuru', 'ilkAdimlar', 'camiler', 'beniArayin', 'kardesAile', 'etkinlikler', 'anket', 'dogrula', 'aile', 'iletisim', 'gizlilik',
+  'basvuru', 'ilkAdimlar', 'ogrenmeYolu', 'camiler', 'beniArayin', 'kardesAile', 'etkinlikler', 'anket', 'dogrula', 'aile', 'iletisim', 'gizlilik',
 ];
 
 /** Ana sayfadaki altı kutucuğun hedefleri — sözlükteki `ana.kutucuklar` sırasıyla aynı. */

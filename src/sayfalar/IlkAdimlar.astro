@@ -1,7 +1,7 @@
 ---
 import SayfaBasligi from '../components/SayfaBasligi.astro';
 import Ikon from '../components/Ikon.astro';
-import { type Dil } from '../i18n/diller';
+import { yol, type Dil } from '../i18n/diller';
 import { sozluk } from '../i18n';
 
 interface Props { dil: Dil }
@@ -24,6 +24,11 @@ const k = s.ilkAdimlar;
       </li>
     ))}
   </ol>
+
+  <p class="mt-8 flex flex-wrap items-center gap-3">
+    <span>{s.ogrenmeYolu.ilkAdimlarNot}</span>
+    <a href={yol(dil, 'ogrenmeYolu')} class="dugme dugme-ikincil">{s.ogrenmeYolu.anaDugme}<Ikon ad="ok" boyut={18} /></a>
+  </p>
 
   <aside class="mt-10 flex gap-4 rounded-2xl border border-dy-altin/40 bg-dy-altin-acik/50 p-5 sm:p-6" aria-labelledby="ders-notu">
     <span class="mt-0.5 shrink-0 text-dy-altin-koyu"><Ikon ad="kitap" boyut={26} /></span>

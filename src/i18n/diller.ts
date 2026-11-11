@@ -19,6 +19,7 @@ export const DIL_BILGI: Record<Dil, { ad: string; kisa: string; htmlLang: string
 export const SAYFALAR = [
   'basvuru',
   'ilkAdimlar',
+  'ogrenmeYolu',
   'camiler',
   'beniArayin',
   'kardesAile',
@@ -35,23 +36,23 @@ export type SayfaVeyaAna = Sayfa | 'ana';
 /** Yerelleştirilmiş adres parçaları. Değiştirirken testteki yol listesi kendiliğinden güncellenir. */
 export const SLUGLAR: Record<Dil, Record<Sayfa, string>> = {
   tr: {
-    basvuru: 'basvuru', ilkAdimlar: 'ilk-adimlar', camiler: 'cami-bul', beniArayin: 'beni-arayin', kardesAile: 'kardes-aile',
+    basvuru: 'basvuru', ilkAdimlar: 'ilk-adimlar', ogrenmeYolu: 'ogrenme-yolu', camiler: 'cami-bul', beniArayin: 'beni-arayin', kardesAile: 'kardes-aile',
     etkinlikler: 'etkinlikler', anket: 'anket', dogrula: 'belge-dogrula', aile: 'aileler-icin', iletisim: 'iletisim', gizlilik: 'gizlilik',
   },
   fr: {
-    basvuru: 'demande', ilkAdimlar: 'premiers-pas', camiler: 'mosquees', beniArayin: 'contactez-moi', kardesAile: 'accompagnement',
+    basvuru: 'demande', ilkAdimlar: 'premiers-pas', ogrenmeYolu: 'parcours', camiler: 'mosquees', beniArayin: 'contactez-moi', kardesAile: 'accompagnement',
     etkinlikler: 'activites', anket: 'questionnaire', dogrula: 'verifier', aile: 'pour-les-proches', iletisim: 'contact', gizlilik: 'confidentialite',
   },
   nl: {
-    basvuru: 'aanvraag', ilkAdimlar: 'eerste-stappen', camiler: 'moskeeen', beniArayin: 'contacteer-mij', kardesAile: 'buddygezin',
+    basvuru: 'aanvraag', ilkAdimlar: 'eerste-stappen', ogrenmeYolu: 'leerpad', camiler: 'moskeeen', beniArayin: 'contacteer-mij', kardesAile: 'buddygezin',
     etkinlikler: 'activiteiten', anket: 'vragenlijst', dogrula: 'verifieren', aile: 'voor-familie', iletisim: 'contact', gizlilik: 'privacy',
   },
   de: {
-    basvuru: 'antrag', ilkAdimlar: 'erste-schritte', camiler: 'moscheen', beniArayin: 'kontaktwunsch', kardesAile: 'patenfamilie',
+    basvuru: 'antrag', ilkAdimlar: 'erste-schritte', ogrenmeYolu: 'lernweg', camiler: 'moscheen', beniArayin: 'kontaktwunsch', kardesAile: 'patenfamilie',
     etkinlikler: 'veranstaltungen', anket: 'fragebogen', dogrula: 'pruefen', aile: 'fuer-angehoerige', iletisim: 'kontakt', gizlilik: 'datenschutz',
   },
   en: {
-    basvuru: 'application', ilkAdimlar: 'first-steps', camiler: 'mosques', beniArayin: 'contact-me', kardesAile: 'buddy-family',
+    basvuru: 'application', ilkAdimlar: 'first-steps', ogrenmeYolu: 'learning-path', camiler: 'mosques', beniArayin: 'contact-me', kardesAile: 'buddy-family',
     etkinlikler: 'events', anket: 'survey', dogrula: 'verify', aile: 'for-families', iletisim: 'contact', gizlilik: 'privacy',
   },
 };
@@ -59,8 +60,8 @@ export const SLUGLAR: Record<Dil, Record<Sayfa, string>> = {
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 /** Kök göreli adres üretir: yol('fr','basvuru') → '/fr/demande/'. */
-export function yol(dil: Dil, sayfa: SayfaVeyaAna = 'ana'): string {
-  return sayfa === 'ana' ? `${BASE}/${dil}/` : `${BASE}/${dil}/${SLUGLAR[dil][sayfa]}/`;
+export function yol(dil: Dil, sayfa: SayfaVeyaAna = 'ana', alt = ''): string {
+  return sayfa === 'ana' ? `${BASE}/${dil}/` : `${BASE}/${dil}/${SLUGLAR[dil][sayfa]}/${alt ? alt + '/' : ''}`;
 }
 
 /** public/ altındaki bir dosyanın adresini base'e göre üretir. */

@@ -1,0 +1,33 @@
+---
+/**
+ * Öğrenme yolu alt sayfaları: /{dil}/{öğrenme-yolu-slug}/h01/ … h12/ (hafta) ve adim-1/ … adim-8/ (adım).
+ * Kimlikler dilden bağımsızdır; üst sayfa slug'ı SLUGLAR.ogrenmeYolu.
+ */
+import Genel from '../../../layouts/Genel.astro';
+import OgrenmeHaftasi from '../../../sayfalar/OgrenmeHaftasi.astro';
+import OgrenmeAdimi from '../../../sayfalar/OgrenmeAdimi.astro';
+import { DILLER, SLUGLAR, type Dil } from '../../../i18n/diller';
+import { sozluk } from '../../../i18n';
+import { HAFTALAR, ADIMLAR, adimKimligi, m, videoKimligi } from '../../../lib/ogrenme-yolu/yol';
+
+export function getStaticPaths() {
+  return DILLER.flatMap((lang) => [
+    ...HAFTALAR.map((h) => ({ params: { lang, yol: SLUGLAR[lang].ogrenmeYolu, id: h.id }, props: { tur: 'hafta' as const, kimlik: h.id } })),
+    ...ADIMLAR.map((a) => ({ params: { lang, yol: SLUGLAR[lang].ogrenmeYolu, id: adimKimligi(a.no) }, props: { tur: 'adim' as const, kimlik: String(a.no) } })),
+  ]);
+}
+
+const dil = Astro.params.lang as Dil;
+const { tur, kimlik } = Astro.props as { tur: 'hafta' | 'adim'; kimlik: string };
+const s = sozluk(dil);
+const hafta = tur === 'hafta' ? HAFTALAR.find((h) => h.id === kimlik)! : undefined;
+const adim = tur === 'adim' ? ADIMLAR.find((a) => a.no === Number(kimlik))! : undefined;
+const baslik = hafta ? m(hafta.baslik, dil) : m(adim!.baslik, dil);
+const aciklama = hafta ? m(hafta.hedef, dil) : s.ogrenmeYolu.aciklama;
+const alt = hafta ? hafta.id : adimKimligi(adim!.no);
+// Tıklayınca açılan video yalnız videosu olan hafta sayfalarında çerçeve izni alır.
+const frameKaynak = hafta && videoKimligi(hafta, dil) ? 'https://www.youtube-nocookie.com' : undefined;
+---
+<Genel dil={dil} sayfa="ogrenmeYolu" baslik={baslik} aciklama={aciklama} alt={alt} frameKaynak={frameKaynak}>
+  {hafta ? <OgrenmeHaftasi dil={dil} id={hafta.id} /> : <OgrenmeAdimi dil={dil} no={adim!.no} />}
+</Genel>

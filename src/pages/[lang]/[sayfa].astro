@@ -15,6 +15,7 @@ import Iletisim from '../../sayfalar/Iletisim.astro';
 import Gizlilik from '../../sayfalar/Gizlilik.astro';
 import BeniArayin from '../../sayfalar/BeniArayin.astro';
 import Anket from '../../sayfalar/Anket.astro';
+import OgrenmeYolu from '../../sayfalar/OgrenmeYolu.astro';
 import { DILLER, SAYFALAR, SLUGLAR, type Dil, type Sayfa } from '../../i18n/diller';
 import { sozluk } from '../../i18n';
 
@@ -23,7 +24,7 @@ export function getStaticPaths() {
 }
 
 const BILESENLER: Record<Sayfa, typeof Basvuru> = {
-  basvuru: Basvuru, ilkAdimlar: IlkAdimlar, camiler: Camiler, beniArayin: BeniArayin, kardesAile: KardesAile,
+  basvuru: Basvuru, ilkAdimlar: IlkAdimlar, ogrenmeYolu: OgrenmeYolu, camiler: Camiler, beniArayin: BeniArayin, kardesAile: KardesAile,
   etkinlikler: Etkinlikler, anket: Anket, dogrula: Dogrula, aile: Aile, iletisim: Iletisim, gizlilik: Gizlilik,
 };
 

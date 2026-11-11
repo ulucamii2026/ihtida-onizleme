@@ -23,9 +23,11 @@ interface Props {
   bandKapat?: string;
   /** hreflang → mutlak yol (kök göreli) */
   alternatifler?: Record<string, string>;
+  /** CSP `frame-src` kaynağı; yalnız videosu olan sayfalar verir (youtube-nocookie.com), diğerlerinde çerçeve yok. */
+  frameKaynak?: string;
 }
 
-const { htmlLang, baslik, aciklama, bandMetin, bandAciklama, bandKapat, alternatifler = {} } = Astro.props;
+const { htmlLang, baslik, aciklama, bandMetin, bandAciklama, bandKapat, alternatifler = {}, frameKaynak } = Astro.props;
 const sayfaDili = DILLER.find((d) => htmlLang.toLowerCase().startsWith(d)) ?? 'fr';
 const kapatMetni = bandKapat ?? sozluk(sayfaDili).genel.onizlemeKapat;
 const site = Astro.site ?? new URL('https://ihtida.ulucamii.be');
@@ -41,6 +43,7 @@ const csp = [
   "form-action 'none'",
   "base-uri 'self'",
   "object-src 'none'",
+  ...(frameKaynak ? [`frame-src ${frameKaynak}`] : []),
 ].join('; ');
 ---
 <!doctype html>

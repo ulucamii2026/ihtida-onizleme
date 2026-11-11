@@ -1,0 +1,43 @@
+---
+import SayfaBasligi from '../components/SayfaBasligi.astro';
+import IlerlemeBetigi from '../components/IlerlemeBetigi.astro';
+import Ikon from '../components/Ikon.astro';
+import { yol, type Dil } from '../i18n/diller';
+import { sozluk, doldur } from '../i18n';
+import { HAFTALAR, ADIMLAR, m, adimHaftalari } from '../lib/ogrenme-yolu/yol';
+
+interface Props { dil: Dil; no: number }
+const { dil, no } = Astro.props;
+const k = sozluk(dil).ogrenmeYolu;
+const adim = ADIMLAR.find((a) => a.no === no)!;
+const haftalar = adimHaftalari(no);
+const kimlikler = haftalar.map((h) => h.id).join(',');
+---
+<SayfaBasligi ustEtiket={`${k.adimEtiketi} ${no} / ${ADIMLAR.length}`} baslik={m(adim.baslik, dil)} />
+
+<section class="kap py-10 sm:py-12" aria-labelledby="adim-haftalar">
+  <nav aria-label={k.sayfaBaslik} class="ui mb-6 text-sm"><a href={yol(dil, 'ogrenmeYolu')}>← {k.sayfaBaslik}</a></nav>
+  <div class="kart p-5" data-ilerleme={kimlikler}>
+    <p class="ui font-bold" id="ilerleme-yazi" data-ilerleme-metin data-kalip={k.ilerlemeKalibi}>{doldur(k.ilerlemeKalibi, { n: 0, m: haftalar.length })}</p>
+    <progress class="mt-2 w-full" style="accent-color: var(--color-bdv)" max={haftalar.length} value="0" aria-labelledby="ilerleme-yazi"></progress>
+  </div>
+  <h2 id="adim-haftalar" class="mt-8 text-2xl font-bold">{k.adimdakiHaftalar}</h2>
+  <ul class="mt-5 grid gap-4 sm:grid-cols-2">
+    {haftalar.map((h) => (
+      <li>
+        <a href={yol(dil, 'ogrenmeYolu', h.id)} class="kart flex h-full flex-col p-5 text-dy-metin no-underline hover:border-[#D9B7B3]">
+          <span class="ui flex items-center justify-between text-sm font-bold text-dy-altin-koyu">
+            <span class="tracking-[0.06em] uppercase">{k.haftaEtiketi} {HAFTALAR.indexOf(h) + 1}</span>
+            <span data-durum-hafta={h.id} class="inline-flex items-center gap-1 text-bdv">
+              <span class="durum-tamam inline-flex items-center gap-1" hidden><Ikon ad="onay" boyut={18} />{k.tamamlandi}</span>
+              <span class="durum-bos sr-only">{k.baslanmadi}</span>
+            </span>
+          </span>
+          <span class="ui mt-2 block text-lg font-bold">{m(h.baslik, dil)}</span>
+          <span class="mt-2 block text-[0.975rem] text-dy-metin/85">{m(h.hedef, dil)}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+<IlerlemeBetigi />

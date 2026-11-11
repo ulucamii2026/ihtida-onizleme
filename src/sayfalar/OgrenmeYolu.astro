@@ -1,0 +1,82 @@
+---
+import SayfaBasligi from '../components/SayfaBasligi.astro';
+import IlerlemeBetigi from '../components/IlerlemeBetigi.astro';
+import Ikon from '../components/Ikon.astro';
+import { yol, type Dil } from '../i18n/diller';
+import { sozluk, doldur } from '../i18n';
+import { YOL, HAFTALAR, ADIMLAR, m, adimKimligi, adimHaftalari, adimaGore } from '../lib/ogrenme-yolu/yol';
+
+interface Props { dil: Dil }
+const { dil } = Astro.props;
+const k = sozluk(dil).ogrenmeYolu;
+const taslakVar = HAFTALAR.some((h) => h.durum[dil] === 'taslak');
+const kimlikler = HAFTALAR.map((h) => h.id).join(',');
+---
+<SayfaBasligi ustEtiket={k.ustEtiket} baslik={k.sayfaBaslik} giris={m(YOL.giris, dil)} />
+
+<section class="kap py-10 sm:py-12" aria-labelledby="haftalar-baslik">
+  <div class="kart p-5 sm:p-6" data-ilerleme={kimlikler}>
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <p class="ui text-lg font-bold" id="ilerleme-yazi" data-ilerleme-metin data-kalip={k.ilerlemeKalibi}>{doldur(k.ilerlemeKalibi, { n: 0, m: HAFTALAR.length })}</p>
+      <button type="button" class="dugme dugme-ikincil text-sm" data-isaretleri-sil>{k.isaretleriSil}</button>
+    </div>
+    <progress class="ilerleme mt-3 w-full" max={HAFTALAR.length} value="0" aria-labelledby="ilerleme-yazi"></progress>
+    <p class="alan-yardim mt-3">{k.cihazNotu}</p>
+  </div>
+  {taslakVar && (
+    <p class="mt-4 flex items-start gap-2 rounded-xl border border-dy-altin/40 bg-dy-altin-acik/50 p-4 text-[0.95rem]" role="note">
+      <span class="rozet rozet-ornek shrink-0">{k.taslak}</span><span>{k.taslakNot}</span>
+    </p>
+  )}
+
+  <h2 id="haftalar-baslik" class="mt-10 text-[1.65rem] font-bold sm:text-3xl">{k.haftalarBaslik}</h2>
+  <ol class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {HAFTALAR.map((h, i) => (
+      <li>
+        <a href={yol(dil, 'ogrenmeYolu', h.id)} class="kutucuk kart group flex h-full flex-col p-5 text-dy-metin no-underline sm:p-6">
+          <span class="ui flex items-center justify-between gap-2 text-sm font-bold text-dy-altin-koyu">
+            <span class="inline-flex items-center gap-2">
+              <span class="inline-flex h-8 min-w-8 items-center justify-center rounded-full bg-dy-altin-acik px-2" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <span class="tracking-[0.06em] uppercase">{k.haftaEtiketi} {i + 1}</span>
+            </span>
+            <span data-durum-hafta={h.id} class="inline-flex items-center gap-1 text-bdv">
+              <span class="durum-tamam inline-flex items-center gap-1" hidden><Ikon ad="onay" boyut={18} />{k.tamamlandi}</span>
+              <span class="durum-bos sr-only">{k.baslanmadi}</span>
+            </span>
+          </span>
+          <span class="ui mt-3 block text-lg font-bold group-hover:text-dy-koyu">{m(h.baslik, dil)}</span>
+          <span class="mt-2 block text-[0.975rem] text-dy-metin/85">{m(h.hedef, dil)}</span>
+          <span class="ui mt-3 block text-[0.8rem] font-semibold text-dy-gri-koyu">{k.adimEtiketi} {h.adim} · {m(adimaGore(h).baslik, dil)}</span>
+        </a>
+      </li>
+    ))}
+  </ol>
+
+  <h2 id="adimlar-baslik" class="mt-14 text-[1.65rem] font-bold sm:text-3xl">{k.adimlarBaslik}</h2>
+  <p class="mt-3 max-w-2xl">{k.adimlarGiris}</p>
+  <ol class="mt-6 grid gap-3 sm:grid-cols-2">
+    {ADIMLAR.map((a) => (
+      <li>
+        <a href={yol(dil, 'ogrenmeYolu', adimKimligi(a.no))} class="kutucuk kart flex h-full items-start gap-4 p-4 text-dy-metin no-underline">
+          <span class="ui inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-bdv text-sm font-bold text-white" aria-hidden="true">{a.no}</span>
+          <span>
+            <span class="ui block font-bold"><span class="sr-only">{k.adimEtiketi} {a.no}: </span>{m(a.baslik, dil)}</span>
+            <span class="ui mt-1 block text-[0.8rem] font-semibold text-dy-gri-koyu">{adimHaftalari(a.no).map((h) => `${k.haftaEtiketi} ${HAFTALAR.indexOf(h) + 1}`).join(' · ')}</span>
+          </span>
+        </a>
+      </li>
+    ))}
+  </ol>
+
+  <p class="mt-10 flex flex-wrap items-center gap-3">
+    <span>{k.platformMetin}</span>
+    <a href={`https://egitim.ulucamii.be/${dil}/yollar/`} rel="noopener noreferrer" target="_blank" class="dugme dugme-ikincil">{k.platformDugme}<Ikon ad="ok" boyut={18} /></a>
+  </p>
+</section>
+<IlerlemeBetigi />
+
+<style>
+  .kutucuk { transition: border-color .15s, box-shadow .15s; }
+  .kutucuk:hover { border-color: #D9B7B3; box-shadow: 0 6px 18px rgba(184, 35, 31, .08); }
+  .ilerleme { height: .75rem; border-radius: 999px; accent-color: var(--color-bdv); }
+</style>

@@ -1,0 +1,1844 @@
+{
+  "surum": 1,
+  "giris": {
+    "tr": "Bu yol, yeni Müslüman olanlar için 12 haftalık sade bir çalışma önerisidir. Her haftada kısa bir metin, küçük bir uygulama ve iki soru vardır. Sırayı kendi ihtiyacınıza göre değiştirebilirsiniz. Önemli: öğrenmeyi haftalara bölmek, ibadet sorumluluklarının ertelendiği anlamına gelmez; ibadetleri öğrenirken ilk günden bir din görevlisinden uygulamalı destek isteyin. Bu içerik bir öğrenme önerisidir, bireysel dinî sorularınızın yerini tutmaz. Soru sormaktan çekinmeyin; baskı yok, acele yok.",
+    "fr": "Ce parcours est une proposition de travail en 12 semaines pour les personnes qui viennent de devenir musulmanes. Chaque semaine comprend un court texte, un petit exercice et deux questions. Vous pouvez changer l’ordre selon vos besoins. Important : organiser l’apprentissage par semaines ne signifie pas reporter les obligations religieuses ; pour apprendre les pratiques, demandez dès le premier jour une aide pratique à l’imam. Ce contenu est une proposition d’étude et ne remplace pas vos questions religieuses personnelles. N’hésitez pas à poser vos questions : pas de pression, pas de hâte.",
+    "en": "This path is a simple 12-week study suggestion for people who have recently become Muslim. Each week has a short text, a small practice and two questions. You may change the order to suit your needs. Important: dividing the learning into weeks does not mean postponing religious obligations; as you learn the acts of worship, ask an imam for hands-on support from the first day. This content is a learning suggestion and does not replace your personal religious questions. Please do not hesitate to ask questions: no pressure, no rush.",
+    "nl": "Deze weg is een eenvoudig studievoorstel van 12 weken voor mensen die onlangs moslim zijn geworden. Elke week bevat een korte tekst, een kleine oefening en twee vragen. Je mag de volgorde aanpassen aan je behoeften. Belangrijk: het leren in weken indelen betekent niet dat religieuze verplichtingen worden uitgesteld; vraag vanaf de eerste dag praktische hulp aan een imam bij het leren van de geloofspraktijk. Deze inhoud is een leervoorstel en vervangt je persoonlijke religieuze vragen niet. Aarzel niet om vragen te stellen: geen druk, geen haast.",
+    "de": "Dieser Weg ist ein einfacher 12-Wochen-Lernvorschlag für Menschen, die kürzlich Musliminnen oder Muslime geworden sind. Jede Woche enthält einen kurzen Text, eine kleine Übung und zwei Fragen. Sie können die Reihenfolge Ihren Bedürfnissen anpassen. Wichtig: Das Lernen in Wochen einzuteilen bedeutet nicht, religiöse Pflichten aufzuschieben; bitten Sie beim Erlernen der religiösen Praxis von Anfang an um praktische Unterstützung einer Lehrperson. Dieser Inhalt ist ein Lernvorschlag und ersetzt Ihre persönlichen religiösen Fragen nicht. Zögern Sie nicht zu fragen: kein Druck, keine Eile."
+  },
+  "adimlar": [
+    {
+      "no": 1,
+      "baslik": {
+        "tr": "İlk adım: İslâm ve kelime-i şehâdet",
+        "fr": "Premiers pas : l’islam et la chahada",
+        "en": "First steps: Islam and the shahada",
+        "nl": "Eerste stappen: islam en de geloofsgetuigenis",
+        "de": "Erste Schritte: Islam und Glaubensbekenntnis"
+      }
+    },
+    {
+      "no": 2,
+      "baslik": {
+        "tr": "İmanın esasları ve anlamı",
+        "fr": "Comprendre les fondements de la foi",
+        "en": "Understanding the foundations of belief",
+        "nl": "De grondslagen van het geloof begrijpen",
+        "de": "Die Glaubensgrundlagen verstehen"
+      }
+    },
+    {
+      "no": 3,
+      "baslik": {
+        "tr": "Temizlik, abdest ve gusül",
+        "fr": "Propreté, ablutions et grande ablution",
+        "en": "Cleanliness, wudu and ghusl",
+        "nl": "Reinheid, woedoe en ghoesl",
+        "de": "Reinheit, Gebetswaschung und Ganzwaschung"
+      }
+    },
+    {
+      "no": 4,
+      "baslik": {
+        "tr": "Namazı adım adım öğrenme",
+        "fr": "Apprendre la prière pas à pas",
+        "en": "Learning prayer step by step",
+        "nl": "Het gebed stap voor stap leren",
+        "de": "Das Gebet Schritt für Schritt lernen"
+      }
+    },
+    {
+      "no": 5,
+      "baslik": {
+        "tr": "Arap harflerinden Kur’an okumaya",
+        "fr": "Des lettres arabes à la lecture du Coran",
+        "en": "From Arabic letters to reading the Qur’an",
+        "nl": "Van Arabische letters naar Koran lezen",
+        "de": "Von arabischen Buchstaben zum Koranlesen"
+      }
+    },
+    {
+      "no": 6,
+      "baslik": {
+        "tr": "Sûreler, dualar ve anlamları",
+        "fr": "Sourates, invocations et compréhension",
+        "en": "Surahs, supplications and their meanings",
+        "nl": "Soera’s, smeekbeden en betekenissen",
+        "de": "Suren, Bittgebete und ihre Bedeutung"
+      }
+    },
+    {
+      "no": 7,
+      "baslik": {
+        "tr": "Oruç, paylaşma ve diğer ibadetler",
+        "fr": "Jeûne, partage et autres adorations",
+        "en": "Fasting, giving and other worship",
+        "nl": "Vasten, delen en andere aanbidding",
+        "de": "Fasten, Teilen und weitere Gottesdienste"
+      }
+    },
+    {
+      "no": 8,
+      "baslik": {
+        "tr": "Peygamberimizin örnekliği ve günlük hayat",
+        "fr": "L’exemple du Prophète et la vie quotidienne",
+        "en": "The Prophet’s example and everyday life",
+        "nl": "Het voorbeeld van de Profeet in het dagelijks leven",
+        "de": "Das Vorbild des Propheten und der Alltag"
+      }
+    }
+  ],
+  "haftalar": [
+    {
+      "id": "h01",
+      "adim": 1,
+      "baslik": {
+        "tr": "Hoş geldiniz ve ilk adımlar",
+        "fr": "Bienvenue et premiers pas",
+        "en": "Welcome and first steps",
+        "nl": "Welkom en eerste stappen",
+        "de": "Willkommen und erste Schritte"
+      },
+      "hedef": {
+        "tr": "Şehâdetin anlamını kendi cümlelerinizle anlatabilmek.",
+        "fr": "Pouvoir expliquer le sens de la chahada avec vos propres mots.",
+        "en": "Being able to explain the meaning of the shahada in your own words.",
+        "nl": "De betekenis van de sjahada in je eigen woorden kunnen uitleggen.",
+        "de": "Die Bedeutung der Schahada mit eigenen Worten erklären können."
+      },
+      "metin": {
+        "tr": "Hoş geldiniz. Bildiklerinizi kanıtlamanız gerekmiyor; bir soruyu cevaplamak istemediğinizde bunu söyleyebilirsiniz. İslâm’da Allah’ın birliği temel esastır. Kelime-i şehâdet, Allah’tan başka ilâh olmadığına ve Muhammed’in O’nun kulu ve elçisi olduğuna inanmayı ifade eder: أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ (Ashhadu an lā ilāha illā-llāh, wa ashhadu anna Muḥammadan ʿabduhū wa rasūluh). İman, ibadet ve güzel ahlâk birlikte ele alınır; namaz İslâm’ın temel ibadetlerindendir. İnanç zorlamayla oluşmaz. Ailenizle inançlarınız farklı olsa da anne babaya iyi davranmak önemlidir; bu, tehlikeli bir durumda kalmanız demek değildir. Güvenliğinizle ilgili kaygınız varsa güvendiğiniz biriyle paylaşın; özel ayrıntıları anlatmak zorunda değilsiniz.",
+        "fr": "Bienvenue. Vous n’avez pas à prouver ce que vous savez ; vous pouvez dire que vous préférez ne pas répondre à une question. L’unicité de Dieu est un principe fondamental de l’islam. La chahada exprime la croyance qu’il n’y a de divinité que Dieu et que Muhammad est Son serviteur et Son messager : أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ (Ashhadu an lā ilāha illā-llāh, wa ashhadu anna Muḥammadan ʿabduhū wa rasūluh). La foi, les pratiques et le bon comportement vont ensemble ; la prière rituelle fait partie des pratiques fondamentales. La foi ne se construit pas par la contrainte. Même si vos convictions diffèrent de celles de vos parents, bien vous comporter envers eux reste important ; cela ne signifie pas rester dans une situation dangereuse. Si votre sécurité vous inquiète, parlez-en à une personne de confiance.",
+        "en": "Welcome. You do not have to prove what you know, and you may say you would rather not answer a question. The oneness of God is a fundamental principle of Islam. The shahada expresses belief that there is no deity but God and that Muhammad is His servant and messenger: أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ (Ashhadu an lā ilāha illā-llāh, wa ashhadu anna Muḥammadan ʿabduhū wa rasūluh). Faith, worship and good conduct belong together; ritual prayer is one of Islam’s fundamental practices. Faith cannot be created by force. Treating your parents well remains important even when your beliefs differ; this does not mean staying in a dangerous situation. If you worry about your safety, talk to someone you trust; you do not have to share private details.",
+        "nl": "Welkom. Je hoeft niet te bewijzen wat je weet en je mag aangeven dat je een vraag liever niet beantwoordt. De eenheid van God is een grondbeginsel van de islam. De sjahada drukt het geloof uit dat er geen god is behalve God en dat Mohammed Zijn dienaar en boodschapper is: أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ (Ashhadu an lā ilāha illā-llāh, wa ashhadu anna Muḥammadan ʿabduhū wa rasūluh). Geloof, aanbidding en goed gedrag horen bij elkaar; het rituele gebed is een van de fundamentele praktijken. Geloof kan niet door dwang ontstaan. Goed omgaan met je ouders blijft belangrijk, ook als jullie overtuigingen verschillen; dat betekent niet dat je in een gevaarlijke situatie moet blijven. Maak je je zorgen over je veiligheid, praat dan met iemand die je vertrouwt; je hoeft geen privédetails te delen.",
+        "de": "Willkommen. Sie müssen Ihr Wissen nicht beweisen und dürfen sagen, dass Sie eine Frage lieber nicht beantworten. Die Einheit Gottes ist ein Grundprinzip des Islams. Die Schahada bringt den Glauben zum Ausdruck, dass es keinen Gott außer Gott gibt und dass Muhammad Sein Diener und Gesandter ist: أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ (Ashhadu an lā ilāha illā-llāh, wa ashhadu anna Muḥammadan ʿabduhū wa rasūluh). Glaube, Gottesdienst und gutes Verhalten gehören zusammen; das rituelle Gebet zählt zu den grundlegenden Handlungen. Glaube lässt sich nicht erzwingen. Ein guter Umgang mit den Eltern bleibt auch bei unterschiedlichen Überzeugungen wichtig; das heißt nicht, in einer gefährlichen Lage zu bleiben. Wenn Sie um Ihre Sicherheit besorgt sind, sprechen Sie mit einer Vertrauensperson; private Einzelheiten müssen Sie nicht erzählen."
+      },
+      "yap": {
+        "tr": "Şehâdetin anlamını üç cümleyle yazın ve aklınızdaki iki soruyu not edin. Sorularınızı isimsiz de iletebilirsiniz.",
+        "fr": "Écrivez le sens de la chahada en trois phrases et notez deux questions. Vous pouvez aussi les transmettre sans indiquer votre nom.",
+        "en": "Write the meaning of the shahada in three sentences and note two questions. You may also pass them on without your name.",
+        "nl": "Schrijf de betekenis van de sjahada in drie zinnen op en noteer twee vragen. Je mag ze ook zonder naam doorgeven.",
+        "de": "Schreiben Sie die Bedeutung der Schahada in drei Sätzen auf und notieren Sie zwei Fragen. Sie können sie auch ohne Namen weitergeben."
+      },
+      "sorular": [
+        {
+          "id": "h01-1",
+          "soru": {
+            "tr": "Kelime-i şehâdetin iki temel unsuru nedir?",
+            "fr": "Quels sont les deux éléments essentiels de la chahada ?",
+            "en": "What are the two essential parts of the shahada?",
+            "nl": "Wat zijn de twee kernelementen van de sjahada?",
+            "de": "Was sind die beiden Kernelemente der Schahada?"
+          },
+          "siklar": [
+            {
+              "tr": "Allah’ın birliği; Muhammed’in O’nun kulu ve elçisi olması",
+              "fr": "L’unicité de Dieu ; Muhammad, Son serviteur et messager",
+              "en": "The oneness of God; Muhammad as His servant and messenger",
+              "nl": "De eenheid van God; Mohammed als Zijn dienaar en boodschapper",
+              "de": "Die Einheit Gottes; Muhammad als Sein Diener und Gesandter"
+            },
+            {
+              "tr": "Namaz vakitleri ve abdest",
+              "fr": "Les horaires de prière et les ablutions",
+              "en": "Prayer times and ablution",
+              "nl": "Gebedstijden en rituele wassing",
+              "de": "Gebetszeiten und Gebetswaschung"
+            },
+            {
+              "tr": "Oruç ve zekât",
+              "fr": "Le jeûne et l’aumône légale",
+              "en": "Fasting and zakat",
+              "nl": "Vasten en zakat",
+              "de": "Fasten und Zakat"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "TDV İslâm Ansiklopedisi, Kelime-i Şehâdet (K2)"
+        },
+        {
+          "id": "h01-2",
+          "soru": {
+            "tr": "Ailenizle inancınız farklıysa hangi ifade doğrudur?",
+            "fr": "Si votre foi diffère de celle de votre famille, quelle phrase est juste ?",
+            "en": "If your faith differs from your family’s, which statement is right?",
+            "nl": "Als je geloof verschilt van dat van je familie, welke uitspraak klopt dan?",
+            "de": "Wenn sich Ihr Glaube von dem Ihrer Familie unterscheidet, welche Aussage stimmt?"
+          },
+          "siklar": [
+            {
+              "tr": "Anne babaya iyi davranmak yine önemlidir",
+              "fr": "Bien se comporter envers ses parents reste important",
+              "en": "Treating your parents well still matters",
+              "nl": "Goed omgaan met je ouders blijft belangrijk",
+              "de": "Ein guter Umgang mit den Eltern bleibt wichtig"
+            },
+            {
+              "tr": "İlişkiyi tamamen kesmek gerekir",
+              "fr": "Il faut rompre toute relation",
+              "en": "You must cut all contact",
+              "nl": "Je moet alle contact verbreken",
+              "de": "Man muss den Kontakt völlig abbrechen"
+            },
+            {
+              "tr": "Hiçbir şey söylememek gerekir",
+              "fr": "Il ne faut rien dire",
+              "en": "You must say nothing",
+              "nl": "Je moet niets zeggen",
+              "de": "Man darf nichts sagen"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "Lokmân 31/14–15 (K5)"
+        }
+      ],
+      "kaynaklar": [
+        {
+          "ad": {
+            "tr": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet",
+            "fr": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet",
+            "en": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet",
+            "nl": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet",
+            "de": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet"
+          },
+          "url": "https://islamansiklopedisi.org.tr/kelime-i-sehadet"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet · Kur’an Yolu — İhlâs 112/1",
+            "fr": "Diyanet · Kur’an Yolu — İhlâs 112/1",
+            "en": "Diyanet · Kur’an Yolu — İhlâs 112/1",
+            "nl": "Diyanet · Kur’an Yolu — İhlâs 112/1",
+            "de": "Diyanet · Kur’an Yolu — İhlâs 112/1"
+          },
+          "url": "https://kuran.diyanet.gov.tr/tefsir/%C4%B0hl%C3%A2s-suresi/6222/1-ayet-tefsiri"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet · Kur’an Yolu — Bakara 2/256",
+            "fr": "Diyanet · Kur’an Yolu — Bakara 2/256",
+            "en": "Diyanet · Kur’an Yolu — Bakara 2/256",
+            "nl": "Diyanet · Kur’an Yolu — Bakara 2/256",
+            "de": "Diyanet · Kur’an Yolu — Bakara 2/256"
+          },
+          "url": "https://kuran.diyanet.gov.tr/tefsir/Bakara-suresi/263/256-ayet-tefsiri"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet · Kur’an Yolu — Lokmân 31/14–15",
+            "fr": "Diyanet · Kur’an Yolu — Lokmân 31/14–15",
+            "en": "Diyanet · Kur’an Yolu — Lokmân 31/14–15",
+            "nl": "Diyanet · Kur’an Yolu — Lokmân 31/14–15",
+            "de": "Diyanet · Kur’an Yolu — Lokmân 31/14–15"
+          },
+          "url": "https://kuran.diyanet.gov.tr/tefsir/Lokm%C3%A2n-suresi/3483/14-15-ayet-tefsiri"
+        }
+      ],
+      "video": {
+        "tr": "tX_NMZjTSc8",
+        "en": "RLKYz_hjZeA"
+      },
+      "durum": {
+        "tr": "taslak",
+        "fr": "taslak",
+        "en": "taslak",
+        "nl": "taslak",
+        "de": "taslak"
+      }
+    },
+    {
+      "id": "h02",
+      "adim": 2,
+      "baslik": {
+        "tr": "Allah’a iman",
+        "fr": "La foi en Dieu",
+        "en": "Belief in God",
+        "nl": "Geloof in God",
+        "de": "Der Glaube an Gott"
+      },
+      "hedef": {
+        "tr": "İmanın altı esasını ve Allah’a imanın anlamını tanımak.",
+        "fr": "Connaître les six articles de foi et le sens de la foi en Dieu.",
+        "en": "Getting to know the six articles of faith and what belief in God means.",
+        "nl": "De zes geloofsartikelen en de betekenis van geloof in God leren kennen.",
+        "de": "Die sechs Glaubensartikel und die Bedeutung des Glaubens an Gott kennenlernen."
+      },
+      "metin": {
+        "tr": "Allah’a iman, Allah’ın var ve bir olduğuna, eşi ve benzeri bulunmadığına inanmaktır. İhlâs sûresi bu birliği kısa ve açık biçimde anlatır. İmanın esasları şunlardır: Allah’a, meleklerine, kitaplarına, peygamberlerine, âhiret gününe ve kadere iman. Bu başlıkları ezberlemekten çok anlamaya çalışın; her biri güven, şükür ve sorumluluk duygusuyla hayata dokunur. Zorlandığınız bir kavramı geçiştirmeyin: soru sormak, anlamaya çalışmanın doğal bir parçasıdır. Dinleyip okuduktan sonra öğrendiğinizi kendi cümlelerinizle söylemeyi deneyin.",
+        "fr": "La foi en Dieu, c’est croire qu’Il existe, qu’Il est unique et qu’Il n’a ni associé ni semblable. La sourate Al-Ikhlas l’exprime de façon courte et claire. Les articles de foi sont : croire en Dieu, en Ses anges, en Ses livres, en Ses prophètes, au Jour dernier et au destin. Cherchez à comprendre ces notions plutôt qu’à les réciter : chacune touche la vie par la confiance, la gratitude et la responsabilité. Ne passez pas sur une notion difficile : poser des questions fait partie de la compréhension. Après avoir lu ou écouté, essayez de redire l’essentiel avec vos propres mots.",
+        "en": "Belief in God means believing that God exists, is one, and has no partner or equal. Surah al-Ikhlas expresses this oneness briefly and clearly. The articles of faith are: belief in God, His angels, His books, His prophets, the Last Day and divine decree. Try to understand these ideas rather than only memorise them; each touches daily life through trust, gratitude and responsibility. Do not skip over a difficult idea: asking questions is a natural part of understanding. After reading or listening, try to say the main point in your own words.",
+        "nl": "Geloof in God betekent geloven dat God bestaat, één is en geen deelgenoot of gelijke heeft. Soera al-Ikhlas verwoordt die eenheid kort en helder. De geloofsartikelen zijn: geloof in God, Zijn engelen, Zijn boeken, Zijn profeten, de Laatste Dag en de goddelijke beschikking. Probeer deze begrippen te begrijpen in plaats van ze alleen te onthouden; elk raakt het dagelijks leven via vertrouwen, dankbaarheid en verantwoordelijkheid. Sla een moeilijk begrip niet over: vragen stellen hoort bij begrijpen. Probeer na het lezen of luisteren de kern in je eigen woorden te zeggen.",
+        "de": "Der Glaube an Gott bedeutet, daran zu glauben, dass Gott existiert, einzig ist und weder Teilhaber noch Gleichen hat. Die Sure al-Ichlas bringt diese Einheit kurz und klar zum Ausdruck. Die Glaubensartikel sind: der Glaube an Gott, Seine Engel, Seine Bücher, Seine Propheten, den Jüngsten Tag und die göttliche Bestimmung. Versuchen Sie, diese Begriffe zu verstehen, statt sie nur auswendig zu lernen; jeder berührt den Alltag durch Vertrauen, Dankbarkeit und Verantwortung. Übergehen Sie Schwieriges nicht: Fragen gehören zum Verstehen. Versuchen Sie nach dem Lesen oder Hören, das Wesentliche mit eigenen Worten zu sagen."
+      },
+      "yap": {
+        "tr": "Altı iman esasını bir kâğıda yazın; birini kendi cümlenizle açıklayın.",
+        "fr": "Écrivez les six articles de foi et expliquez-en un avec vos propres mots.",
+        "en": "Write down the six articles of faith and explain one in your own words.",
+        "nl": "Schrijf de zes geloofsartikelen op en leg er één in eigen woorden uit.",
+        "de": "Schreiben Sie die sechs Glaubensartikel auf und erklären Sie einen mit eigenen Worten."
+      },
+      "sorular": [
+        {
+          "id": "h02-1",
+          "soru": {
+            "tr": "İhlâs sûresinin ana konusu nedir?",
+            "fr": "Quel est le thème central de la sourate Al-Ikhlas ?",
+            "en": "What is the main theme of Surah al-Ikhlas?",
+            "nl": "Wat is het hoofdthema van soera al-Ikhlas?",
+            "de": "Was ist das Hauptthema der Sure al-Ichlas?"
+          },
+          "siklar": [
+            {
+              "tr": "Allah’ın birliği",
+              "fr": "L’unicité de Dieu",
+              "en": "The oneness of God",
+              "nl": "De eenheid van God",
+              "de": "Die Einheit Gottes"
+            },
+            {
+              "tr": "Orucun şartları",
+              "fr": "Les conditions du jeûne",
+              "en": "The conditions of fasting",
+              "nl": "De voorwaarden van het vasten",
+              "de": "Die Bedingungen des Fastens"
+            },
+            {
+              "tr": "Abdestin farzları",
+              "fr": "Les obligations des ablutions",
+              "en": "The obligatory parts of ablution",
+              "nl": "De verplichte onderdelen van de wassing",
+              "de": "Die Pflichtteile der Gebetswaschung"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "İhlâs 112/1 (K1)"
+        },
+        {
+          "id": "h02-2",
+          "soru": {
+            "tr": "Aşağıdakilerden hangisi imanın esaslarından biridir?",
+            "fr": "Lequel de ces points est un article de foi ?",
+            "en": "Which of these is an article of faith?",
+            "nl": "Welke van deze is een geloofsartikel?",
+            "de": "Welcher dieser Punkte ist ein Glaubensartikel?"
+          },
+          "siklar": [
+            {
+              "tr": "Abdest almak",
+              "fr": "Faire les ablutions",
+              "en": "Performing ablution",
+              "nl": "De rituele wassing verrichten",
+              "de": "Die Gebetswaschung verrichten"
+            },
+            {
+              "tr": "Sadaka vermek",
+              "fr": "Donner l’aumône",
+              "en": "Giving charity",
+              "nl": "Liefdadigheid geven",
+              "de": "Almosen geben"
+            },
+            {
+              "tr": "Âhiret gününe iman",
+              "fr": "Croire au Jour dernier",
+              "en": "Belief in the Last Day",
+              "nl": "Geloof in de Laatste Dag",
+              "de": "Der Glaube an den Jüngsten Tag"
+            }
+          ],
+          "dogru": 2,
+          "kaynak": "Sahîh-i Müslim 8a (K3)"
+        }
+      ],
+      "kaynaklar": [
+        {
+          "ad": {
+            "tr": "Diyanet · Kur’an Yolu — İhlâs 112/1",
+            "fr": "Diyanet · Kur’an Yolu — İhlâs 112/1",
+            "en": "Diyanet · Kur’an Yolu — İhlâs 112/1",
+            "nl": "Diyanet · Kur’an Yolu — İhlâs 112/1",
+            "de": "Diyanet · Kur’an Yolu — İhlâs 112/1"
+          },
+          "url": "https://kuran.diyanet.gov.tr/tefsir/%C4%B0hl%C3%A2s-suresi/6222/1-ayet-tefsiri"
+        },
+        {
+          "ad": {
+            "tr": "Sahîh-i Müslim 8a (Cibrîl hadisi)",
+            "fr": "Sahîh-i Müslim 8a (Cibrîl hadisi)",
+            "en": "Sahîh-i Müslim 8a (Cibrîl hadisi)",
+            "nl": "Sahîh-i Müslim 8a (Cibrîl hadisi)",
+            "de": "Sahîh-i Müslim 8a (Cibrîl hadisi)"
+          },
+          "url": "https://sunnah.com/muslim:8a"
+        },
+        {
+          "ad": {
+            "tr": "TDV İslâm Ansiklopedisi — İman",
+            "fr": "TDV İslâm Ansiklopedisi — İman",
+            "en": "TDV İslâm Ansiklopedisi — İman",
+            "nl": "TDV İslâm Ansiklopedisi — İman",
+            "de": "TDV İslâm Ansiklopedisi — İman"
+          },
+          "url": "https://islamansiklopedisi.org.tr/iman"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)",
+            "fr": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)",
+            "en": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)",
+            "nl": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)",
+            "de": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)"
+          },
+          "url": "https://dijital.diyanet.gov.tr/File/Download?path=3624_1.pdf&id=3624"
+        }
+      ],
+      "video": {
+        "tr": "sST704CV290",
+        "en": "rHxw7Y8Fcuo"
+      },
+      "durum": {
+        "tr": "taslak",
+        "fr": "taslak",
+        "en": "taslak",
+        "nl": "taslak",
+        "de": "taslak"
+      }
+    },
+    {
+      "id": "h03",
+      "adim": 8,
+      "baslik": {
+        "tr": "Peygamberimizi tanımak",
+        "fr": "Découvrir le Prophète",
+        "en": "Getting to know the Prophet",
+        "nl": "Kennismaken met de Profeet",
+        "de": "Den Propheten kennenlernen"
+      },
+      "hedef": {
+        "tr": "Hz. Muhammed’in kimliğini ve örnekliğini tanımak.",
+        "fr": "Connaître la personne et l’exemple du prophète Muhammad.",
+        "en": "Getting to know who the Prophet Muhammad was and why his example matters.",
+        "nl": "Leren wie de profeet Mohammed was en waarom zijn voorbeeld telt.",
+        "de": "Kennenlernen, wer der Prophet Muhammad war und warum sein Vorbild zählt."
+      },
+      "metin": {
+        "tr": "Hz. Muhammed, Allah’ın kulu ve elçisidir; Müslümanlar onu son peygamber olarak tanır. Doğruluğu, merhameti ve güvenilirliğiyle bilinir; güzel ahlâkı hem sözüyle hem yaşayışıyla öğretmiştir. Onu tanımak için güvenilir bir giriş kitabından başlayın. Peygamberimizin örnekliği, bir kurallar listesinden çok, insanlarla ilişkide nazik, adil ve sabırlı olmayı gösterir. Ona duyulan sevgi ve saygı öğrendikçe büyür. Bir olayı veya sözü duyduğunuzda kaynağını sorun; kaynağı belirsiz paylaşımlara temkinli yaklaşın.",
+        "fr": "Muhammad est le serviteur et le messager de Dieu ; les musulmans le reconnaissent comme le dernier prophète. Il est connu pour sa sincérité, sa compassion et sa fiabilité, et il a enseigné le bon comportement par sa parole comme par sa vie. Pour le découvrir, commencez par un ouvrage d’introduction fiable. Son exemple montre moins une liste de règles qu’une manière d’être doux, juste et patient avec les autres. L’affection et le respect grandissent en apprenant. Quand vous entendez un récit ou une parole, demandez la source et restez prudent devant les messages partagés sans source.",
+        "en": "Muhammad is God’s servant and messenger; Muslims regard him as the last prophet. He is known for honesty, compassion and trustworthiness, and he taught good character both by word and by the way he lived. To get to know him, begin with a reliable introductory book. His example shows less a list of rules than a way of being gentle, fair and patient with people. Love and respect grow as you learn. When you hear a story or a saying, ask for its source and be cautious with shared messages of unknown origin.",
+        "nl": "Mohammed is Gods dienaar en boodschapper; moslims beschouwen hem als de laatste profeet. Hij staat bekend om eerlijkheid, mededogen en betrouwbaarheid en leerde goed gedrag zowel met woorden als door zijn leven. Begin om hem te leren kennen met een betrouwbaar inleidend boek. Zijn voorbeeld toont minder een lijst regels dan een manier om vriendelijk, rechtvaardig en geduldig met mensen om te gaan. Liefde en respect groeien met kennis. Vraag bij elk verhaal of gezegde naar de bron en wees voorzichtig met gedeelde berichten van onbekende herkomst.",
+        "de": "Muhammad ist Gottes Diener und Gesandter; Musliminnen und Muslime sehen in ihm den letzten Propheten. Er ist für Ehrlichkeit, Barmherzigkeit und Verlässlichkeit bekannt und lehrte gutes Verhalten durch Worte und durch sein Leben. Beginnen Sie mit einem verlässlichen Einführungsbuch. Sein Vorbild zeigt weniger eine Liste von Regeln als eine Art, freundlich, gerecht und geduldig mit Menschen umzugehen. Liebe und Achtung wachsen mit dem Wissen. Fragen Sie bei jeder Erzählung oder jedem Ausspruch nach der Quelle und seien Sie vorsichtig bei geteilten Meldungen unklarer Herkunft."
+      },
+      "yap": {
+        "tr": "Peygamberimizin ahlâkından aklınıza yatan bir örneği not edin ve bu hafta bir davranışınızda uygulayın.",
+        "fr": "Notez un trait de caractère du Prophète qui vous parle et mettez-le en pratique cette semaine.",
+        "en": "Note one trait of the Prophet’s character that speaks to you and practise it this week.",
+        "nl": "Noteer een karaktertrek van de Profeet die je aanspreekt en pas die deze week toe.",
+        "de": "Notieren Sie einen Charakterzug des Propheten, der Sie anspricht, und üben Sie ihn diese Woche."
+      },
+      "sorular": [
+        {
+          "id": "h03-1",
+          "soru": {
+            "tr": "Müslümanlar Hz. Muhammed’i nasıl tanır?",
+            "fr": "Comment les musulmans considèrent-ils Muhammad ?",
+            "en": "How do Muslims regard Muhammad?",
+            "nl": "Hoe zien moslims Mohammed?",
+            "de": "Wie sehen Musliminnen und Muslime Muhammad?"
+          },
+          "siklar": [
+            {
+              "tr": "Allah’ın kulu ve elçisi",
+              "fr": "Serviteur et messager de Dieu",
+              "en": "God’s servant and messenger",
+              "nl": "Gods dienaar en boodschapper",
+              "de": "Gottes Diener und Gesandter"
+            },
+            {
+              "tr": "Bir melek",
+              "fr": "Un ange",
+              "en": "An angel",
+              "nl": "Een engel",
+              "de": "Ein Engel"
+            },
+            {
+              "tr": "Bir ilâh",
+              "fr": "Une divinité",
+              "en": "A deity",
+              "nl": "Een god",
+              "de": "Eine Gottheit"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "TDV İslâm Ansiklopedisi, Kelime-i Şehâdet (K2)"
+        },
+        {
+          "id": "h03-2",
+          "soru": {
+            "tr": "Peygamberimizin örnekliğinden hangisi öğrenilir?",
+            "fr": "Que retient-on de l’exemple du Prophète ?",
+            "en": "What do we learn from the Prophet’s example?",
+            "nl": "Wat leren we van het voorbeeld van de Profeet?",
+            "de": "Was lernen wir aus dem Vorbild des Propheten?"
+          },
+          "siklar": [
+            {
+              "tr": "Sertlik ve inat",
+              "fr": "La dureté et l’entêtement",
+              "en": "Harshness and stubbornness",
+              "nl": "Hardheid en koppigheid",
+              "de": "Härte und Sturheit"
+            },
+            {
+              "tr": "Doğruluk, merhamet, güvenilirlik",
+              "fr": "Sincérité, compassion, fiabilité",
+              "en": "Honesty, compassion, trustworthiness",
+              "nl": "Eerlijkheid, mededogen, betrouwbaarheid",
+              "de": "Ehrlichkeit, Barmherzigkeit, Verlässlichkeit"
+            },
+            {
+              "tr": "Yalnızca kurallar listesi",
+              "fr": "Uniquement une liste de règles",
+              "en": "Only a list of rules",
+              "nl": "Alleen een lijst regels",
+              "de": "Nur eine Liste von Regeln"
+            }
+          ],
+          "dogru": 1,
+          "kaynak": "Diyanet, Le Prophète Muhammad (PDF); TDV İslâm Ansiklopedisi, Muhammed"
+        }
+      ],
+      "kaynaklar": [
+        {
+          "ad": {
+            "tr": "Diyanet — Le Prophète Muhammad (PDF, FR)",
+            "fr": "Diyanet — Le Prophète Muhammad (PDF, FR)",
+            "en": "Diyanet — Le Prophète Muhammad (PDF, FR)",
+            "nl": "Diyanet — Le Prophète Muhammad (PDF, FR)",
+            "de": "Diyanet — Le Prophète Muhammad (PDF, FR)"
+          },
+          "url": "https://dijital.diyanet.gov.tr/File/Download?path=3623_1.pdf&id=3623"
+        },
+        {
+          "ad": {
+            "tr": "TDV İslâm Ansiklopedisi — Muhammed",
+            "fr": "TDV İslâm Ansiklopedisi — Muhammed",
+            "en": "TDV İslâm Ansiklopedisi — Muhammed",
+            "nl": "TDV İslâm Ansiklopedisi — Muhammed",
+            "de": "TDV İslâm Ansiklopedisi — Muhammed"
+          },
+          "url": "https://islamansiklopedisi.org.tr/muhammed"
+        },
+        {
+          "ad": {
+            "tr": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet",
+            "fr": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet",
+            "en": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet",
+            "nl": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet",
+            "de": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet"
+          },
+          "url": "https://islamansiklopedisi.org.tr/kelime-i-sehadet"
+        }
+      ],
+      "video": {
+        "tr": "Xk68bTWN27A",
+        "en": "aZe9IlmC6eE"
+      },
+      "durum": {
+        "tr": "taslak",
+        "fr": "taslak",
+        "en": "taslak",
+        "nl": "taslak",
+        "de": "taslak"
+      }
+    },
+    {
+      "id": "h04",
+      "adim": 5,
+      "baslik": {
+        "tr": "Kur’an’la tanışmak",
+        "fr": "Découvrir le Coran",
+        "en": "An introduction to the Qur’an",
+        "nl": "Kennismaken met de Koran",
+        "de": "Den Koran kennenlernen"
+      },
+      "hedef": {
+        "tr": "Kur’an’ı ve Arap harfleriyle ilk adımı tanımak.",
+        "fr": "Découvrir le Coran et faire un premier pas avec les lettres arabes.",
+        "en": "Getting to know the Qur’an and taking a first step with Arabic letters.",
+        "nl": "De Koran leren kennen en een eerste stap zetten met Arabische letters.",
+        "de": "Den Koran kennenlernen und einen ersten Schritt mit den arabischen Buchstaben tun."
+      },
+      "metin": {
+        "tr": "Kur’an, Müslümanların Allah’ın kelâmı olarak inandığı, Hz. Muhammed’e vahiy yoluyla indirilen kutsal kitaptır. Okumaya Arap harflerini tanıyarak başlanır: harfin adı ile harekeli okunuşu farklıdır. Fetha, kesra ve damme kısa sesleri gösterir. Acele etmeyin; kısa bir sesli kaydı dinleyin, durdurun, tekrar edin. Anlamını öğrenmek için Diyanet’in resmî Kur’an sitesindeki meâl ve açıklamaları kullanabilirsiniz. Okuyuşunuzu bir öğreticiye dinletmek hatalarınızı erken fark etmenizi sağlar. Her gün birkaç dakika, nadiren uzun çalışmaktan daha etkilidir.",
+        "fr": "Le Coran est le livre que les musulmans croient être la parole de Dieu, révélée au prophète Muhammad. On commence à le lire en découvrant les lettres arabes : le nom d’une lettre diffère de sa lecture vocalisée. Fatha, kasra et damma indiquent les voyelles brèves. Sans hâte : écoutez un court enregistrement, faites une pause, répétez. Pour comprendre le sens, vous pouvez utiliser la traduction et les explications du site officiel du Coran de la Diyanet. Faire écouter votre lecture à une personne qui enseigne vous aide à repérer tôt vos erreurs. Quelques minutes par jour valent mieux qu’une longue séance rare.",
+        "en": "The Qur’an is the book Muslims believe to be God’s word, revealed to the Prophet Muhammad. Reading begins by learning the Arabic letters: a letter’s name differs from its vowelled sound. Fatha, kasra and damma mark the short vowels. Take your time: listen to a short recording, pause, repeat. To learn the meaning you can use the translation and explanations on the Diyanet’s official Qur’an website. Having a teacher listen to your reading helps you notice mistakes early. A few minutes every day works better than a rare long session.",
+        "nl": "De Koran is het boek waarvan moslims geloven dat het Gods woord is, geopenbaard aan de profeet Mohammed. Lezen begint met het leren kennen van de Arabische letters: de naam van een letter verschilt van de klank met klinkertekens. Fatha, kasra en damma geven de korte klinkers aan. Neem de tijd: luister naar een korte opname, pauzeer, herhaal. Voor de betekenis kun je de vertaling en uitleg op de officiële Koransite van de Diyanet gebruiken. Laat je lezing beluisteren door een leraar, dan merk je fouten vroeg op. Elke dag een paar minuten werkt beter dan af en toe lang.",
+        "de": "Der Koran ist das Buch, von dem Musliminnen und Muslime glauben, dass es Gottes Wort ist, dem Propheten Muhammad offenbart. Das Lesen beginnt mit dem Kennenlernen der arabischen Buchstaben: Der Name eines Buchstabens unterscheidet sich von seinem vokalisierten Klang. Fatha, Kasra und Damma bezeichnen die kurzen Vokale. Nehmen Sie sich Zeit: Hören Sie eine kurze Aufnahme, halten Sie an, wiederholen Sie. Für die Bedeutung können Sie Übersetzung und Erläuterungen auf der offiziellen Koran-Seite der Diyanet nutzen. Wenn eine Lehrperson Ihnen beim Lesen zuhört, fallen Fehler früh auf. Täglich wenige Minuten wirken besser als selten lange."
+      },
+      "yap": {
+        "tr": "Beş Arap harfi seçin; önce adlarını, sonra üç harekeyle seslerini dinleyip tekrar edin.",
+        "fr": "Choisissez cinq lettres arabes ; écoutez d’abord leur nom, puis leur son avec les trois voyelles, et répétez.",
+        "en": "Pick five Arabic letters; listen first to their names, then to their sounds with the three vowels, and repeat.",
+        "nl": "Kies vijf Arabische letters; luister eerst naar hun naam, dan naar hun klank met de drie klinkers, en herhaal.",
+        "de": "Wählen Sie fünf arabische Buchstaben; hören Sie zuerst ihre Namen, dann ihre Laute mit den drei Vokalen, und wiederholen Sie."
+      },
+      "sorular": [
+        {
+          "id": "h04-1",
+          "soru": {
+            "tr": "Fetha, kesra ve damme ne işe yarar?",
+            "fr": "À quoi servent fatha, kasra et damma ?",
+            "en": "What do fatha, kasra and damma do?",
+            "nl": "Waar dienen fatha, kasra en damma voor?",
+            "de": "Wozu dienen Fatha, Kasra und Damma?"
+          },
+          "siklar": [
+            {
+              "tr": "Kısa sesleri (harekeleri) gösterir",
+              "fr": "Elles indiquent les voyelles brèves",
+              "en": "They mark the short vowels",
+              "nl": "Ze geven de korte klinkers aan",
+              "de": "Sie bezeichnen die kurzen Vokale"
+            },
+            {
+              "tr": "Sûrenin adını gösterir",
+              "fr": "Elles indiquent le nom de la sourate",
+              "en": "They show the surah’s name",
+              "nl": "Ze geven de naam van de soera aan",
+              "de": "Sie zeigen den Namen der Sure"
+            },
+            {
+              "tr": "Namaz vaktini gösterir",
+              "fr": "Elles indiquent l’heure de la prière",
+              "en": "They show prayer time",
+              "nl": "Ze geven de gebedstijd aan",
+              "de": "Sie zeigen die Gebetszeit"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "Diyanet, Kur’an okuma dersleri; TDV İslâm Ansiklopedisi, Kur’ân-ı Kerîm"
+        },
+        {
+          "id": "h04-2",
+          "soru": {
+            "tr": "Kur’an’ın anlamını öğrenmek için hangi kaynak uygundur?",
+            "fr": "Quelle source convient pour comprendre le sens du Coran ?",
+            "en": "Which source suits learning the Qur’an’s meaning?",
+            "nl": "Welke bron past om de betekenis van de Koran te leren?",
+            "de": "Welche Quelle eignet sich, um die Bedeutung des Korans zu lernen?"
+          },
+          "siklar": [
+            {
+              "tr": "Kaynağı belirsiz bir paylaşım",
+              "fr": "Un message partagé sans source",
+              "en": "A shared message with no source",
+              "nl": "Een gedeeld bericht zonder bron",
+              "de": "Eine geteilte Meldung ohne Quelle"
+            },
+            {
+              "tr": "Resmî Diyanet meâli ve açıklamaları",
+              "fr": "La traduction et les explications officielles de la Diyanet",
+              "en": "The Diyanet’s official translation and explanations",
+              "nl": "De officiële vertaling en uitleg van de Diyanet",
+              "de": "Die offizielle Übersetzung und Erläuterung der Diyanet"
+            },
+            {
+              "tr": "Tahmin etmek",
+              "fr": "Deviner",
+              "en": "Guessing",
+              "nl": "Gokken",
+              "de": "Raten"
+            }
+          ],
+          "dogru": 1,
+          "kaynak": "Diyanet · Kur’an-ı Kerim (kuran.diyanet.gov.tr)"
+        }
+      ],
+      "kaynaklar": [
+        {
+          "ad": {
+            "tr": "Diyanet · Kur’an-ı Kerim (mushaf, meâl)",
+            "fr": "Diyanet · Kur’an-ı Kerim (mushaf, meâl)",
+            "en": "Diyanet · Kur’an-ı Kerim (mushaf, meâl)",
+            "nl": "Diyanet · Kur’an-ı Kerim (mushaf, meâl)",
+            "de": "Diyanet · Kur’an-ı Kerim (mushaf, meâl)"
+          },
+          "url": "https://kuran.diyanet.gov.tr/mushaf"
+        },
+        {
+          "ad": {
+            "tr": "TDV İslâm Ansiklopedisi — Kur’ân-ı Kerîm",
+            "fr": "TDV İslâm Ansiklopedisi — Kur’ân-ı Kerîm",
+            "en": "TDV İslâm Ansiklopedisi — Kur’ân-ı Kerîm",
+            "nl": "TDV İslâm Ansiklopedisi — Kur’ân-ı Kerîm",
+            "de": "TDV İslâm Ansiklopedisi — Kur’ân-ı Kerîm"
+          },
+          "url": "https://islamansiklopedisi.org.tr/kuran"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)",
+            "fr": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)",
+            "en": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)",
+            "nl": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)",
+            "de": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)"
+          },
+          "url": "https://dijital.diyanet.gov.tr/File/Download?path=3624_1.pdf&id=3624"
+        }
+      ],
+      "video": {
+        "tr": "ULCe_8Y-pQw",
+        "en": "lYqjhLNcMyg"
+      },
+      "durum": {
+        "tr": "taslak",
+        "fr": "taslak",
+        "en": "taslak",
+        "nl": "taslak",
+        "de": "taslak"
+      }
+    },
+    {
+      "id": "h05",
+      "adim": 3,
+      "baslik": {
+        "tr": "Temizlik ve abdest",
+        "fr": "La propreté et les ablutions",
+        "en": "Cleanliness and ablution",
+        "nl": "Reinheid en rituele wassing",
+        "de": "Reinheit und rituelle Waschung"
+      },
+      "hedef": {
+        "tr": "Abdestin sırasını resimli rehberle uygulamak.",
+        "fr": "Pratiquer l’ordre des ablutions avec le guide illustré.",
+        "en": "Practising the order of ablution with the illustrated guide.",
+        "nl": "De volgorde van de rituele wassing oefenen met de geïllustreerde gids.",
+        "de": "Die Reihenfolge der Gebetswaschung mit dem bebilderten Leitfaden üben."
+      },
+      "metin": {
+        "tr": "Temizlik, ibadete hazırlığın parçasıdır. Beden, elbise ve namaz kılınan yerin temizliği ile abdest ayrı konulardır. Abdestte yüz yıkanır, kollar dirseklerle birlikte yıkanır, baş mesh edilir ve ayaklar topuklarla birlikte yıkanır. Sünnetleri ve tam sırayı resimli rehberden izleyin; abdesti uygulayarak öğrenmek, okumaktan çok daha kolaydır. Abdesti bozan durumları, guslü gerektiren hâlleri ve su bulunmayan ya da kullanılamayan durumlarda teyemmümü kaynaktan okuyun. Kendi durumunuzda tereddüt ettiğiniz bir nokta olursa bir din görevlisine sorun; bu bilgiler Hanefî mezhebine göre Diyanet’in öğrettiği biçimdedir.",
+        "fr": "La propreté fait partie de la préparation à l’adoration. La propreté du corps, des vêtements et du lieu de prière est distincte des ablutions rituelles. Dans les ablutions, on lave le visage, les bras avec les coudes, on passe la main humide sur la tête et l’on lave les pieds avec les chevilles. Suivez les pratiques recommandées et l’ordre complet dans le guide illustré : apprendre en pratiquant est bien plus simple que de lire. Lisez dans la source ce qui annule les ablutions, ce qui exige la grande ablution et le tayammoum lorsque l’eau manque ou ne peut être utilisée. Si un point de votre situation vous laisse hésitant, demandez à l’imam ; ces informations suivent l’école hanéfite telle que la Diyanet l’enseigne.",
+        "en": "Cleanliness is part of preparing for worship. Cleanliness of the body, clothing and place of prayer is separate from ablution (wudu). In wudu you wash the face, wash the arms including the elbows, wipe the head, and wash the feet including the ankles. Follow the recommended practices and the full order in the illustrated guide; learning by doing is much easier than reading. Read in the source what breaks wudu, what requires ghusl, and tayammum when water is unavailable or cannot be used. If something in your own situation is unclear, ask an imam; this follows the Hanafi school as the Diyanet teaches it.",
+        "nl": "Reinheid hoort bij de voorbereiding op de aanbidding. Reinheid van lichaam, kleding en gebedsplaats is iets anders dan de rituele wassing (woedoe). Bij woedoe was je het gezicht, de armen inclusief de ellebogen, wrijf je met natte hand over het hoofd en was je de voeten inclusief de enkels. Volg de aanbevolen gebruiken en de volledige volgorde in de geïllustreerde gids; al doende leren is veel makkelijker dan lezen. Lees in de bron wat woedoe ongeldig maakt, wat ghoesl vereist, en tayammoem wanneer water ontbreekt of niet gebruikt kan worden. Is er iets onduidelijk in jouw situatie, vraag het dan aan een imam; dit volgt de hanafitische school zoals de Diyanet die onderwijst.",
+        "de": "Reinheit gehört zur Vorbereitung auf den Gottesdienst. Die Sauberkeit von Körper, Kleidung und Gebetsort ist etwas anderes als die rituelle Gebetswaschung (Wudu). Bei der Wudu werden das Gesicht und die Arme samt Ellbogen gewaschen, der Kopf wird mit der nassen Hand bestrichen und die Füße samt Knöcheln werden gewaschen. Folgen Sie den empfohlenen Gepflogenheiten und der vollständigen Reihenfolge im bebilderten Leitfaden; Lernen durch Tun ist viel leichter als Lesen. Lesen Sie in der Quelle, was die Wudu ungültig macht, was die Ganzwaschung (Ghusl) erfordert und wann Tayammum gilt. Bei Unklarheiten in Ihrer Lage fragen Sie eine Lehrperson; dies folgt der hanafitischen Schule, wie die Diyanet sie lehrt."
+      },
+      "yap": {
+        "tr": "Resimli rehberi açıp bir abdest uygulaması yapın; sırayı bir öğreticiyle kontrol edin.",
+        "fr": "Ouvrez le guide illustré, faites une démonstration des ablutions et vérifiez l’ordre avec une personne qui enseigne.",
+        "en": "Open the illustrated guide, practise a full wudu and check the order with a teacher.",
+        "nl": "Open de geïllustreerde gids, oefen een volledige woedoe en controleer de volgorde met een leraar.",
+        "de": "Öffnen Sie den bebilderten Leitfaden, üben Sie eine vollständige Wudu und prüfen Sie die Reihenfolge mit einer Lehrperson."
+      },
+      "sorular": [
+        {
+          "id": "h05-1",
+          "soru": {
+            "tr": "Abdestte kollar nereye kadar yıkanır?",
+            "fr": "Jusqu’où lave-t-on les bras dans les ablutions ?",
+            "en": "How far up are the arms washed in wudu?",
+            "nl": "Tot waar worden de armen gewassen bij woedoe?",
+            "de": "Bis wohin werden die Arme bei der Wudu gewaschen?"
+          },
+          "siklar": [
+            {
+              "tr": "Bileğe kadar",
+              "fr": "Jusqu’au poignet",
+              "en": "Up to the wrist",
+              "nl": "Tot de pols",
+              "de": "Bis zum Handgelenk"
+            },
+            {
+              "tr": "Dirseklerle birlikte",
+              "fr": "Jusqu’aux coudes inclus",
+              "en": "Including the elbows",
+              "nl": "Inclusief de ellebogen",
+              "de": "Einschließlich der Ellbogen"
+            },
+            {
+              "tr": "Omuza kadar",
+              "fr": "Jusqu’à l’épaule",
+              "en": "Up to the shoulder",
+              "nl": "Tot de schouder",
+              "de": "Bis zur Schulter"
+            }
+          ],
+          "dogru": 1,
+          "kaynak": "Diyanet İlmihali I, Temizlik, Abdestin farzları (Mâide 5/6)"
+        },
+        {
+          "id": "h05-2",
+          "soru": {
+            "tr": "Abdest ile bedenin temizliği aynı şey midir?",
+            "fr": "Les ablutions et la propreté du corps, est-ce la même chose ?",
+            "en": "Are wudu and bodily cleanliness the same thing?",
+            "nl": "Zijn woedoe en lichamelijke reinheid hetzelfde?",
+            "de": "Sind Wudu und körperliche Sauberkeit dasselbe?"
+          },
+          "siklar": [
+            {
+              "tr": "Evet, aynıdır",
+              "fr": "Oui, c’est identique",
+              "en": "Yes, they are the same",
+              "nl": "Ja, hetzelfde",
+              "de": "Ja, dasselbe"
+            },
+            {
+              "tr": "Hayır, ayrı konulardır",
+              "fr": "Non, ce sont deux sujets distincts",
+              "en": "No, they are separate topics",
+              "nl": "Nee, het zijn aparte onderwerpen",
+              "de": "Nein, es sind getrennte Themen"
+            },
+            {
+              "tr": "Yalnız ibadet yerinde fark eder",
+              "fr": "Seul le lieu de prière diffère",
+              "en": "Only the place of worship differs",
+              "nl": "Alleen de gebedsplaats verschilt",
+              "de": "Nur der Gebetsort unterscheidet sich"
+            }
+          ],
+          "dogru": 1,
+          "kaynak": "Diyanet İlmihali I, Temizlik"
+        }
+      ],
+      "kaynaklar": [
+        {
+          "ad": {
+            "tr": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "fr": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "en": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "nl": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "de": "Diyanet — Guide pratique des adorations (PDF, FR)"
+          },
+          "url": "https://dijital.diyanet.gov.tr/File/Download?path=ibadet_rehberi_fransizca.pdf&id=513"
+        },
+        {
+          "ad": {
+            "tr": "TDV İslâm Ansiklopedisi — Abdest",
+            "fr": "TDV İslâm Ansiklopedisi — Abdest",
+            "en": "TDV İslâm Ansiklopedisi — Abdest",
+            "nl": "TDV İslâm Ansiklopedisi — Abdest",
+            "de": "TDV İslâm Ansiklopedisi — Abdest"
+          },
+          "url": "https://islamansiklopedisi.org.tr/abdest"
+        }
+      ],
+      "video": {
+        "tr": "3AsoamSK-JM",
+        "en": "WP5lXBa_zhE"
+      },
+      "durum": {
+        "tr": "taslak",
+        "fr": "taslak",
+        "en": "taslak",
+        "nl": "taslak",
+        "de": "taslak"
+      }
+    },
+    {
+      "id": "h06",
+      "adim": 4,
+      "baslik": {
+        "tr": "Namazı öğrenmek",
+        "fr": "Apprendre la prière",
+        "en": "Learning to pray",
+        "nl": "Het gebed leren",
+        "de": "Das Gebet lernen"
+      },
+      "hedef": {
+        "tr": "Namazın vakitlerini ve bir rekâtın sırasını tanımak.",
+        "fr": "Connaître les horaires de la prière et l’ordre d’une rak‘a.",
+        "en": "Getting to know the prayer times and the order of one rak‘a.",
+        "nl": "De gebedstijden en de volgorde van één rak‘a leren kennen.",
+        "de": "Die Gebetszeiten und den Ablauf einer Rak‘a kennenlernen."
+      },
+      "metin": {
+        "tr": "Namaz, günde beş vakit kılınan temel ibadettir: sabah, öğle, ikindi, akşam ve yatsı. Hazırlık; temizlik, vakit, kıble ve niyeti içerir. Namazda kıyam, rükû, secde ve oturuş vardır; bir rekât kıyam, rükû ve iki secdeyi kapsar. Fâtiha, kısa sûreler ve dualar küçük parçalarla öğrenilir: önce hareketleri, sonra okuyuşları çalışın, sonra ikisini birleştirin. Güncel yerel vakitler için resmî Diyanet takvimini kullanın. Öğrenmenin tamamlanmasını beklemeden ilk günden bir din görevlisinden uygulamalı destek isteyin; kendi hızınızda ilerlemek bu sürecin parçasıdır.",
+        "fr": "La prière est l’adoration fondamentale accomplie cinq fois par jour : l’aube, midi, l’après-midi, le coucher du soleil et la nuit. La préparation comprend la propreté, l’heure, la qibla et l’intention. La prière comporte la station debout, l’inclinaison, la prosternation et la position assise ; une rak‘a comprend la station debout, l’inclinaison et deux prosternations. La Fâtiha, les courtes sourates et les invocations s’apprennent par petits passages : travaillez d’abord les gestes, puis les récitations, puis les deux ensemble. Pour les horaires locaux, utilisez le calendrier officiel de la Diyanet. Sans attendre la fin de l’apprentissage, demandez dès le premier jour une démonstration à l’imam ; avancer à votre rythme fait partie du chemin.",
+        "en": "Prayer is the fundamental act of worship performed five times a day: dawn, noon, afternoon, sunset and night. Preparation includes cleanliness, the time, the direction of the qibla and intention. Prayer has standing, bowing, prostration and sitting; one rak‘a covers standing, bowing and two prostrations. The Fatiha, short surahs and supplications are learned in small parts: practise the movements first, then the recitations, then put them together. For local times use the Diyanet’s official calendar. Do not wait until learning is finished: ask an imam for hands-on support from the first day, and move at your own pace.",
+        "nl": "Het gebed is de fundamentele vorm van aanbidding, vijf keer per dag: dageraad, middag, namiddag, zonsondergang en nacht. De voorbereiding omvat reinheid, het tijdstip, de qibla en de intentie. Het gebed kent staan, buigen, neerknielen en zitten; één rak‘a omvat staan, buigen en twee keer neerknielen. De Fatiha, korte soera’s en smeekbeden leer je in kleine delen: oefen eerst de bewegingen, dan de recitaties, en voeg ze dan samen. Gebruik voor lokale tijden de officiële kalender van de Diyanet. Wacht niet tot je klaar bent met leren: vraag vanaf de eerste dag praktische hulp aan een imam en ga in je eigen tempo.",
+        "de": "Das Gebet ist der grundlegende Gottesdienst, der fünfmal täglich verrichtet wird: Morgen, Mittag, Nachmittag, Sonnenuntergang und Nacht. Zur Vorbereitung gehören Reinheit, Zeit, Gebetsrichtung (Qibla) und Absicht. Das Gebet kennt Stehen, Verbeugung, Niederwerfung und Sitzen; eine Rak‘a umfasst Stehen, Verbeugung und zwei Niederwerfungen. Die Fatiha, kurze Suren und Bittgebete lernt man in kleinen Teilen: erst die Bewegungen, dann die Rezitation, dann beides zusammen. Für die örtlichen Zeiten nutzen Sie den offiziellen Kalender der Diyanet. Warten Sie nicht, bis Sie fertig gelernt haben: Bitten Sie von Anfang an um praktische Hilfe einer Lehrperson und gehen Sie in Ihrem Tempo."
+      },
+      "yap": {
+        "tr": "Bir rekâtın hareket sırasını rehberden takip ederek gösterin; hangi anda ne okunduğunu işaretleyin.",
+        "fr": "Montrez l’ordre des gestes d’une rak‘a avec le guide et repérez ce qui se récite à chaque moment.",
+        "en": "Show the order of movements in one rak‘a using the guide and mark what is recited at each point.",
+        "nl": "Laat met de gids de volgorde van de bewegingen in één rak‘a zien en markeer wat wanneer wordt gereciteerd.",
+        "de": "Zeigen Sie mit dem Leitfaden den Ablauf einer Rak‘a und markieren Sie, was wann rezitiert wird."
+      },
+      "sorular": [
+        {
+          "id": "h06-1",
+          "soru": {
+            "tr": "Günde kaç vakit farz namaz vardır?",
+            "fr": "Combien de prières obligatoires y a-t-il par jour ?",
+            "en": "How many obligatory prayers are there each day?",
+            "nl": "Hoeveel verplichte gebeden zijn er per dag?",
+            "de": "Wie viele Pflichtgebete gibt es täglich?"
+          },
+          "siklar": [
+            {
+              "tr": "Üç",
+              "fr": "Trois",
+              "en": "Three",
+              "nl": "Drie",
+              "de": "Drei"
+            },
+            {
+              "tr": "Beş",
+              "fr": "Cinq",
+              "en": "Five",
+              "nl": "Vijf",
+              "de": "Fünf"
+            },
+            {
+              "tr": "Yedi",
+              "fr": "Sept",
+              "en": "Seven",
+              "nl": "Zeven",
+              "de": "Sieben"
+            }
+          ],
+          "dogru": 1,
+          "kaynak": "Diyanet İlmihali I, Namaz; Sahîh-i Müslim 8a (K3)"
+        },
+        {
+          "id": "h06-2",
+          "soru": {
+            "tr": "Bir rekât nelerden oluşur?",
+            "fr": "De quoi se compose une rak‘a ?",
+            "en": "What does one rak‘a consist of?",
+            "nl": "Waaruit bestaat één rak‘a?",
+            "de": "Woraus besteht eine Rak‘a?"
+          },
+          "siklar": [
+            {
+              "tr": "Kıyam, rükû ve iki secde",
+              "fr": "Station debout, inclinaison et deux prosternations",
+              "en": "Standing, bowing and two prostrations",
+              "nl": "Staan, buigen en twee keer neerknielen",
+              "de": "Stehen, Verbeugung und zwei Niederwerfungen"
+            },
+            {
+              "tr": "Yalnız oturuş",
+              "fr": "La seule position assise",
+              "en": "Only sitting",
+              "nl": "Alleen zitten",
+              "de": "Nur Sitzen"
+            },
+            {
+              "tr": "Yalnız selam",
+              "fr": "Seulement le salut final",
+              "en": "Only the final greeting",
+              "nl": "Alleen de afsluitende groet",
+              "de": "Nur der Schlussgruß"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "Diyanet İlmihali I, Namaz"
+        }
+      ],
+      "kaynaklar": [
+        {
+          "ad": {
+            "tr": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "fr": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "en": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "nl": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "de": "Diyanet — Guide pratique des adorations (PDF, FR)"
+          },
+          "url": "https://dijital.diyanet.gov.tr/File/Download?path=ibadet_rehberi_fransizca.pdf&id=513"
+        },
+        {
+          "ad": {
+            "tr": "TDV İslâm Ansiklopedisi — Namaz",
+            "fr": "TDV İslâm Ansiklopedisi — Namaz",
+            "en": "TDV İslâm Ansiklopedisi — Namaz",
+            "nl": "TDV İslâm Ansiklopedisi — Namaz",
+            "de": "TDV İslâm Ansiklopedisi — Namaz"
+          },
+          "url": "https://islamansiklopedisi.org.tr/namaz"
+        },
+        {
+          "ad": {
+            "tr": "Sahîh-i Müslim 8a (Cibrîl hadisi)",
+            "fr": "Sahîh-i Müslim 8a (Cibrîl hadisi)",
+            "en": "Sahîh-i Müslim 8a (Cibrîl hadisi)",
+            "nl": "Sahîh-i Müslim 8a (Cibrîl hadisi)",
+            "de": "Sahîh-i Müslim 8a (Cibrîl hadisi)"
+          },
+          "url": "https://sunnah.com/muslim:8a"
+        }
+      ],
+      "video": {
+        "tr": "EkKfKohLgu8",
+        "en": "bxCKUaYMD1I"
+      },
+      "durum": {
+        "tr": "taslak",
+        "fr": "taslak",
+        "en": "taslak",
+        "nl": "taslak",
+        "de": "taslak"
+      }
+    },
+    {
+      "id": "h07",
+      "adim": 6,
+      "baslik": {
+        "tr": "Dua ve günlük hayat",
+        "fr": "L’invocation au quotidien",
+        "en": "Supplication in daily life",
+        "nl": "Smeekbeden in het dagelijks leven",
+        "de": "Bittgebete im Alltag"
+      },
+      "hedef": {
+        "tr": "Kısa sûreleri ve duaları anlamıyla birlikte öğrenmeye başlamak.",
+        "fr": "Commencer à apprendre de courtes sourates et invocations avec leur sens.",
+        "en": "Starting to learn short surahs and supplications together with their meaning.",
+        "nl": "Beginnen met het leren van korte soera’s en smeekbeden samen met hun betekenis.",
+        "de": "Kurze Suren und Bittgebete zusammen mit ihrer Bedeutung zu lernen beginnen."
+      },
+      "metin": {
+        "tr": "Dua, insanın Allah’a içten yönelişi ve O’ndan istemesidir. Fâtiha, İhlâs, Felak ve Nâs gibi kısa sûreler ile namaz duaları küçük parçalarla öğrenilir. Bir satırı dinleyin, durun, tekrar edin; sonra anlamını okuyun ki ne dediğinizi bilin. Metne bakarak üç kez, ardından bakmadan deneyin; takıldığınız yere dönün. Okuyuşunuzu bir öğreticiye dinletin. Günlük hayatta da kısa duaları anmak yararlıdır: yemeğe “Bismillâh” diyerek başlamak gibi. Her şeyi bir anda ezberlemek gerekmez; küçük ama düzenli ilerleyin ve zorlandığınızda geri dönmekten çekinmeyin.",
+        "fr": "L’invocation (dou‘â) est l’élan sincère de la personne vers Dieu et sa demande auprès de Lui. Des sourates courtes comme Al-Fâtiha, Al-Ikhlas, Al-Falaq et An-Nâs, ainsi que les invocations de la prière, s’apprennent par petits passages. Écoutez une ligne, faites une pause, répétez ; lisez ensuite le sens pour savoir ce que vous dites. Essayez trois fois avec le texte, puis sans ; revenez à l’endroit où vous butez. Faites écouter votre récitation à une personne qui enseigne. Dans la vie quotidienne, de courtes invocations sont aussi utiles, comme dire « Bismillah » en commençant un repas. Inutile de tout mémoriser d’un coup : avancez peu mais régulièrement et n’hésitez pas à revenir en arrière.",
+        "en": "Supplication (dua) is a person’s sincere turning to God and asking from Him. Short surahs such as al-Fatiha, al-Ikhlas, al-Falaq and an-Nas, and the prayers said in salah, are learned in small parts. Listen to a line, pause, repeat; then read its meaning so you know what you are saying. Try three times with the text, then without; return to where you stumble. Let a teacher listen to your recitation. In daily life short supplications help too, such as saying “Bismillah” before a meal. You need not memorise everything at once; progress in small but regular steps and do not hesitate to go back when it is hard.",
+        "nl": "Smeekbede (doea) is het oprechte zich richten tot God en het vragen aan Hem. Korte soera’s zoals al-Fatiha, al-Ikhlas, al-Falaq en an-Nas en de gebeden in de salat leer je in kleine delen. Luister naar een regel, pauzeer, herhaal; lees daarna de betekenis zodat je weet wat je zegt. Probeer drie keer met de tekst, daarna zonder; ga terug naar waar je struikelt. Laat je recitatie beluisteren door een leraar. Ook in het dagelijks leven helpen korte smeekbeden, zoals “Bismillah” zeggen voor het eten. Je hoeft niet alles tegelijk te onthouden; ga in kleine maar regelmatige stappen vooruit en keer gerust terug als het moeilijk is.",
+        "de": "Das Bittgebet (Du‘a) ist die aufrichtige Hinwendung des Menschen zu Gott und die Bitte an Ihn. Kurze Suren wie al-Fatiha, al-Ichlas, al-Falaq und an-Nas sowie die Gebete im rituellen Gebet lernt man in kleinen Teilen. Hören Sie eine Zeile, halten Sie inne, wiederholen Sie; lesen Sie danach die Bedeutung, damit Sie wissen, was Sie sagen. Versuchen Sie es dreimal mit dem Text, dann ohne; kehren Sie zu der Stelle zurück, an der Sie stocken. Lassen Sie Ihre Rezitation von einer Lehrperson anhören. Auch im Alltag helfen kurze Bittgebete, etwa „Bismillah“ vor dem Essen. Sie müssen nicht alles auf einmal auswendig lernen; gehen Sie in kleinen, regelmäßigen Schritten voran und kehren Sie ruhig zurück, wenn es schwer wird."
+      },
+      "yap": {
+        "tr": "Fâtiha’nın bir satırını bu hafta öğrenin ve anlamını kendi cümlenizle söyleyin.",
+        "fr": "Apprenez cette semaine une ligne de la Fâtiha et dites son sens avec vos propres mots.",
+        "en": "Learn one line of the Fatiha this week and say its meaning in your own words.",
+        "nl": "Leer deze week één regel van de Fatiha en zeg de betekenis in je eigen woorden.",
+        "de": "Lernen Sie diese Woche eine Zeile der Fatiha und sagen Sie ihre Bedeutung mit eigenen Worten."
+      },
+      "sorular": [
+        {
+          "id": "h07-1",
+          "soru": {
+            "tr": "Bir sûreyi öğrenirken en uygun yol hangisidir?",
+            "fr": "Quelle est la meilleure façon d’apprendre une sourate ?",
+            "en": "What is the best way to learn a surah?",
+            "nl": "Wat is de beste manier om een soera te leren?",
+            "de": "Was ist der beste Weg, eine Sure zu lernen?"
+          },
+          "siklar": [
+            {
+              "tr": "Hepsini bir gecede ezberlemek",
+              "fr": "Tout mémoriser en une nuit",
+              "en": "Memorise it all in one night",
+              "nl": "Alles in één nacht onthouden",
+              "de": "Alles in einer Nacht auswendig lernen"
+            },
+            {
+              "tr": "Satır satır dinleyip tekrar etmek ve anlamını okumak",
+              "fr": "Écouter et répéter ligne par ligne et lire le sens",
+              "en": "Listen and repeat line by line and read the meaning",
+              "nl": "Regel voor regel luisteren, herhalen en de betekenis lezen",
+              "de": "Zeile für Zeile hören, wiederholen und die Bedeutung lesen"
+            },
+            {
+              "tr": "Anlamına hiç bakmamak",
+              "fr": "Ne jamais regarder le sens",
+              "en": "Never look at the meaning",
+              "nl": "Nooit naar de betekenis kijken",
+              "de": "Nie auf die Bedeutung schauen"
+            }
+          ],
+          "dogru": 1,
+          "kaynak": "Diyanet · Kur’an Yolu; TDV İslâm Ansiklopedisi, Dua"
+        },
+        {
+          "id": "h07-2",
+          "soru": {
+            "tr": "Dua nedir?",
+            "fr": "Qu’est-ce que la dou‘â ?",
+            "en": "What is dua?",
+            "nl": "Wat is doea?",
+            "de": "Was ist Du‘a?"
+          },
+          "siklar": [
+            {
+              "tr": "Allah’a içten yönelip O’ndan istemek",
+              "fr": "S’adresser sincèrement à Dieu et Lui demander",
+              "en": "Sincerely turning to God and asking from Him",
+              "nl": "Je oprecht tot God richten en iets van Hem vragen",
+              "de": "Sich aufrichtig an Gott wenden und Ihn bitten"
+            },
+            {
+              "tr": "Yalnız bir hesap yöntemi",
+              "fr": "Seulement une méthode de calcul",
+              "en": "Only a method of calculation",
+              "nl": "Alleen een rekenmethode",
+              "de": "Nur eine Rechenmethode"
+            },
+            {
+              "tr": "Bir oruç türü",
+              "fr": "Un type de jeûne",
+              "en": "A kind of fasting",
+              "nl": "Een soort vasten",
+              "de": "Eine Art des Fastens"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "TDV İslâm Ansiklopedisi, Dua"
+        }
+      ],
+      "kaynaklar": [
+        {
+          "ad": {
+            "tr": "TDV İslâm Ansiklopedisi — Dua",
+            "fr": "TDV İslâm Ansiklopedisi — Dua",
+            "en": "TDV İslâm Ansiklopedisi — Dua",
+            "nl": "TDV İslâm Ansiklopedisi — Dua",
+            "de": "TDV İslâm Ansiklopedisi — Dua"
+          },
+          "url": "https://islamansiklopedisi.org.tr/dua"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet · Kur’an-ı Kerim (mushaf, meâl)",
+            "fr": "Diyanet · Kur’an-ı Kerim (mushaf, meâl)",
+            "en": "Diyanet · Kur’an-ı Kerim (mushaf, meâl)",
+            "nl": "Diyanet · Kur’an-ı Kerim (mushaf, meâl)",
+            "de": "Diyanet · Kur’an-ı Kerim (mushaf, meâl)"
+          },
+          "url": "https://kuran.diyanet.gov.tr/mushaf"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "fr": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "en": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "nl": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "de": "Diyanet — Guide pratique des adorations (PDF, FR)"
+          },
+          "url": "https://dijital.diyanet.gov.tr/File/Download?path=ibadet_rehberi_fransizca.pdf&id=513"
+        }
+      ],
+      "video": {
+        "tr": "osXNfzXuva4",
+        "en": "8OdkRvAiSm0"
+      },
+      "durum": {
+        "tr": "taslak",
+        "fr": "taslak",
+        "en": "taslak",
+        "nl": "taslak",
+        "de": "taslak"
+      }
+    },
+    {
+      "id": "h08",
+      "adim": 8,
+      "baslik": {
+        "tr": "Ahlâk ve ilişkiler",
+        "fr": "L’éthique et les relations",
+        "en": "Character and relationships",
+        "nl": "Goed gedrag en relaties",
+        "de": "Gutes Verhalten und Beziehungen"
+      },
+      "hedef": {
+        "tr": "İmanın güzel ahlâkla birlikte düşünüldüğünü fark etmek.",
+        "fr": "Comprendre que la foi va de pair avec le bon comportement.",
+        "en": "Realising that faith goes together with good character.",
+        "nl": "Inzien dat geloof samengaat met goed gedrag.",
+        "de": "Erkennen, dass Glaube und gutes Verhalten zusammengehören."
+      },
+      "metin": {
+        "tr": "İslâm’da iman, ibadet ve güzel ahlâk birbirinden ayrılmaz. Doğruluk, verilen sözü tutma, merhamet, adalet ve komşuya iyilik temel değerlerdir. Başkalarının hakkını gözetmek ve kimseye zulmetmemek bu değerlerin parçasıdır. Hata yaptığımızda özür dilemek ve düzeltmek de güzel ahlâktandır. Konuşurken hikmetli ve güzel bir üslup esastır: Nahl sûresi bu yaklaşımı hatırlatır. Her şeyi bir anda değiştirmek gerekmez; bu hafta uygulayabileceğiniz tek bir güzel davranış seçin. Hatalarınızda kendinize sert olmayın; öğrenmek zaman alır.",
+        "fr": "En islam, la foi, l’adoration et le bon comportement sont inséparables. La sincérité, la parole tenue, la compassion, la justice et la bienveillance envers le voisin sont des valeurs de base. Respecter les droits d’autrui et ne léser personne en font partie. S’excuser et réparer après une erreur relève aussi du bon comportement. Pour parler, la sagesse et la belle parole sont de mise : la sourate An-Nahl le rappelle. Inutile de tout changer d’un coup : choisissez cette semaine un seul geste à mettre en pratique. Ne soyez pas dur avec vous-même après une erreur ; apprendre prend du temps.",
+        "en": "In Islam, faith, worship and good character cannot be separated. Honesty, keeping one’s word, compassion, justice and kindness to neighbours are core values. Respecting the rights of others and wronging no one are part of them. Apologising and putting things right after a mistake is also good character. When speaking, wisdom and fair words are the way: Surah an-Nahl reminds us of this. You do not need to change everything at once; choose one good habit to practise this week. Do not be harsh with yourself over mistakes; learning takes time.",
+        "nl": "In de islam zijn geloof, aanbidding en goed gedrag onlosmakelijk verbonden. Eerlijkheid, woord houden, mededogen, rechtvaardigheid en vriendelijkheid voor de buren zijn kernwaarden. De rechten van anderen respecteren en niemand onrecht doen horen erbij. Na een fout excuses aanbieden en het goedmaken is ook goed gedrag. Bij het spreken horen wijsheid en mooie woorden: soera an-Nahl herinnert eraan. Je hoeft niet alles tegelijk te veranderen; kies deze week één goede gewoonte om te oefenen. Wees niet hard voor jezelf bij fouten; leren kost tijd.",
+        "de": "Im Islam sind Glaube, Gottesdienst und gutes Verhalten untrennbar. Ehrlichkeit, Wort halten, Barmherzigkeit, Gerechtigkeit und Freundlichkeit gegenüber Nachbarn sind Grundwerte. Die Rechte anderer zu achten und niemandem Unrecht zu tun, gehört dazu. Sich nach einem Fehler zu entschuldigen und es wiedergutzumachen, ist ebenfalls gutes Verhalten. Beim Sprechen sind Weisheit und schöne Worte maßgeblich: Die Sure an-Nahl erinnert daran. Sie müssen nicht alles auf einmal ändern; wählen Sie diese Woche eine gute Gewohnheit zum Üben. Seien Sie bei Fehlern nicht hart zu sich; Lernen braucht Zeit."
+      },
+      "yap": {
+        "tr": "Bu hafta uygulayacağınız tek bir güzel davranışı seçin; hafta sonunda nasıl geçtiğini not edin.",
+        "fr": "Choisissez un seul geste à pratiquer cette semaine et notez en fin de semaine comment cela s’est passé.",
+        "en": "Choose one good habit to practise this week and note at the end how it went.",
+        "nl": "Kies één goede gewoonte om deze week te oefenen en noteer aan het eind hoe het ging.",
+        "de": "Wählen Sie eine gute Gewohnheit für diese Woche und notieren Sie am Ende, wie es lief."
+      },
+      "sorular": [
+        {
+          "id": "h08-1",
+          "soru": {
+            "tr": "Güzel ahlâkın parçası hangisidir?",
+            "fr": "Lequel fait partie du bon comportement ?",
+            "en": "Which is part of good character?",
+            "nl": "Wat hoort bij goed gedrag?",
+            "de": "Was gehört zu gutem Verhalten?"
+          },
+          "siklar": [
+            {
+              "tr": "Verilen sözü tutmak",
+              "fr": "Tenir sa parole",
+              "en": "Keeping one’s word",
+              "nl": "Woord houden",
+              "de": "Wort halten"
+            },
+            {
+              "tr": "Başkasının hakkını yemek",
+              "fr": "Léser les droits d’autrui",
+              "en": "Taking others’ rights",
+              "nl": "Rechten van anderen schenden",
+              "de": "Rechte anderer verletzen"
+            },
+            {
+              "tr": "Komşuyu görmezden gelmek",
+              "fr": "Ignorer le voisin",
+              "en": "Ignoring the neighbour",
+              "nl": "De buren negeren",
+              "de": "Den Nachbarn ignorieren"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "Diyanet · Kur’an Yolu, Nahl 16/125 (K6); TDV İslâm Ansiklopedisi, Ahlâk"
+        },
+        {
+          "id": "h08-2",
+          "soru": {
+            "tr": "Konuşurken hangi üslup esastır?",
+            "fr": "Quel ton est de mise quand on parle ?",
+            "en": "Which manner of speaking is advised?",
+            "nl": "Welke manier van spreken is aangewezen?",
+            "de": "Welche Art zu sprechen ist geboten?"
+          },
+          "siklar": [
+            {
+              "tr": "Hikmetli ve güzel söz",
+              "fr": "La sagesse et la belle parole",
+              "en": "Wisdom and fair words",
+              "nl": "Wijsheid en mooie woorden",
+              "de": "Weisheit und schöne Worte"
+            },
+            {
+              "tr": "Sert ve kırıcı söz",
+              "fr": "Des mots durs et blessants",
+              "en": "Harsh and hurtful words",
+              "nl": "Harde en kwetsende woorden",
+              "de": "Harte und verletzende Worte"
+            },
+            {
+              "tr": "Hiç konuşmamak",
+              "fr": "Ne jamais parler",
+              "en": "Never speaking",
+              "nl": "Nooit spreken",
+              "de": "Nie sprechen"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "Nahl 16/125 (K6)"
+        }
+      ],
+      "kaynaklar": [
+        {
+          "ad": {
+            "tr": "Diyanet · Kur’an Yolu — Nahl 16/125",
+            "fr": "Diyanet · Kur’an Yolu — Nahl 16/125",
+            "en": "Diyanet · Kur’an Yolu — Nahl 16/125",
+            "nl": "Diyanet · Kur’an Yolu — Nahl 16/125",
+            "de": "Diyanet · Kur’an Yolu — Nahl 16/125"
+          },
+          "url": "https://kuran.diyanet.gov.tr/tefsir/Nahl-suresi/2026/125-"
+        },
+        {
+          "ad": {
+            "tr": "Sahîh-i Buhârî 69",
+            "fr": "Sahîh-i Buhârî 69",
+            "en": "Sahîh-i Buhârî 69",
+            "nl": "Sahîh-i Buhârî 69",
+            "de": "Sahîh-i Buhârî 69"
+          },
+          "url": "https://sunnah.com/bukhari:69"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet — Qu’est-ce qu’un Musulman ? (PDF, FR)",
+            "fr": "Diyanet — Qu’est-ce qu’un Musulman ? (PDF, FR)",
+            "en": "Diyanet — Qu’est-ce qu’un Musulman ? (PDF, FR)",
+            "nl": "Diyanet — Qu’est-ce qu’un Musulman ? (PDF, FR)",
+            "de": "Diyanet — Qu’est-ce qu’un Musulman ? (PDF, FR)"
+          },
+          "url": "https://dijital.diyanet.gov.tr/File/Download?path=4194_1.pdf&id=4194"
+        }
+      ],
+      "video": {
+        "tr": "sXIIGVOA9Bg",
+        "en": "9L-4rOV5rls"
+      },
+      "durum": {
+        "tr": "taslak",
+        "fr": "taslak",
+        "en": "taslak",
+        "nl": "taslak",
+        "de": "taslak"
+      }
+    },
+    {
+      "id": "h09",
+      "adim": 8,
+      "baslik": {
+        "tr": "Aileyle iletişim",
+        "fr": "Les relations familiales",
+        "en": "Family communication",
+        "nl": "Communicatie met de familie",
+        "de": "Gespräche in der Familie"
+      },
+      "hedef": {
+        "tr": "Aile ve yakınlarla sakin, saygılı ve güvenli bir iletişim kurmak.",
+        "fr": "Communiquer avec vos proches de façon calme, respectueuse et sûre.",
+        "en": "Communicating with family calmly, respectfully and safely.",
+        "nl": "Rustig, respectvol en veilig communiceren met je familie.",
+        "de": "Ruhig, respektvoll und sicher mit der Familie kommunizieren."
+      },
+      "metin": {
+        "tr": "Yeni bir inanç, aile ve çevreyle ilişkilerde sorular doğurabilir. İnançlarınız farklı olsa da anne babaya iyi davranmak önemlidir. İnanç konusunda kimse zorlanmaz; bu, sizin de başkalarını ikna etme baskısı hissetmeyeceğiniz anlamına gelir. Acele etmeyin: sakin, saygılı ve açık konuşun, kendi hızınızda anlatın. Sevdiklerinizle ortak değerlerinizi (dürüstlük, yardımseverlik, saygı) birlikte konuşmak köprü kurar. Güvenliğiniz veya huzurunuz tehlikedeyse güvendiğiniz bir kişiden yardım isteyin; özel ayrıntıları paylaşmak zorunda değilsiniz. Durumunuza özgü dinî sorular için bir din görevlisine başvurun.",
+        "fr": "Une nouvelle foi peut soulever des questions dans les relations avec la famille et l’entourage. Même si vos convictions diffèrent, bien vous comporter envers vos parents reste important. Nul n’est contraint en matière de foi ; vous n’avez donc pas non plus à convaincre les autres. Sans hâte : parlez avec calme, respect et clarté, à votre rythme. Parler de valeurs communes (honnêteté, entraide, respect) avec vos proches construit des ponts. Si votre sécurité ou votre paix est en danger, demandez l’aide d’une personne de confiance ; vous n’avez pas à donner de détails privés. Pour les questions religieuses propres à votre situation, adressez-vous à l’imam.",
+        "en": "A new faith can raise questions in your relationships with family and surroundings. Even when your beliefs differ, treating your parents well remains important. No one is forced in matters of faith; this also means you need not feel pressure to convince others. Take your time: speak calmly, respectfully and clearly, at your own pace. Talking with loved ones about shared values (honesty, helping others, respect) builds bridges. If your safety or peace is at risk, ask a trusted person for help; you do not have to share private details. For religious questions specific to your situation, ask an imam.",
+        "nl": "Een nieuw geloof kan vragen oproepen in de relatie met familie en omgeving. Ook als jullie overtuigingen verschillen, blijft goed omgaan met je ouders belangrijk. In geloofszaken wordt niemand gedwongen; dat betekent ook dat jij geen druk hoeft te voelen om anderen te overtuigen. Neem de tijd: praat rustig, respectvol en duidelijk, in je eigen tempo. Met je dierbaren praten over gedeelde waarden (eerlijkheid, helpen, respect) bouwt bruggen. Zijn je veiligheid of rust in gevaar, vraag dan hulp aan iemand die je vertrouwt; je hoeft geen privédetails te delen. Voor religieuze vragen over jouw situatie kun je bij een imam terecht.",
+        "de": "Ein neuer Glaube kann in den Beziehungen zu Familie und Umfeld Fragen aufwerfen. Auch bei unterschiedlichen Überzeugungen bleibt ein guter Umgang mit den Eltern wichtig. In Glaubensfragen wird niemand gezwungen; das heißt auch, dass Sie keinen Druck verspüren müssen, andere zu überzeugen. Nehmen Sie sich Zeit: Sprechen Sie ruhig, respektvoll und klar, in Ihrem Tempo. Gespräche mit Nahestehenden über gemeinsame Werte (Ehrlichkeit, Hilfsbereitschaft, Respekt) bauen Brücken. Sind Ihre Sicherheit oder Ihr Frieden in Gefahr, bitten Sie eine Vertrauensperson um Hilfe; private Einzelheiten müssen Sie nicht teilen. Für religiöse Fragen zu Ihrer Lage wenden Sie sich an eine Lehrperson."
+      },
+      "yap": {
+        "tr": "Bir yakınınızla paylaşmak istediğiniz ortak bir değeri seçin ve nasıl anlatacağınızı birkaç cümleyle hazırlayın.",
+        "fr": "Choisissez une valeur commune à partager avec un proche et préparez en quelques phrases comment en parler.",
+        "en": "Pick a shared value you would like to talk about with a loved one and prepare a few sentences on how.",
+        "nl": "Kies een gedeelde waarde om met een dierbare te bespreken en bereid een paar zinnen voor.",
+        "de": "Wählen Sie einen gemeinsamen Wert, über den Sie mit einer nahestehenden Person sprechen möchten, und bereiten Sie einige Sätze vor."
+      },
+      "sorular": [
+        {
+          "id": "h09-1",
+          "soru": {
+            "tr": "İnanç konusunda hangi ilke geçerlidir?",
+            "fr": "Quel principe vaut en matière de foi ?",
+            "en": "Which principle applies in matters of faith?",
+            "nl": "Welk principe geldt in geloofszaken?",
+            "de": "Welcher Grundsatz gilt in Glaubensfragen?"
+          },
+          "siklar": [
+            {
+              "tr": "İnançta zorlama yoktur",
+              "fr": "Nulle contrainte en matière de foi",
+              "en": "There is no compulsion in faith",
+              "nl": "Er is geen dwang in het geloof",
+              "de": "Im Glauben gibt es keinen Zwang"
+            },
+            {
+              "tr": "İnanç zorla öğretilir",
+              "fr": "La foi s’impose par la force",
+              "en": "Faith is taught by force",
+              "nl": "Geloof wordt met dwang onderwezen",
+              "de": "Glaube wird mit Zwang gelehrt"
+            },
+            {
+              "tr": "İnanç gizli tutulmalıdır",
+              "fr": "La foi doit être cachée",
+              "en": "Faith must be hidden",
+              "nl": "Geloof moet verborgen blijven",
+              "de": "Glaube muss verborgen bleiben"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "Bakara 2/256 (K4)"
+        },
+        {
+          "id": "h09-2",
+          "soru": {
+            "tr": "Güvenliğinizle ilgili bir kaygınız varsa ne yapabilirsiniz?",
+            "fr": "Que faire si votre sécurité vous inquiète ?",
+            "en": "What can you do if you are worried about your safety?",
+            "nl": "Wat kun je doen als je je zorgen maakt over je veiligheid?",
+            "de": "Was können Sie tun, wenn Sie um Ihre Sicherheit besorgt sind?"
+          },
+          "siklar": [
+            {
+              "tr": "Tek başıma taşırım",
+              "fr": "La porter seul",
+              "en": "Carry it alone",
+              "nl": "Alleen dragen",
+              "de": "Allein tragen"
+            },
+            {
+              "tr": "Güvendiğim bir kişiden yardım isterim",
+              "fr": "Demander l’aide d’une personne de confiance",
+              "en": "Ask a trusted person for help",
+              "nl": "Hulp vragen aan iemand die ik vertrouw",
+              "de": "Eine Vertrauensperson um Hilfe bitten"
+            },
+            {
+              "tr": "Bütün ayrıntıları herkese anlatırım",
+              "fr": "Tout raconter à tout le monde",
+              "en": "Tell everyone every detail",
+              "nl": "Alles aan iedereen vertellen",
+              "de": "Allen alles erzählen"
+            }
+          ],
+          "dogru": 1,
+          "kaynak": "Lokmân 31/14–15 (K5)"
+        }
+      ],
+      "kaynaklar": [
+        {
+          "ad": {
+            "tr": "Diyanet · Kur’an Yolu — Bakara 2/256",
+            "fr": "Diyanet · Kur’an Yolu — Bakara 2/256",
+            "en": "Diyanet · Kur’an Yolu — Bakara 2/256",
+            "nl": "Diyanet · Kur’an Yolu — Bakara 2/256",
+            "de": "Diyanet · Kur’an Yolu — Bakara 2/256"
+          },
+          "url": "https://kuran.diyanet.gov.tr/tefsir/Bakara-suresi/263/256-ayet-tefsiri"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet · Kur’an Yolu — Lokmân 31/14–15",
+            "fr": "Diyanet · Kur’an Yolu — Lokmân 31/14–15",
+            "en": "Diyanet · Kur’an Yolu — Lokmân 31/14–15",
+            "nl": "Diyanet · Kur’an Yolu — Lokmân 31/14–15",
+            "de": "Diyanet · Kur’an Yolu — Lokmân 31/14–15"
+          },
+          "url": "https://kuran.diyanet.gov.tr/tefsir/Lokm%C3%A2n-suresi/3483/14-15-ayet-tefsiri"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet · Kur’an Yolu — Nahl 16/125",
+            "fr": "Diyanet · Kur’an Yolu — Nahl 16/125",
+            "en": "Diyanet · Kur’an Yolu — Nahl 16/125",
+            "nl": "Diyanet · Kur’an Yolu — Nahl 16/125",
+            "de": "Diyanet · Kur’an Yolu — Nahl 16/125"
+          },
+          "url": "https://kuran.diyanet.gov.tr/tefsir/Nahl-suresi/2026/125-"
+        }
+      ],
+      "video": {
+        "tr": "USgJjlXPmMY",
+        "en": "xuzuPg5Yols"
+      },
+      "durum": {
+        "tr": "taslak",
+        "fr": "taslak",
+        "en": "taslak",
+        "nl": "taslak",
+        "de": "taslak"
+      }
+    },
+    {
+      "id": "h10",
+      "adim": 7,
+      "baslik": {
+        "tr": "Ramazan’a hazırlık",
+        "fr": "Se préparer au Ramadan",
+        "en": "Preparing for Ramadan",
+        "nl": "Voorbereiding op de ramadan",
+        "de": "Vorbereitung auf den Ramadan"
+      },
+      "hedef": {
+        "tr": "Oruç ve Ramazan kavramlarını tanıyıp hazırlık planı yapmak.",
+        "fr": "Découvrir le jeûne et le Ramadan et faire un plan de préparation.",
+        "en": "Learning the basics of fasting and Ramadan and making a preparation plan.",
+        "nl": "De basis van vasten en ramadan leren en een voorbereidingsplan maken.",
+        "de": "Die Grundlagen von Fasten und Ramadan kennenlernen und einen Vorbereitungsplan machen."
+      },
+      "metin": {
+        "tr": "Ramazan, hicrî takvimin dokuzuncu ayıdır. Bu ayda oruç tutmak, güçleri yeten ve mazereti bulunmayan Müslümanlar için farzdır. Oruç, tan yerinin ağarmasından güneşin batışına kadar yeme, içme ve eşle ilişkiden uzak durmaktır; niyet de gerekir. Sahur sabah vaktinden önce yenen yemek, iftar ise orucun açılışıdır. Hasta, yolcu ve benzeri durumlarda mazeret hükümleri vardır; kendi durumunuz için kaynağı okuyun ve bir din görevlisine sorun. Ramazan’dan önce sahur ve iftar düzeninizi, uyku ve iş programınızı gözden geçirin. İftarlar paylaşmanın güzel bir vesilesidir.",
+        "fr": "Le Ramadan est le neuvième mois du calendrier de l’hégire. Y jeûner est une obligation pour les musulmans qui en ont la capacité et n’ont pas d’excuse. Le jeûne consiste à s’abstenir de manger, de boire et des rapports conjugaux de l’aube au coucher du soleil ; l’intention est nécessaire. Le sahour est le repas pris avant l’aube, l’iftar la rupture du jeûne. Des règles d’excuse existent pour la maladie, le voyage et situations proches ; lisez la source pour votre cas et demandez à l’imam. Avant le Ramadan, revoyez votre organisation de sahour et d’iftar, votre sommeil et votre travail. Les iftars sont une belle occasion de partage.",
+        "en": "Ramadan is the ninth month of the Hijri calendar. Fasting in this month is obligatory for Muslims who are able and have no excuse. Fasting means abstaining from food, drink and marital relations from dawn until sunset; intention is also required. Suhoor is the meal before dawn and iftar is the breaking of the fast. There are rules of excuse for illness, travel and similar situations; read the source for your own case and ask an imam. Before Ramadan, review your suhoor and iftar routine, your sleep and your work schedule. Iftar meals are a lovely opportunity for sharing.",
+        "nl": "Ramadan is de negende maand van de islamitische kalender. Vasten in deze maand is verplicht voor moslims die daartoe in staat zijn en geen geldige reden tot vrijstelling hebben. Vasten betekent van de dageraad tot zonsondergang zich onthouden van eten, drinken en echtelijke omgang; ook de intentie is nodig. Soehoer is de maaltijd vóór de dageraad, iftar het verbreken van het vasten. Voor ziekte, reizen en vergelijkbare situaties bestaan vrijstellingsregels; lees de bron voor jouw geval en vraag het aan een imam. Bekijk vóór de ramadan je soehoer- en iftarroutine, je slaap en je werkrooster. Iftarmaaltijden zijn een mooie gelegenheid om te delen.",
+        "de": "Der Ramadan ist der neunte Monat des islamischen Kalenders. Das Fasten in diesem Monat ist für Musliminnen und Muslime Pflicht, die dazu in der Lage sind und keinen Entschuldigungsgrund haben. Fasten heißt, von der Morgendämmerung bis zum Sonnenuntergang auf Essen, Trinken und Intimität zu verzichten; auch die Absicht gehört dazu. Das Suhur ist die Mahlzeit vor der Dämmerung, das Iftar das Fastenbrechen. Für Krankheit, Reise und ähnliche Lagen gibt es Ausnahmeregeln; lesen Sie die Quelle für Ihren Fall und fragen Sie eine Lehrperson. Überprüfen Sie vor dem Ramadan Ihre Suhur- und Iftar-Routine, Ihren Schlaf und Ihren Arbeitsplan. Iftar-Mahlzeiten sind eine schöne Gelegenheit zum Teilen."
+      },
+      "yap": {
+        "tr": "Ramazan öncesi için bir plan yazın: sahur, iftar, uyku ve iş düzeni; bir sorunuzu not edin.",
+        "fr": "Écrivez un plan avant le Ramadan : sahour, iftar, sommeil, travail ; notez une question.",
+        "en": "Write a plan for before Ramadan: suhoor, iftar, sleep and work; note one question.",
+        "nl": "Schrijf een plan voor vóór de ramadan: soehoer, iftar, slaap en werk; noteer één vraag.",
+        "de": "Schreiben Sie einen Plan für die Zeit vor dem Ramadan: Suhur, Iftar, Schlaf und Arbeit; notieren Sie eine Frage."
+      },
+      "sorular": [
+        {
+          "id": "h10-1",
+          "soru": {
+            "tr": "Ramazan orucu hangi ayda tutulur?",
+            "fr": "Dans quel mois jeûne-t-on le Ramadan ?",
+            "en": "In which month is the Ramadan fast kept?",
+            "nl": "In welke maand wordt de ramadanvasten gehouden?",
+            "de": "In welchem Monat wird das Ramadan-Fasten gehalten?"
+          },
+          "siklar": [
+            {
+              "tr": "Hicrî takvimin dokuzuncu ayında",
+              "fr": "Au neuvième mois du calendrier de l’hégire",
+              "en": "In the ninth month of the Hijri calendar",
+              "nl": "In de negende maand van de islamitische kalender",
+              "de": "Im neunten Monat des islamischen Kalenders"
+            },
+            {
+              "tr": "Yılın ilk gününde",
+              "fr": "Le premier jour de l’année",
+              "en": "On the first day of the year",
+              "nl": "Op de eerste dag van het jaar",
+              "de": "Am ersten Tag des Jahres"
+            },
+            {
+              "tr": "Yalnızca kış aylarında",
+              "fr": "Seulement en hiver",
+              "en": "Only in winter",
+              "nl": "Alleen in de winter",
+              "de": "Nur im Winter"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "Diyanet İlmihali I, Oruç; Oruç İlmihali"
+        },
+        {
+          "id": "h10-2",
+          "soru": {
+            "tr": "Mazeretli durumlar için ne yapılır?",
+            "fr": "Que faire dans les cas d’excuse ?",
+            "en": "What should be done in cases of excuse?",
+            "nl": "Wat te doen bij vrijstellingsgronden?",
+            "de": "Was tun bei Entschuldigungsgründen?"
+          },
+          "siklar": [
+            {
+              "tr": "Kaynağı okuyup din görevlisine sorulur",
+              "fr": "On lit la source et on demande à l’imam",
+              "en": "Read the source and ask an imam",
+              "nl": "De bron lezen en een imam vragen",
+              "de": "Die Quelle lesen und eine Lehrperson fragen"
+            },
+            {
+              "tr": "Kimseye sorulmaz",
+              "fr": "On ne demande à personne",
+              "en": "Nobody is asked",
+              "nl": "Niemand wordt gevraagd",
+              "de": "Man fragt niemanden"
+            },
+            {
+              "tr": "Tahminle karar verilir",
+              "fr": "On décide au hasard",
+              "en": "One decides by guessing",
+              "nl": "Men beslist op gevoel",
+              "de": "Man entscheidet nach Gefühl"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "Diyanet İlmihali I, Oruç"
+        }
+      ],
+      "kaynaklar": [
+        {
+          "ad": {
+            "tr": "TDV İslâm Ansiklopedisi — Oruç",
+            "fr": "TDV İslâm Ansiklopedisi — Oruç",
+            "en": "TDV İslâm Ansiklopedisi — Oruç",
+            "nl": "TDV İslâm Ansiklopedisi — Oruç",
+            "de": "TDV İslâm Ansiklopedisi — Oruç"
+          },
+          "url": "https://islamansiklopedisi.org.tr/oruc"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "fr": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "en": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "nl": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "de": "Diyanet — Guide pratique des adorations (PDF, FR)"
+          },
+          "url": "https://dijital.diyanet.gov.tr/File/Download?path=ibadet_rehberi_fransizca.pdf&id=513"
+        }
+      ],
+      "video": {
+        "tr": "cvQ2Tf5lsC4",
+        "en": "plGnO6YVt-E"
+      },
+      "durum": {
+        "tr": "taslak",
+        "fr": "taslak",
+        "en": "taslak",
+        "nl": "taslak",
+        "de": "taslak"
+      }
+    },
+    {
+      "id": "h11",
+      "adim": 7,
+      "baslik": {
+        "tr": "Dayanışma ve topluluk",
+        "fr": "L’entraide et la communauté",
+        "en": "Mutual support and community",
+        "nl": "Onderlinge steun en gemeenschap",
+        "de": "Unterstützung und Gemeinschaft"
+      },
+      "hedef": {
+        "tr": "Zekât ve sadakanın farkını ve topluluk desteğini tanımak.",
+        "fr": "Connaître la différence entre zakat et aumône volontaire, et le soutien communautaire.",
+        "en": "Knowing the difference between zakat and voluntary charity, and community support.",
+        "nl": "Het verschil tussen zakat en vrijwillige liefdadigheid kennen, en gemeenschapssteun.",
+        "de": "Den Unterschied zwischen Zakat und freiwilliger Spende sowie Gemeinschaftshilfe kennen."
+      },
+      "metin": {
+        "tr": "İslâm paylaşmayı ve dayanışmayı teşvik eder. Zekât, belirli şartları taşıyan Müslümanlara farz olan malî bir ibadettir; sadaka ise gönüllü yardımdır. Zekâtın hesabı kişinin durumuna göre değişir; kendi durumunuz için bir din görevlisine sorun, kendi başınıza hesap yapmak zorunda değilsiniz. Yardımlaşma yalnız para değildir: ziyaret, selam, bilgi, zaman ve güler yüz de paylaşmaktır. Yerel camiler ve öğrenme toplulukları yeni Müslümanlar için bir destek ağı olabilir. Katılmak istediğiniz etkinlikleri kendiniz seçersiniz; kimse sizi kişisel bilgi vermeye veya fotoğraf paylaşmaya zorlayamaz.",
+        "fr": "L’islam encourage le partage et l’entraide. La zakat est une adoration financière obligatoire pour les musulmans qui réunissent certaines conditions ; l’aumône (sadaqa) est une aide volontaire. Le calcul de la zakat dépend de la situation de chacun ; demandez à l’imam pour la vôtre, vous n’avez pas à calculer seul. L’entraide n’est pas seulement financière : une visite, un salut, un savoir, du temps et un sourire sont aussi du partage. Les mosquées locales et les groupes d’apprentissage peuvent être un réseau de soutien pour les nouveaux musulmans. Vous choisissez vous-même les activités auxquelles vous participez ; nul ne peut vous obliger à donner des informations personnelles ou à partager des photos.",
+        "en": "Islam encourages sharing and mutual support. Zakat is an obligatory financial act of worship for Muslims who meet certain conditions; sadaqa is voluntary giving. Calculating zakat depends on a person’s situation; ask an imam about yours, you need not work it out alone. Helping each other is not only about money: a visit, a greeting, knowledge, time and a smile are sharing too. Local mosques and learning groups can be a support network for new Muslims. You choose which activities to join; no one can require you to give personal information or share photos.",
+        "nl": "De islam moedigt delen en onderlinge steun aan. Zakat is een verplichte financiële vorm van aanbidding voor moslims die aan bepaalde voorwaarden voldoen; sadaqa is vrijwillig geven. De berekening van zakat hangt van de situatie af; vraag een imam naar de jouwe, je hoeft het niet alleen uit te rekenen. Elkaar helpen is niet alleen geld: een bezoek, een groet, kennis, tijd en een glimlach zijn ook delen. Plaatselijke moskeeën en leergroepen kunnen een steunnetwerk zijn voor nieuwe moslims. Je kiest zelf aan welke activiteiten je deelneemt; niemand kan van je eisen persoonlijke gegevens te geven of foto’s te delen.",
+        "de": "Der Islam ermutigt zum Teilen und zur gegenseitigen Hilfe. Die Zakat ist ein verpflichtender finanzieller Gottesdienst für Musliminnen und Muslime, die bestimmte Bedingungen erfüllen; Sadaqa ist freiwilliges Geben. Die Berechnung der Zakat hängt von der Lage ab; fragen Sie eine Lehrperson nach Ihrer, Sie müssen nicht allein rechnen. Gegenseitige Hilfe ist nicht nur Geld: Besuch, Gruß, Wissen, Zeit und ein Lächeln sind auch Teilen. Örtliche Moscheen und Lerngruppen können ein Unterstützungsnetz für neue Musliminnen und Muslime sein. Sie wählen selbst, an welchen Angeboten Sie teilnehmen; niemand darf von Ihnen persönliche Angaben oder Fotos verlangen."
+      },
+      "yap": {
+        "tr": "Bu hafta bir kişiye para dışında bir iyilik yapın (ziyaret, telefon, yardım) ve nasıl geçtiğini not edin.",
+        "fr": "Rendez cette semaine un service non financier à quelqu’un (visite, appel, aide) et notez comment cela s’est passé.",
+        "en": "This week do a non-financial kindness for someone (a visit, a call, help) and note how it went.",
+        "nl": "Doe deze week iemand een niet-financiële gunst (bezoek, telefoontje, hulp) en noteer hoe het ging.",
+        "de": "Tun Sie diese Woche jemandem einen nicht-finanziellen Gefallen (Besuch, Anruf, Hilfe) und notieren Sie, wie es lief."
+      },
+      "sorular": [
+        {
+          "id": "h11-1",
+          "soru": {
+            "tr": "Zekât ile sadaka arasındaki fark nedir?",
+            "fr": "Quelle est la différence entre zakat et sadaqa ?",
+            "en": "What is the difference between zakat and sadaqa?",
+            "nl": "Wat is het verschil tussen zakat en sadaqa?",
+            "de": "Was ist der Unterschied zwischen Zakat und Sadaqa?"
+          },
+          "siklar": [
+            {
+              "tr": "Zekât belirli şartlarda farzdır; sadaka gönüllüdür",
+              "fr": "La zakat est obligatoire sous conditions ; la sadaqa est volontaire",
+              "en": "Zakat is obligatory under conditions; sadaqa is voluntary",
+              "nl": "Zakat is onder voorwaarden verplicht; sadaqa is vrijwillig",
+              "de": "Zakat ist unter Bedingungen Pflicht; Sadaqa ist freiwillig"
+            },
+            {
+              "tr": "İkisi aynıdır",
+              "fr": "Les deux sont identiques",
+              "en": "They are identical",
+              "nl": "Ze zijn identiek",
+              "de": "Beide sind identisch"
+            },
+            {
+              "tr": "Sadaka farzdır, zekât gönüllüdür",
+              "fr": "La sadaqa est obligatoire, la zakat volontaire",
+              "en": "Sadaqa is obligatory, zakat voluntary",
+              "nl": "Sadaqa is verplicht, zakat vrijwillig",
+              "de": "Sadaqa ist Pflicht, Zakat freiwillig"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "TDV İslâm Ansiklopedisi, Zekât; Zekat İlmihali"
+        },
+        {
+          "id": "h11-2",
+          "soru": {
+            "tr": "Yardımlaşma yalnız para mıdır?",
+            "fr": "L’entraide se limite-t-elle à l’argent ?",
+            "en": "Is mutual help only about money?",
+            "nl": "Is onderlinge hulp alleen geld?",
+            "de": "Besteht gegenseitige Hilfe nur aus Geld?"
+          },
+          "siklar": [
+            {
+              "tr": "Evet, yalnız para",
+              "fr": "Oui, seulement l’argent",
+              "en": "Yes, only money",
+              "nl": "Ja, alleen geld",
+              "de": "Ja, nur Geld"
+            },
+            {
+              "tr": "Hayır; ziyaret, bilgi ve zaman da paylaşmaktır",
+              "fr": "Non ; visite, savoir et temps comptent aussi",
+              "en": "No; visits, knowledge and time count too",
+              "nl": "Nee; bezoek, kennis en tijd tellen ook",
+              "de": "Nein; Besuch, Wissen und Zeit zählen auch"
+            },
+            {
+              "tr": "Hiçbiri sayılmaz",
+              "fr": "Rien ne compte",
+              "en": "None of it counts",
+              "nl": "Niets telt",
+              "de": "Nichts zählt"
+            }
+          ],
+          "dogru": 1,
+          "kaynak": "TDV İslâm Ansiklopedisi, Sadaka"
+        }
+      ],
+      "kaynaklar": [
+        {
+          "ad": {
+            "tr": "TDV İslâm Ansiklopedisi — Zekât",
+            "fr": "TDV İslâm Ansiklopedisi — Zekât",
+            "en": "TDV İslâm Ansiklopedisi — Zekât",
+            "nl": "TDV İslâm Ansiklopedisi — Zekât",
+            "de": "TDV İslâm Ansiklopedisi — Zekât"
+          },
+          "url": "https://islamansiklopedisi.org.tr/zekat"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "fr": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "en": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "nl": "Diyanet — Guide pratique des adorations (PDF, FR)",
+            "de": "Diyanet — Guide pratique des adorations (PDF, FR)"
+          },
+          "url": "https://dijital.diyanet.gov.tr/File/Download?path=ibadet_rehberi_fransizca.pdf&id=513"
+        }
+      ],
+      "video": {
+        "tr": "ZSxR6FQm_U0",
+        "en": "v6Fz7HPzB0M"
+      },
+      "durum": {
+        "tr": "taslak",
+        "fr": "taslak",
+        "en": "taslak",
+        "nl": "taslak",
+        "de": "taslak"
+      }
+    },
+    {
+      "id": "h12",
+      "adim": 1,
+      "baslik": {
+        "tr": "Tekrar ve sonraki adımlar",
+        "fr": "Bilan et prochaines étapes",
+        "en": "Review and next steps",
+        "nl": "Terugblik en volgende stappen",
+        "de": "Rückblick und nächste Schritte"
+      },
+      "hedef": {
+        "tr": "Öğrendiklerinizi toparlayıp bir sonraki küçük hedefi seçmek.",
+        "fr": "Faire le point et choisir un prochain petit objectif.",
+        "en": "Pulling together what you learned and choosing the next small goal.",
+        "nl": "Samenvatten wat je leerde en het volgende kleine doel kiezen.",
+        "de": "Das Gelernte zusammenfassen und das nächste kleine Ziel wählen."
+      },
+      "metin": {
+        "tr": "On bir haftayı geriye bakarak gözden geçirin: şehâdetin anlamı, iman esasları, peygamberimiz, Kur’an’la ilk tanışma, abdest ve namaz, dua, ahlâk, aile, oruç ve paylaşma. Hangi konular netleşti, hangileri ek zaman istiyor? Bu liste bir yoklama değil, kendi ilerlemenizi görmek içindir. Önümüzdeki üç ay için küçük bir hedef seçin; örneğin Fâtiha’yı anlamıyla okumak veya bir giriş kitabını bitirmek. Bu yol bir başlangıçtır, bitiş değil: sorularınızı sormaya devam edin ve bir din görevlisi ile güvendiğiniz bir öğrenme arkadaşıyla düzenli görüşün. Öğrenmeyi kolaylaştıran bir yaklaşım esastır.",
+        "fr": "Revoyez les onze semaines : le sens de la chahada, les articles de foi, le Prophète, la première rencontre avec le Coran, les ablutions et la prière, l’invocation, le bon comportement, la famille, le jeûne et le partage. Quels sujets sont clairs, lesquels demandent du temps ? Cette liste n’est pas un examen : elle sert à voir vos progrès. Choisissez un petit objectif pour les trois mois à venir, par exemple lire la Fâtiha avec son sens ou terminer un livre d’introduction. Ce parcours est un début, non une fin : continuez à poser vos questions et gardez des rencontres régulières avec l’imam et une personne de confiance pour apprendre. Une approche qui facilite l’apprentissage reste de mise.",
+        "en": "Look back over the eleven weeks: the meaning of the shahada, the articles of faith, the Prophet, first steps with the Qur’an, ablution and prayer, supplication, character, family, fasting and sharing. Which topics are clear, which need more time? This list is not a test; it helps you see your own progress. Choose a small goal for the next three months, for example reading the Fatiha with its meaning or finishing an introductory book. This path is a beginning, not an end: keep asking questions and meet regularly with an imam and a trusted learning companion. An approach that makes learning easier remains the guide.",
+        "nl": "Kijk terug op de elf weken: de betekenis van de sjahada, de geloofsartikelen, de Profeet, de eerste kennismaking met de Koran, rituele wassing en gebed, smeekbeden, goed gedrag, familie, vasten en delen. Welke onderwerpen zijn duidelijk, welke vragen meer tijd? Deze lijst is geen toets; ze helpt je je eigen vooruitgang te zien. Kies een klein doel voor de komende drie maanden, bijvoorbeeld de Fatiha met betekenis lezen of een inleidend boek uitlezen. Deze weg is een begin, geen einde: blijf vragen stellen en spreek regelmatig af met een imam en een vertrouwde leermaatje. Een aanpak die leren gemakkelijker maakt, blijft het uitgangspunt.",
+        "de": "Blicken Sie auf die elf Wochen zurück: Bedeutung der Schahada, Glaubensartikel, der Prophet, erste Schritte mit dem Koran, Gebetswaschung und Gebet, Bittgebet, Verhalten, Familie, Fasten und Teilen. Welche Themen sind klar, welche brauchen mehr Zeit? Diese Liste ist keine Prüfung; sie zeigt Ihnen Ihren eigenen Fortschritt. Wählen Sie ein kleines Ziel für die nächsten drei Monate, etwa die Fatiha mit Bedeutung zu lesen oder ein Einführungsbuch zu beenden. Dieser Weg ist ein Anfang, kein Ende: Stellen Sie weiter Fragen und treffen Sie sich regelmäßig mit einer Lehrperson und einer vertrauten Lernpartnerin oder einem Lernpartner. Ein Ansatz, der das Lernen erleichtert, bleibt maßgeblich."
+      },
+      "yap": {
+        "tr": "Bir sonraki üç ay için tek bir hedef yazın ve onu kiminle gözden geçireceğinizi belirleyin.",
+        "fr": "Écrivez un seul objectif pour les trois prochains mois et décidez avec qui vous le reverrez.",
+        "en": "Write one goal for the next three months and decide who you will review it with.",
+        "nl": "Schrijf één doel voor de komende drie maanden en bepaal met wie je het bespreekt.",
+        "de": "Schreiben Sie ein Ziel für die nächsten drei Monate auf und bestimmen Sie, mit wem Sie es besprechen."
+      },
+      "sorular": [
+        {
+          "id": "h12-1",
+          "soru": {
+            "tr": "Kelime-i şehâdet neyi ifade eder?",
+            "fr": "Qu’exprime la chahada ?",
+            "en": "What does the shahada express?",
+            "nl": "Wat drukt de sjahada uit?",
+            "de": "Was bringt die Schahada zum Ausdruck?"
+          },
+          "siklar": [
+            {
+              "tr": "Allah’ın birliğine ve Muhammed’in O’nun kulu ve elçisi olduğuna inanmayı",
+              "fr": "La croyance en l’unicité de Dieu et en Muhammad, Son serviteur et messager",
+              "en": "Belief in the oneness of God and in Muhammad as His servant and messenger",
+              "nl": "Het geloof in de eenheid van God en in Mohammed als Zijn dienaar en boodschapper",
+              "de": "Den Glauben an die Einheit Gottes und an Muhammad als Seinen Diener und Gesandten"
+            },
+            {
+              "tr": "Bir oruç niyetini",
+              "fr": "Une intention de jeûne",
+              "en": "A fasting intention",
+              "nl": "Een vastenintentie",
+              "de": "Eine Fastenabsicht"
+            },
+            {
+              "tr": "Bir namaz vaktini",
+              "fr": "Une heure de prière",
+              "en": "A prayer time",
+              "nl": "Een gebedstijd",
+              "de": "Eine Gebetszeit"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "TDV İslâm Ansiklopedisi, Kelime-i Şehâdet (K2)"
+        },
+        {
+          "id": "h12-2",
+          "soru": {
+            "tr": "Bir konuyu anlamadığınızda ne yapabilirsiniz?",
+            "fr": "Que faire quand un sujet reste obscur ?",
+            "en": "What can you do when a topic is unclear?",
+            "nl": "Wat kun je doen als een onderwerp onduidelijk blijft?",
+            "de": "Was können Sie tun, wenn ein Thema unklar bleibt?"
+          },
+          "siklar": [
+            {
+              "tr": "Güvenilir bir din görevlisine sorabilirim",
+              "fr": "Le demander à un imam de confiance",
+              "en": "Ask a trusted imam",
+              "nl": "Het aan een betrouwbare imam vragen",
+              "de": "Eine vertrauenswürdige Lehrperson fragen"
+            },
+            {
+              "tr": "Vazgeçerim",
+              "fr": "Abandonner",
+              "en": "Give up",
+              "nl": "Opgeven",
+              "de": "Aufgeben"
+            },
+            {
+              "tr": "Kaynağı belirsiz paylaşımlara bakarım",
+              "fr": "Me fier à des messages sans source",
+              "en": "Rely on messages without a source",
+              "nl": "Op berichten zonder bron vertrouwen",
+              "de": "Auf Meldungen ohne Quelle vertrauen"
+            }
+          ],
+          "dogru": 0,
+          "kaynak": "Sahîh-i Buhârî 69 (K7)"
+        }
+      ],
+      "kaynaklar": [
+        {
+          "ad": {
+            "tr": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet",
+            "fr": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet",
+            "en": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet",
+            "nl": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet",
+            "de": "TDV İslâm Ansiklopedisi — Kelime-i Şehâdet"
+          },
+          "url": "https://islamansiklopedisi.org.tr/kelime-i-sehadet"
+        },
+        {
+          "ad": {
+            "tr": "Sahîh-i Buhârî 69",
+            "fr": "Sahîh-i Buhârî 69",
+            "en": "Sahîh-i Buhârî 69",
+            "nl": "Sahîh-i Buhârî 69",
+            "de": "Sahîh-i Buhârî 69"
+          },
+          "url": "https://sunnah.com/bukhari:69"
+        },
+        {
+          "ad": {
+            "tr": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)",
+            "fr": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)",
+            "en": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)",
+            "nl": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)",
+            "de": "Diyanet — Qu’est-ce que l’Islam ? (PDF, FR)"
+          },
+          "url": "https://dijital.diyanet.gov.tr/File/Download?path=3624_1.pdf&id=3624"
+        }
+      ],
+      "durum": {
+        "tr": "taslak",
+        "fr": "taslak",
+        "en": "taslak",
+        "nl": "taslak",
+        "de": "taslak"
+      }
+    }
+  ]
+}
